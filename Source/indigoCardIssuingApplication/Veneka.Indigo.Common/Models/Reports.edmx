@@ -1,0 +1,832 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="indigo_database_ReportsModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <Function Name="usp_branch_order_report" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="issuer_id" Type="int" Mode="In" />
+          <Parameter Name="branch_id" Type="int" Mode="In" />
+          <Parameter Name="date_from" Type="datetime" Mode="In" />
+          <Parameter Name="date_to" Type="datetime" Mode="In" />
+        </Function>
+        <Function Name="usp_card_dispatch_report" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="issuer_id" Type="int" Mode="In" />
+          <Parameter Name="branch_id" Type="int" Mode="In" />
+          <Parameter Name="date_from" Type="datetime" Mode="In" />
+          <Parameter Name="date_to" Type="datetime" Mode="In" />
+          <Parameter Name="audit_user_id" Type="bigint" Mode="In" />
+          <Parameter Name="audit_workstation" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="usp_card_expiry_report" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="issuer_id" Type="int" Mode="In" />
+          <Parameter Name="branch_id" Type="int" Mode="In" />
+          <Parameter Name="date_from" Type="datetime" Mode="In" />
+          <Parameter Name="audit_user_id" Type="bigint" Mode="In" />
+          <Parameter Name="audit_workstation" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="usp_card_production_report" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="issuer_id" Type="int" Mode="In" />
+          <Parameter Name="branch_id" Type="int" Mode="In" />
+          <Parameter Name="date_from" Type="datetime" Mode="In" />
+          <Parameter Name="date_to" Type="datetime" Mode="In" />
+          <Parameter Name="audit_user_id" Type="bigint" Mode="In" />
+          <Parameter Name="audit_workstation" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="usp_get_brachesperusergroup_auditreport" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="issuer_id" Type="int" Mode="In" />
+          <Parameter Name="user_group_id" Type="int" Mode="In" />
+          <Parameter Name="branch_id" Type="int" Mode="In" />
+          <Parameter Name="user_role_id" Type="int" Mode="In" />
+          <Parameter Name="audit_user_id" Type="bigint" Mode="In" />
+          <Parameter Name="audit_workstation" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="usp_get_branchcardstock_report" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="branch_id" Type="int" Mode="In" />
+          <Parameter Name="issuer_id" Type="int" Mode="In" />
+          <Parameter Name="language_id" Type="int" Mode="In" />
+          <Parameter Name="audit_user_id" Type="bigint" Mode="In" />
+          <Parameter Name="audit_workstation" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="usp_get_burnrate_report" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="branch_id" Type="int" Mode="In" />
+          <Parameter Name="issuer_id" Type="int" Mode="In" />
+          <Parameter Name="language_id" Type="int" Mode="In" />
+          <Parameter Name="REPORT_DATE" Type="datetime" Mode="In" />
+          <Parameter Name="audit_user_id" Type="bigint" Mode="In" />
+          <Parameter Name="audit_workstation" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="usp_get_cardinventorysummaryreport" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="branch_id" Type="int" Mode="In" />
+          <Parameter Name="issuer_id" Type="int" Mode="In" />
+          <Parameter Name="language_id" Type="int" Mode="In" />
+          <Parameter Name="audit_user_id" Type="bigint" Mode="In" />
+          <Parameter Name="audit_workstation" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="usp_get_centercardstock_report" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="branch_id" Type="int" Mode="In" />
+          <Parameter Name="issuer_id" Type="int" Mode="In" />
+          <Parameter Name="language_id" Type="int" Mode="In" />
+          <Parameter Name="audit_user_id" Type="bigint" Mode="In" />
+          <Parameter Name="audit_workstation" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="usp_get_feerevenue_report" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="branch_id" Type="int" Mode="In" />
+          <Parameter Name="issuer_id" Type="int" Mode="In" />
+          <Parameter Name="language_id" Type="int" Mode="In" />
+          <Parameter Name="fromdate" Type="datetime" Mode="In" />
+          <Parameter Name="todate" Type="datetime" Mode="In" />
+          <Parameter Name="audit_user_id" Type="bigint" Mode="In" />
+          <Parameter Name="audit_workstation" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="usp_get_invetorysummaryreport" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="branch_id" Type="int" Mode="In" />
+          <Parameter Name="issuer_id" Type="int" Mode="In" />
+          <Parameter Name="language_id" Type="int" Mode="In" />
+          <Parameter Name="audit_user_id" Type="bigint" Mode="In" />
+          <Parameter Name="audit_workstation" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="usp_get_issuecardsummaryreport" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="branch_id" Type="int" Mode="In" />
+          <Parameter Name="issuer_id" Type="int" Mode="In" />
+          <Parameter Name="language_id" Type="int" Mode="In" />
+          <Parameter Name="fromdate" Type="datetime" Mode="In" />
+          <Parameter Name="todate" Type="datetime" Mode="In" />
+        </Function>
+        <Function Name="usp_get_issuedcardsreport" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="isuerid" Type="int" Mode="In" />
+          <Parameter Name="fromdate" Type="datetime" Mode="In" />
+          <Parameter Name="todate" Type="datetime" Mode="In" />
+          <Parameter Name="userid" Type="int" Mode="In" />
+          <Parameter Name="branchid" Type="int" Mode="In" />
+          <Parameter Name="language_id" Type="int" Mode="In" />
+          <Parameter Name="audit_user_id" Type="bigint" Mode="In" />
+          <Parameter Name="audit_workstation" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="usp_get_pinreissue_report" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="isuerid" Type="int" Mode="In" />
+          <Parameter Name="fromdate" Type="datetime" Mode="In" />
+          <Parameter Name="todate" Type="datetime" Mode="In" />
+          <Parameter Name="userid" Type="int" Mode="In" />
+          <Parameter Name="branchid" Type="int" Mode="In" />
+          <Parameter Name="language_id" Type="int" Mode="In" />
+          <Parameter Name="audit_user_id" Type="bigint" Mode="In" />
+          <Parameter Name="audit_workstation" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="usp_get_spoilcardsreport" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="isuerid" Type="int" Mode="In" />
+          <Parameter Name="language_id" Type="int" Mode="In" />
+          <Parameter Name="userid" Type="int" Mode="In" />
+          <Parameter Name="branchid" Type="int" Mode="In" />
+          <Parameter Name="fromdate" Type="datetime" Mode="In" />
+          <Parameter Name="todate" Type="datetime" Mode="In" />
+          <Parameter Name="audit_user_id" Type="bigint" Mode="In" />
+          <Parameter Name="audit_workstation" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="usp_get_Spoilcardsummaryreport" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="branch_id" Type="int" Mode="In" />
+          <Parameter Name="issuer_id" Type="int" Mode="In" />
+          <Parameter Name="language_id" Type="int" Mode="In" />
+          <Parameter Name="fromdate" Type="datetime" Mode="In" />
+          <Parameter Name="todate" Type="datetime" Mode="In" />
+        </Function>
+        <Function Name="usp_get_userbyroles_auditreport" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="issuer_id" Type="int" Mode="In" />
+          <Parameter Name="user_group_id" Type="int" Mode="In" />
+          <Parameter Name="user_role_id" Type="int" Mode="In" />
+          <Parameter Name="user_id" Type="int" Mode="In" />
+          <Parameter Name="audit_user_id" Type="bigint" Mode="In" />
+          <Parameter Name="audit_workstation" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="usp_get_usergroup_auditreport" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="issuer_id" Type="int" Mode="In" />
+          <Parameter Name="user_group_id" Type="int" Mode="In" />
+          <Parameter Name="user_role_id" Type="int" Mode="In" />
+          <Parameter Name="audit_user_id" Type="bigint" Mode="In" />
+          <Parameter Name="audit_workstation" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="usp_pin_mailer_report" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="issuer_id" Type="int" Mode="In" />
+          <Parameter Name="branch_id" Type="int" Mode="In" />
+          <Parameter Name="date_from" Type="datetime" Mode="In" />
+          <Parameter Name="date_to" Type="datetime" Mode="In" />
+        </Function>
+        <Function Name="usp_pin_mailer_reprint_report" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="issuer_id" Type="int" Mode="In" />
+          <Parameter Name="branch_id" Type="int" Mode="In" />
+          <Parameter Name="date_from" Type="datetime" Mode="In" />
+          <Parameter Name="date_to" Type="datetime" Mode="In" />
+          <Parameter Name="audit_userid" Type="int" Mode="In" />
+          <Parameter Name="audit_workstation" Type="nvarchar" Mode="In" />
+        </Function>
+        <EntityContainer Name="indigo_database_ReportsModelStoreContainer" />
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="indigo_database_ReportsModel" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2009/11/edm" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+        <EntityContainer Name="indigo_database_ReportsEntities" annotation:LazyLoadingEnabled="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+          <FunctionImport Name="usp_get_brachesperusergroup_auditreport" ReturnType="Collection(indigo_database_ReportsModel.auditreport_usergroup_Result)">
+            <Parameter Name="issuer_id" Mode="In" Type="Int32" />
+            <Parameter Name="user_group_id" Mode="In" Type="Int32" />
+            <Parameter Name="branch_id" Mode="In" Type="Int32" />
+            <Parameter Name="user_role_id" Mode="In" Type="Int32" />
+            <Parameter Name="audit_user_id" Mode="In" Type="Int64" />
+            <Parameter Name="audit_workstation" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="usp_branch_order_report" ReturnType="Collection(indigo_database_ReportsModel.BranchOrderReportResult)">
+            <Parameter Name="issuer_id" Mode="In" Type="Int32" />
+            <Parameter Name="branch_id" Mode="In" Type="Int32" />
+            <Parameter Name="date_from" Mode="In" Type="DateTime" />
+            <Parameter Name="date_to" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <FunctionImport Name="usp_card_dispatch_report" ReturnType="Collection(indigo_database_ReportsModel.CardDispatchReportResult)">
+            <Parameter Name="issuer_id" Mode="In" Type="Int32" />
+            <Parameter Name="branch_id" Mode="In" Type="Int32" />
+            <Parameter Name="date_from" Mode="In" Type="DateTime" />
+            <Parameter Name="date_to" Mode="In" Type="DateTime" />
+            <Parameter Name="audit_user_id" Mode="In" Type="Int64" />
+            <Parameter Name="audit_workstation" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="usp_card_expiry_report" ReturnType="Collection(indigo_database_ReportsModel.CardExpiryReportResult)">
+            <Parameter Name="issuer_id" Mode="In" Type="Int32" />
+            <Parameter Name="branch_id" Mode="In" Type="Int32" />
+            <Parameter Name="date_from" Mode="In" Type="DateTime" />
+            <Parameter Name="audit_user_id" Mode="In" Type="Int64" />
+            <Parameter Name="audit_workstation" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="usp_card_production_report" ReturnType="Collection(indigo_database_ReportsModel.CardProductionReportResult)">
+            <Parameter Name="issuer_id" Mode="In" Type="Int32" />
+            <Parameter Name="branch_id" Mode="In" Type="Int32" />
+            <Parameter Name="date_from" Mode="In" Type="DateTime" />
+            <Parameter Name="date_to" Mode="In" Type="DateTime" />
+            <Parameter Name="audit_user_id" Mode="In" Type="Int64" />
+            <Parameter Name="audit_workstation" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="usp_get_branchcardstock_report" ReturnType="Collection(indigo_database_ReportsModel.branchcardstock_report_Result)">
+            <Parameter Name="branch_id" Mode="In" Type="Int32" />
+            <Parameter Name="issuer_id" Mode="In" Type="Int32" />
+            <Parameter Name="language_id" Mode="In" Type="Int32" />
+            <Parameter Name="audit_user_id" Mode="In" Type="Int64" />
+            <Parameter Name="audit_workstation" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="usp_get_cardinventorysummaryreport" ReturnType="Collection(indigo_database_ReportsModel.invetorysummaryreport_Result)">
+            <Parameter Name="branch_id" Mode="In" Type="Int32" />
+            <Parameter Name="issuer_id" Mode="In" Type="Int32" />
+            <Parameter Name="language_id" Mode="In" Type="Int32" />
+            <Parameter Name="audit_user_id" Mode="In" Type="Int64" />
+            <Parameter Name="audit_workstation" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="usp_get_centercardstock_report" ReturnType="Collection(indigo_database_ReportsModel.branchcardstock_report_Result)">
+            <Parameter Name="branch_id" Mode="In" Type="Int32" />
+            <Parameter Name="issuer_id" Mode="In" Type="Int32" />
+            <Parameter Name="language_id" Mode="In" Type="Int32" />
+            <Parameter Name="audit_user_id" Mode="In" Type="Int64" />
+            <Parameter Name="audit_workstation" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="usp_get_feerevenue_report" ReturnType="Collection(indigo_database_ReportsModel.feerevenue_report_Result)">
+            <Parameter Name="branch_id" Mode="In" Type="Int32" />
+            <Parameter Name="issuer_id" Mode="In" Type="Int32" />
+            <Parameter Name="language_id" Mode="In" Type="Int32" />
+            <Parameter Name="fromdate" Mode="In" Type="DateTime" />
+            <Parameter Name="todate" Mode="In" Type="DateTime" />
+            <Parameter Name="audit_user_id" Mode="In" Type="Int64" />
+            <Parameter Name="audit_workstation" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="usp_get_invetorysummaryreport" ReturnType="Collection(indigo_database_ReportsModel.invetorysummaryreport_Result)">
+            <Parameter Name="branch_id" Mode="In" Type="Int32" />
+            <Parameter Name="issuer_id" Mode="In" Type="Int32" />
+            <Parameter Name="language_id" Mode="In" Type="Int32" />
+            <Parameter Name="audit_user_id" Mode="In" Type="Int64" />
+            <Parameter Name="audit_workstation" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="usp_get_issuecardsummaryreport" ReturnType="Collection(indigo_database_ReportsModel.issuecardsummaryreport_Result)">
+            <Parameter Name="branch_id" Mode="In" Type="Int32" />
+            <Parameter Name="issuer_id" Mode="In" Type="Int32" />
+            <Parameter Name="language_id" Mode="In" Type="Int32" />
+            <Parameter Name="fromdate" Mode="In" Type="DateTime" />
+            <Parameter Name="todate" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <FunctionImport Name="usp_get_issuedcardsreport" ReturnType="Collection(indigo_database_ReportsModel.issuedcardsreport_Result)">
+            <Parameter Name="isuerid" Mode="In" Type="Int32" />
+            <Parameter Name="fromdate" Mode="In" Type="DateTime" />
+            <Parameter Name="todate" Mode="In" Type="DateTime" />
+            <Parameter Name="userid" Mode="In" Type="Int32" />
+            <Parameter Name="branchid" Mode="In" Type="Int32" />
+            <Parameter Name="language_id" Mode="In" Type="Int32" />
+            <Parameter Name="audit_user_id" Mode="In" Type="Int64" />
+            <Parameter Name="audit_workstation" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="usp_get_spoilcardsreport" ReturnType="Collection(indigo_database_ReportsModel.spolicardsreport_Result)">
+            <Parameter Name="isuerid" Mode="In" Type="Int32" />
+            <Parameter Name="language_id" Mode="In" Type="Int32" />
+            <Parameter Name="userid" Mode="In" Type="Int32" />
+            <Parameter Name="branchid" Mode="In" Type="Int32" />
+            <Parameter Name="fromdate" Mode="In" Type="DateTime" />
+            <Parameter Name="todate" Mode="In" Type="DateTime" />
+            <Parameter Name="audit_user_id" Mode="In" Type="Int64" />
+            <Parameter Name="audit_workstation" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="usp_get_Spoilcardsummaryreport" ReturnType="Collection(indigo_database_ReportsModel.Spoilcardsummaryreport_Result)">
+            <Parameter Name="branch_id" Mode="In" Type="Int32" />
+            <Parameter Name="issuer_id" Mode="In" Type="Int32" />
+            <Parameter Name="language_id" Mode="In" Type="Int32" />
+            <Parameter Name="fromdate" Mode="In" Type="DateTime" />
+            <Parameter Name="todate" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <FunctionImport Name="usp_get_userbyroles_auditreport" ReturnType="Collection(indigo_database_ReportsModel.auditreport_usergroup_Result)">
+            <Parameter Name="issuer_id" Mode="In" Type="Int32" />
+            <Parameter Name="user_group_id" Mode="In" Type="Int32" />
+            <Parameter Name="user_role_id" Mode="In" Type="Int32" />
+            <Parameter Name="user_id" Mode="In" Type="Int32" />
+            <Parameter Name="audit_user_id" Mode="In" Type="Int64" />
+            <Parameter Name="audit_workstation" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="usp_get_usergroup_auditreport" ReturnType="Collection(indigo_database_ReportsModel.auditreport_usergroup_Result)">
+            <Parameter Name="issuer_id" Mode="In" Type="Int32" />
+            <Parameter Name="user_group_id" Mode="In" Type="Int32" />
+            <Parameter Name="user_role_id" Mode="In" Type="Int32" />
+            <Parameter Name="audit_user_id" Mode="In" Type="Int64" />
+            <Parameter Name="audit_workstation" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="usp_pin_mailer_report" ReturnType="Collection(indigo_database_ReportsModel.PinMailerReportResult)">
+            <Parameter Name="issuer_id" Mode="In" Type="Int32" />
+            <Parameter Name="branch_id" Mode="In" Type="Int32" />
+            <Parameter Name="date_from" Mode="In" Type="DateTime" />
+            <Parameter Name="date_to" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <FunctionImport Name="usp_get_burnrate_report" ReturnType="Collection(indigo_database_ReportsModel.burnrate_report_Result)">
+            <Parameter Name="branch_id" Mode="In" Type="Int32" />
+            <Parameter Name="issuer_id" Mode="In" Type="Int32" />
+            <Parameter Name="language_id" Mode="In" Type="Int32" />
+            <Parameter Name="REPORT_DATE" Mode="In" Type="DateTime" />
+            <Parameter Name="audit_user_id" Mode="In" Type="Int64" />
+            <Parameter Name="audit_workstation" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="usp_get_pinreissue_report" ReturnType="Collection(indigo_database_ReportsModel.PINReissueReportResult)">
+            <Parameter Name="isuerid" Mode="In" Type="Int32" />
+            <Parameter Name="fromdate" Mode="In" Type="DateTime" />
+            <Parameter Name="todate" Mode="In" Type="DateTime" />
+            <Parameter Name="userid" Mode="In" Type="Int32" />
+            <Parameter Name="branchid" Mode="In" Type="Int32" />
+            <Parameter Name="language_id" Mode="In" Type="Int32" />
+            <Parameter Name="audit_user_id" Mode="In" Type="Int64" />
+            <Parameter Name="audit_workstation" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="usp_pin_mailer_reprint_report" ReturnType="Collection(indigo_database_ReportsModel.PinMailerReprintReportResult)">
+            <Parameter Name="issuer_id" Mode="In" Type="Int32" />
+            <Parameter Name="branch_id" Mode="In" Type="Int32" />
+            <Parameter Name="date_from" Mode="In" Type="DateTime" />
+            <Parameter Name="date_to" Mode="In" Type="DateTime" />
+            <Parameter Name="audit_userid" Mode="In" Type="Int32" />
+            <Parameter Name="audit_workstation" Mode="In" Type="String" />
+          </FunctionImport>
+        </EntityContainer>
+        <ComplexType Name="auditreport_usergroup_Result">
+          <Property Type="String" Name="user_group_name" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="issuer_name" Nullable="false" MaxLength="50" />
+          <Property Type="Boolean" Name="mask_screen_pan" Nullable="false" />
+          <Property Type="Boolean" Name="mask_report_pan" Nullable="false" />
+          <Property Type="Boolean" Name="can_read" Nullable="false" />
+          <Property Type="Boolean" Name="can_update" Nullable="false" />
+          <Property Type="Boolean" Name="can_delete" Nullable="false" />
+          <Property Type="Boolean" Name="all_branch_access" Nullable="false" />
+          <Property Type="String" Name="branch_name" Nullable="false" MaxLength="1" />
+          <Property Type="String" Name="user_role" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="username" Nullable="true" MaxLength="1" />
+          <Property Type="Boolean" Name="can_create" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="branchcardstock_report_Result">
+          <Property Type="String" Name="branch_code" Nullable="true" MaxLength="10" />
+          <Property Type="Int32" Name="branch_id" Nullable="true" />
+          <Property Type="String" Name="card_number" Nullable="true" />
+          <Property Type="String" Name="card_request_reference" Nullable="true" MaxLength="100" />
+          <Property Type="DateTime" Name="card_expiry_date" Nullable="true" Precision="23" />
+          <Property Type="DateTime" Name="card_production_date" Nullable="true" Precision="23" />
+        </ComplexType>
+        <ComplexType Name="CardDispatchReportResult">
+          <Property Type="String" Name="customer_first_name" Nullable="true" />
+          <Property Type="String" Name="customer_middle_name" Nullable="true" />
+          <Property Type="String" Name="customer_last_name" Nullable="true" />
+          <Property Type="String" Name="customer_account_number" Nullable="true" />
+          <Property Type="String" Name="name_on_card" Nullable="true" />
+          <Property Type="String" Name="card_number" Nullable="true" />
+          <Property Type="String" Name="card_reference_number" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="dist_batch_reference" Nullable="false" MaxLength="25" />
+          <Property Type="DateTime" Name="date_created" Nullable="false" Precision="23" />
+          <Property Type="String" Name="issuer_name" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="issuer_code" Nullable="false" MaxLength="10" />
+          <Property Type="String" Name="branch_name" Nullable="false" MaxLength="30" />
+          <Property Type="String" Name="branch_code" Nullable="false" MaxLength="10" />
+        </ComplexType>
+        <ComplexType Name="CardExpiryReportResult">
+          <Property Type="String" Name="card_number" Nullable="true" />
+          <Property Type="String" Name="card_reference_number" Nullable="true" MaxLength="100" />
+          <Property Type="DateTime" Name="card_expiry_date" Nullable="true" Precision="23" />
+          <Property Type="String" Name="issuer_name" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="issuer_code" Nullable="false" MaxLength="10" />
+          <Property Type="String" Name="branch_name" Nullable="false" MaxLength="30" />
+          <Property Type="String" Name="branch_code" Nullable="false" MaxLength="10" />
+        </ComplexType>
+        <ComplexType Name="CardProductionReportResult">
+          <Property Type="String" Name="customer_first_name" Nullable="true" />
+          <Property Type="String" Name="customer_middle_name" Nullable="true" />
+          <Property Type="String" Name="customer_last_name" Nullable="true" />
+          <Property Type="String" Name="customer_account_number" Nullable="true" />
+          <Property Type="String" Name="name_on_card" Nullable="true" />
+          <Property Type="String" Name="card_number" Nullable="true" />
+          <Property Type="String" Name="card_reference_number" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="dist_batch_reference" Nullable="false" MaxLength="25" />
+          <Property Type="DateTime" Name="date_created" Nullable="false" Precision="23" />
+          <Property Type="String" Name="issuer_name" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="issuer_code" Nullable="false" MaxLength="10" />
+          <Property Type="String" Name="branch_name" Nullable="false" MaxLength="30" />
+          <Property Type="String" Name="branch_code" Nullable="false" MaxLength="10" />
+        </ComplexType>
+        <ComplexType Name="feerevenue_report_Result">
+          <Property Type="Int32" Name="branch_id" Nullable="false" />
+          <Property Type="String" Name="branch_code" Nullable="false" MaxLength="10" />
+          <Property Type="Int32" Name="zero_no_fee" Nullable="true" />
+          <Property Type="Int32" Name="amended_fee" Nullable="true" />
+          <Property Type="Int32" Name="full_fee" Nullable="true" />
+          <Property Type="Decimal" Name="fee_charged" Nullable="true" Precision="38" Scale="4" />
+        </ComplexType>
+        <ComplexType Name="invetorysummaryreport_Result">
+          <Property Type="Int32" Name="issuer_id" Nullable="false" />
+          <Property Type="String" Name="branch_code" Nullable="false" MaxLength="10" />
+          <Property Type="Int32" Name="branch_id" Nullable="false" />
+          <Property Type="Int32" Name="CardCount" Nullable="true" />
+          <Property Type="String" Name="issuer_name" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="statuses_name" Nullable="false" MaxLength="100" />
+          <Property Type="Int32" Name="statuses_id" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="issuecardsummaryreport_Result">
+          <Property Type="Int32" Name="issuer_id" Nullable="false" />
+          <Property Type="String" Name="branch_code" Nullable="false" MaxLength="10" />
+          <Property Type="Int32" Name="branch_id" Nullable="false" />
+          <Property Type="Int32" Name="card_issue_reason_id" Nullable="false" />
+          <Property Type="String" Name="card_issuer_reason_name" Nullable="false" MaxLength="100" />
+          <Property Type="Int32" Name="CardCount" Nullable="true" />
+          <Property Type="String" Name="issuer_name" Nullable="false" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="issuedcardsreport_Result">
+          <Property Type="String" Name="BranchCode" Nullable="false" MaxLength="10" />
+          <Property Type="String" Name="IssuedBy" Nullable="true" />
+          <Property Type="String" Name="CustomerNames" Nullable="true" />
+          <Property Type="String" Name="customeraccountNumber" Nullable="true" />
+          <Property Type="String" Name="card_number" Nullable="true" />
+          <Property Type="Int64" Name="original_operator_user_id" Nullable="false" />
+          <Property Type="Int64" Name="user_id" Nullable="false" />
+          <Property Type="String" Name="card_reference_number" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="CardStatus" Nullable="false" MaxLength="50" />
+          <Property Type="DateTime" Name="IssuedDate" Nullable="false" Precision="23" />
+          <Property Type="String" Name="APPROVER_USER" Nullable="true" />
+          <Property Type="String" Name="Scenario" Nullable="false" MaxLength="100" />
+          <Property Type="Decimal" Name="fee_Charged" Nullable="true" Precision="10" Scale="4" />
+        </ComplexType>
+        <ComplexType Name="spolicardsreport_Result">
+          <Property Type="String" Name="BranchCode" Nullable="false" MaxLength="10" />
+          <Property Type="String" Name="SpoliedBy" Nullable="true" MaxLength="30" />
+          <Property Type="String" Name="IssuedBy" Nullable="false" MaxLength="1" />
+          <Property Type="String" Name="CustomerNames" Nullable="true" MaxLength="61" />
+          <Property Type="String" Name="customeraccountNumber" Nullable="true" MaxLength="30" />
+          <Property Type="String" Name="cardnumber" Nullable="true" />
+          <Property Type="String" Name="cardreferencnumber" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="CardStatus" Nullable="false" MaxLength="50" />
+          <Property Type="DateTime" Name="IssuedDate" Nullable="false" Precision="23" />
+          <Property Type="String" Name="Reason" Nullable="true" MaxLength="1000" />
+        </ComplexType>
+        <ComplexType Name="Spoilcardsummaryreport_Result">
+          <Property Type="Int32" Name="issuer_id" Nullable="false" />
+          <Property Type="String" Name="branch_code" Nullable="false" MaxLength="10" />
+          <Property Type="Int32" Name="branch_id" Nullable="false" />
+          <Property Type="Int32" Name="branch_card_code_id" Nullable="false" />
+          <Property Type="String" Name="Spoil_reason_name" Nullable="true" MaxLength="1000" />
+          <Property Type="Int32" Name="CardCount" Nullable="true" />
+          <Property Type="String" Name="issuer_name" Nullable="false" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="PinMailerReportResult">
+          <Property Type="String" Name="customer_account_number" Nullable="true" />
+          <Property Type="String" Name="pin_batch_reference" Nullable="false" MaxLength="100" />
+          <Property Type="DateTime" Name="date_created" Nullable="false" Precision="23" />
+          <Property Type="String" Name="issuer_name" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="issuer_code" Nullable="false" MaxLength="10" />
+          <Property Type="String" Name="branch_name" Nullable="false" MaxLength="30" />
+          <Property Type="String" Name="branch_code" Nullable="false" MaxLength="10" />
+        </ComplexType>
+        <ComplexType Name="burnrate_report_Result">
+          <Property Type="Int32" Name="branch_id" Nullable="false" />
+          <Property Type="String" Name="branch_code" Nullable="false" MaxLength="10" />
+          <Property Type="Int32" Name="C180_d" Nullable="true" />
+          <Property Type="Int32" Name="C90_d" Nullable="true" />
+          <Property Type="Int32" Name="Week_1" Nullable="true" />
+          <Property Type="Int32" Name="Week_2" Nullable="true" />
+          <Property Type="Int32" Name="Week_3" Nullable="true" />
+          <Property Type="Int32" Name="Week_4" Nullable="true" />
+          <Property Type="Int32" Name="Current_Card_Stock" Nullable="true" />
+          <Property Type="Int32" Name="Weeks_remaining" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="BranchOrderReportResult">
+          <Property Type="String" Name="customer_first_name" Nullable="true" />
+          <Property Type="String" Name="customer_middle_name" Nullable="true" />
+          <Property Type="String" Name="customer_last_name" Nullable="true" />
+          <Property Type="String" Name="customer_account_number" Nullable="true" />
+          <Property Type="String" Name="name_on_card" Nullable="true" />
+          <Property Type="String" Name="contact_number" Nullable="true" />
+          <Property Type="String" Name="dist_batch_reference" Nullable="false" MaxLength="25" />
+          <Property Type="DateTime" Name="date_created" Nullable="false" Precision="23" />
+          <Property Type="String" Name="issuer_name" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="issuer_code" Nullable="false" MaxLength="10" />
+          <Property Type="String" Name="branch_name" Nullable="false" MaxLength="30" />
+          <Property Type="String" Name="branch_code" Nullable="false" MaxLength="10" />
+        </ComplexType>
+        <ComplexType Name="PINReissueReportResult">
+          <Property Type="String" Name="branchcode" Nullable="false" MaxLength="41" />
+          <Property Type="String" Name="issuer_name" Nullable="false" MaxLength="50" />
+          <Property Type="Binary" Name="pan" Nullable="false" />
+          <Property Type="String" Name="cardnumber" Nullable="true" />
+          <Property Type="String" Name="Reason" Nullable="false" MaxLength="12" />
+          <Property Type="String" Name="IssuedBy" Nullable="true" MaxLength="30" />
+          <Property Type="String" Name="APPROVER_USER" Nullable="true" MaxLength="30" />
+          <Property Type="DateTime" Name="ReIssuedDate" Nullable="false" Precision="23" />
+          <Property Type="DateTime" Name="approveddate" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="PinMailerReprintReportResult">
+          <Property Type="String" Name="customer_account_number" Nullable="true" />
+          <Property Type="String" Name="pin_batch_reference" Nullable="false" MaxLength="100" />
+          <Property Type="DateTime" Name="date_created" Nullable="false" Precision="23" />
+          <Property Type="String" Name="issuer_name" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="issuer_code" Nullable="false" MaxLength="10" />
+          <Property Type="String" Name="branch_name" Nullable="false" MaxLength="30" />
+          <Property Type="String" Name="branch_code" Nullable="false" MaxLength="10" />
+          <Property Type="String" Name="customer_name" Nullable="true" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="indigo_database_ReportsModelStoreContainer" CdmEntityContainer="indigo_database_ReportsEntities">
+          <FunctionImportMapping FunctionImportName="usp_get_brachesperusergroup_auditreport" FunctionName="indigo_database_ReportsModel.Store.usp_get_brachesperusergroup_auditreport">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="indigo_database_ReportsModel.auditreport_usergroup_Result">
+                <ScalarProperty Name="user_group_name" ColumnName="user_group_name" />
+                <ScalarProperty Name="issuer_name" ColumnName="issuer_name" />
+                <ScalarProperty Name="mask_screen_pan" ColumnName="mask_screen_pan" />
+                <ScalarProperty Name="mask_report_pan" ColumnName="mask_report_pan" />
+                <ScalarProperty Name="can_read" ColumnName="can_read" />
+                <ScalarProperty Name="can_update" ColumnName="can_update" />
+                <ScalarProperty Name="can_delete" ColumnName="can_delete" />
+                <ScalarProperty Name="all_branch_access" ColumnName="all_branch_access" />
+                <ScalarProperty Name="branch_name" ColumnName="branch_name" />
+                <ScalarProperty Name="user_role" ColumnName="user_role" />
+                <ScalarProperty Name="username" ColumnName="username" />
+                <ScalarProperty Name="can_create" ColumnName="can_create" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="usp_branch_order_report" FunctionName="indigo_database_ReportsModel.Store.usp_branch_order_report">
+          <ResultMapping>
+              <ComplexTypeMapping TypeName="indigo_database_ReportsModel.BranchOrderReportResult">
+                <ScalarProperty Name="customer_first_name" ColumnName="customer_first_name" />
+                <ScalarProperty Name="customer_middle_name" ColumnName="customer_middle_name" />
+                <ScalarProperty Name="customer_last_name" ColumnName="customer_last_name" />
+                <ScalarProperty Name="customer_account_number" ColumnName="customer_account_number" />
+                <ScalarProperty Name="name_on_card" ColumnName="name_on_card" />
+                <ScalarProperty Name="contact_number" ColumnName="contact_number" />
+                <ScalarProperty Name="dist_batch_reference" ColumnName="dist_batch_reference" />
+                <ScalarProperty Name="date_created" ColumnName="date_created" />
+                <ScalarProperty Name="issuer_name" ColumnName="issuer_name" />
+                <ScalarProperty Name="issuer_code" ColumnName="issuer_code" />
+                <ScalarProperty Name="branch_name" ColumnName="branch_name" />
+                <ScalarProperty Name="branch_code" ColumnName="branch_code" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="usp_card_dispatch_report" FunctionName="indigo_database_ReportsModel.Store.usp_card_dispatch_report">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="indigo_database_ReportsModel.CardDispatchReportResult">
+                <ScalarProperty Name="customer_first_name" ColumnName="customer_first_name" />
+                <ScalarProperty Name="customer_middle_name" ColumnName="customer_middle_name" />
+                <ScalarProperty Name="customer_last_name" ColumnName="customer_last_name" />
+                <ScalarProperty Name="customer_account_number" ColumnName="customer_account_number" />
+                <ScalarProperty Name="name_on_card" ColumnName="name_on_card" />
+                <ScalarProperty Name="card_number" ColumnName="card_number" />
+                <ScalarProperty Name="card_reference_number" ColumnName="card_reference_number" />
+                <ScalarProperty Name="dist_batch_reference" ColumnName="dist_batch_reference" />
+                <ScalarProperty Name="date_created" ColumnName="date_created" />
+                <ScalarProperty Name="issuer_name" ColumnName="issuer_name" />
+                <ScalarProperty Name="issuer_code" ColumnName="issuer_code" />
+                <ScalarProperty Name="branch_name" ColumnName="branch_name" />
+                <ScalarProperty Name="branch_code" ColumnName="branch_code" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="usp_card_expiry_report" FunctionName="indigo_database_ReportsModel.Store.usp_card_expiry_report">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="indigo_database_ReportsModel.CardExpiryReportResult">
+                <ScalarProperty Name="card_number" ColumnName="card_number" />
+                <ScalarProperty Name="card_reference_number" ColumnName="card_reference_number" />
+                <ScalarProperty Name="card_expiry_date" ColumnName="card_expiry_date" />
+                <ScalarProperty Name="issuer_name" ColumnName="issuer_name" />
+                <ScalarProperty Name="issuer_code" ColumnName="issuer_code" />
+                <ScalarProperty Name="branch_name" ColumnName="branch_name" />
+                <ScalarProperty Name="branch_code" ColumnName="branch_code" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="usp_card_production_report" FunctionName="indigo_database_ReportsModel.Store.usp_card_production_report">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="indigo_database_ReportsModel.CardProductionReportResult">
+                <ScalarProperty Name="customer_first_name" ColumnName="customer_first_name" />
+                <ScalarProperty Name="customer_middle_name" ColumnName="customer_middle_name" />
+                <ScalarProperty Name="customer_last_name" ColumnName="customer_last_name" />
+                <ScalarProperty Name="customer_account_number" ColumnName="customer_account_number" />
+                <ScalarProperty Name="name_on_card" ColumnName="name_on_card" />
+                <ScalarProperty Name="card_number" ColumnName="card_number" />
+                <ScalarProperty Name="card_reference_number" ColumnName="card_reference_number" />
+                <ScalarProperty Name="dist_batch_reference" ColumnName="dist_batch_reference" />
+                <ScalarProperty Name="date_created" ColumnName="date_created" />
+                <ScalarProperty Name="issuer_name" ColumnName="issuer_name" />
+                <ScalarProperty Name="issuer_code" ColumnName="issuer_code" />
+                <ScalarProperty Name="branch_name" ColumnName="branch_name" />
+                <ScalarProperty Name="branch_code" ColumnName="branch_code" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="usp_get_branchcardstock_report" FunctionName="indigo_database_ReportsModel.Store.usp_get_branchcardstock_report">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="indigo_database_ReportsModel.branchcardstock_report_Result">
+                <ScalarProperty Name="branch_code" ColumnName="branch_code" />
+                <ScalarProperty Name="branch_id" ColumnName="branch_id" />
+                <ScalarProperty Name="card_number" ColumnName="card_number" />
+                <ScalarProperty Name="card_request_reference" ColumnName="card_request_reference" />
+                <ScalarProperty Name="card_expiry_date" ColumnName="card_expiry_date" />
+                <ScalarProperty Name="card_production_date" ColumnName="card_production_date" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="usp_get_cardinventorysummaryreport" FunctionName="indigo_database_ReportsModel.Store.usp_get_cardinventorysummaryreport">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="indigo_database_ReportsModel.invetorysummaryreport_Result">
+                <ScalarProperty Name="issuer_id" ColumnName="issuer_id" />
+                <ScalarProperty Name="branch_code" ColumnName="branch_code" />
+                <ScalarProperty Name="branch_id" ColumnName="branch_id" />
+                <ScalarProperty Name="CardCount" ColumnName="CardCount" />
+                <ScalarProperty Name="issuer_name" ColumnName="issuer_name" />
+                <ScalarProperty Name="statuses_name" ColumnName="statuses_name" />
+                <ScalarProperty Name="statuses_id" ColumnName="statuses_id" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="usp_get_centercardstock_report" FunctionName="indigo_database_ReportsModel.Store.usp_get_centercardstock_report">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="indigo_database_ReportsModel.branchcardstock_report_Result">
+                <ScalarProperty Name="branch_code" ColumnName="branch_code" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="usp_get_feerevenue_report" FunctionName="indigo_database_ReportsModel.Store.usp_get_feerevenue_report">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="indigo_database_ReportsModel.feerevenue_report_Result">
+                <ScalarProperty Name="branch_id" ColumnName="branch_id" />
+                <ScalarProperty Name="branch_code" ColumnName="branch_code" />
+                <ScalarProperty Name="zero_no_fee" ColumnName="zero_no_fee" />
+                <ScalarProperty Name="amended_fee" ColumnName="amended_fee" />
+                <ScalarProperty Name="full_fee" ColumnName="full_fee" />
+                <ScalarProperty Name="fee_charged" ColumnName="fee_charged" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="usp_get_invetorysummaryreport" FunctionName="indigo_database_ReportsModel.Store.usp_get_invetorysummaryreport">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="indigo_database_ReportsModel.invetorysummaryreport_Result">
+                <ScalarProperty Name="issuer_id" ColumnName="issuer_id" />
+                <ScalarProperty Name="branch_code" ColumnName="branch_code" />
+                <ScalarProperty Name="branch_id" ColumnName="branch_id" />
+                <ScalarProperty Name="CardCount" ColumnName="CardCount" />
+                <ScalarProperty Name="issuer_name" ColumnName="issuer_name" />
+                <ScalarProperty Name="statuses_name" ColumnName="statuses_name" />
+                <ScalarProperty Name="statuses_id" ColumnName="statuses_id" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="usp_get_issuecardsummaryreport" FunctionName="indigo_database_ReportsModel.Store.usp_get_issuecardsummaryreport">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="indigo_database_ReportsModel.issuecardsummaryreport_Result">
+                <ScalarProperty Name="issuer_id" ColumnName="issuer_id" />
+                <ScalarProperty Name="branch_code" ColumnName="branch_code" />
+                <ScalarProperty Name="branch_id" ColumnName="branch_id" />
+                <ScalarProperty Name="card_issue_reason_id" ColumnName="card_issue_reason_id" />
+                <ScalarProperty Name="card_issuer_reason_name" ColumnName="card_issuer_reason_name" />
+                <ScalarProperty Name="CardCount" ColumnName="CardCount" />
+                <ScalarProperty Name="issuer_name" ColumnName="issuer_name" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="usp_get_issuedcardsreport" FunctionName="indigo_database_ReportsModel.Store.usp_get_issuedcardsreport">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="indigo_database_ReportsModel.issuedcardsreport_Result">
+                <ScalarProperty Name="BranchCode" ColumnName="BranchCode" />
+                <ScalarProperty Name="IssuedBy" ColumnName="IssuedBy" />
+                <ScalarProperty Name="CustomerNames" ColumnName="CustomerNames" />
+                <ScalarProperty Name="customeraccountNumber" ColumnName="customeraccountNumber" />
+                <ScalarProperty Name="card_number" ColumnName="card_number" />
+                <ScalarProperty Name="original_operator_user_id" ColumnName="original_operator_user_id" />
+                <ScalarProperty Name="user_id" ColumnName="user_id" />
+                <ScalarProperty Name="card_reference_number" ColumnName="card_reference_number" />
+                <ScalarProperty Name="CardStatus" ColumnName="CardStatus" />
+                <ScalarProperty Name="IssuedDate" ColumnName="IssuedDate" />
+                <ScalarProperty Name="APPROVER_USER" ColumnName="APPROVER USER" />
+                <ScalarProperty Name="Scenario" ColumnName="Scenario" />
+                <ScalarProperty Name="fee_Charged" ColumnName="fee_Charged" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="usp_get_spoilcardsreport" FunctionName="indigo_database_ReportsModel.Store.usp_get_spoilcardsreport">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="indigo_database_ReportsModel.spolicardsreport_Result">
+                <ScalarProperty Name="BranchCode" ColumnName="BranchCode" />
+                <ScalarProperty Name="SpoliedBy" ColumnName="SpoliedBy" />
+                <ScalarProperty Name="IssuedBy" ColumnName="IssuedBy" />
+                <ScalarProperty Name="CustomerNames" ColumnName="CustomerNames" />
+                <ScalarProperty Name="customeraccountNumber" ColumnName="customeraccountNumber" />
+                <ScalarProperty Name="cardnumber" ColumnName="cardnumber" />
+                <ScalarProperty Name="cardreferencnumber" ColumnName="cardreferencnumber" />
+                <ScalarProperty Name="CardStatus" ColumnName="CardStatus" />
+                <ScalarProperty Name="IssuedDate" ColumnName="IssuedDate" />
+                <ScalarProperty Name="Reason" ColumnName="Reason" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="usp_get_Spoilcardsummaryreport" FunctionName="indigo_database_ReportsModel.Store.usp_get_Spoilcardsummaryreport">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="indigo_database_ReportsModel.Spoilcardsummaryreport_Result">
+                <ScalarProperty Name="issuer_id" ColumnName="issuer_id" />
+                <ScalarProperty Name="branch_code" ColumnName="branch_code" />
+                <ScalarProperty Name="branch_id" ColumnName="branch_id" />
+                <ScalarProperty Name="branch_card_code_id" ColumnName="branch_card_code_id" />
+                <ScalarProperty Name="Spoil_reason_name" ColumnName="Spoil_reason_name" />
+                <ScalarProperty Name="CardCount" ColumnName="CardCount" />
+                <ScalarProperty Name="issuer_name" ColumnName="issuer_name" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="usp_get_userbyroles_auditreport" FunctionName="indigo_database_ReportsModel.Store.usp_get_userbyroles_auditreport">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="indigo_database_ReportsModel.auditreport_usergroup_Result">
+                <ScalarProperty Name="user_group_name" ColumnName="user_group_name" />
+                <ScalarProperty Name="issuer_name" ColumnName="issuer_name" />
+                <ScalarProperty Name="mask_screen_pan" ColumnName="mask_screen_pan" />
+                <ScalarProperty Name="mask_report_pan" ColumnName="mask_report_pan" />
+                <ScalarProperty Name="can_read" ColumnName="can_read" />
+                <ScalarProperty Name="can_update" ColumnName="can_update" />
+                <ScalarProperty Name="can_delete" ColumnName="can_delete" />
+                <ScalarProperty Name="all_branch_access" ColumnName="all_branch_access" />
+                <ScalarProperty Name="branch_name" ColumnName="branch_name" />
+                <ScalarProperty Name="user_role" ColumnName="user_role" />
+                <ScalarProperty Name="username" ColumnName="username" />
+                <ScalarProperty Name="can_create" ColumnName="can_create" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="usp_get_usergroup_auditreport" FunctionName="indigo_database_ReportsModel.Store.usp_get_usergroup_auditreport">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="indigo_database_ReportsModel.auditreport_usergroup_Result">
+                <ScalarProperty Name="user_group_name" ColumnName="user_group_name" />
+                <ScalarProperty Name="issuer_name" ColumnName="issuer_name" />
+                <ScalarProperty Name="mask_screen_pan" ColumnName="mask_screen_pan" />
+                <ScalarProperty Name="mask_report_pan" ColumnName="mask_report_pan" />
+                <ScalarProperty Name="can_read" ColumnName="can_read" />
+                <ScalarProperty Name="can_update" ColumnName="can_update" />
+                <ScalarProperty Name="can_delete" ColumnName="can_delete" />
+                <ScalarProperty Name="all_branch_access" ColumnName="all_branch_access" />
+                <ScalarProperty Name="branch_name" ColumnName="branch_name" />
+                <ScalarProperty Name="user_role" ColumnName="user_role" />
+                <ScalarProperty Name="username" ColumnName="username" />
+                <ScalarProperty Name="can_create" ColumnName="can_create" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="usp_pin_mailer_report" FunctionName="indigo_database_ReportsModel.Store.usp_pin_mailer_report">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="indigo_database_ReportsModel.PinMailerReportResult">
+                <ScalarProperty Name="customer_account_number" ColumnName="customer_account_number" />
+                <ScalarProperty Name="pin_batch_reference" ColumnName="pin_batch_reference" />
+                <ScalarProperty Name="date_created" ColumnName="date_created" />
+                <ScalarProperty Name="issuer_name" ColumnName="issuer_name" />
+                <ScalarProperty Name="issuer_code" ColumnName="issuer_code" />
+                <ScalarProperty Name="branch_name" ColumnName="branch_name" />
+                <ScalarProperty Name="branch_code" ColumnName="branch_code" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="usp_get_burnrate_report" FunctionName="indigo_database_ReportsModel.Store.usp_get_burnrate_report">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="indigo_database_ReportsModel.burnrate_report_Result">
+                <ScalarProperty Name="branch_id" ColumnName="branch_id" />
+                <ScalarProperty Name="branch_code" ColumnName="branch_code" />
+                <ScalarProperty Name="C180_d" ColumnName="180 d" />
+                <ScalarProperty Name="C90_d" ColumnName="90 d" />
+                <ScalarProperty Name="Week_1" ColumnName="Week 1" />
+                <ScalarProperty Name="Week_2" ColumnName="Week 2" />
+                <ScalarProperty Name="Week_3" ColumnName="Week 3" />
+                <ScalarProperty Name="Week_4" ColumnName="Week 4" />
+                <ScalarProperty Name="Current_Card_Stock" ColumnName="Current Card Stock" />
+                <ScalarProperty Name="Weeks_remaining" ColumnName="Weeks remaining" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="usp_get_pinreissue_report" FunctionName="indigo_database_ReportsModel.Store.usp_get_pinreissue_report">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="indigo_database_ReportsModel.PINReissueReportResult">
+                <ScalarProperty Name="branchcode" ColumnName="branchcode" />
+                <ScalarProperty Name="issuer_name" ColumnName="issuer_name" />
+                <ScalarProperty Name="pan" ColumnName="pan" />
+                <ScalarProperty Name="cardnumber" ColumnName="cardnumber" />
+                <ScalarProperty Name="Reason" ColumnName="Reason" />
+                <ScalarProperty Name="IssuedBy" ColumnName="IssuedBy" />
+                <ScalarProperty Name="APPROVER_USER" ColumnName="APPROVER_USER" />
+                <ScalarProperty Name="ReIssuedDate" ColumnName="ReIssuedDate" />
+                <ScalarProperty Name="approveddate" ColumnName="approveddate" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="usp_pin_mailer_reprint_report" FunctionName="indigo_database_ReportsModel.Store.usp_pin_mailer_reprint_report">
+          <ResultMapping>
+              <ComplexTypeMapping TypeName="indigo_database_ReportsModel.PinMailerReprintReportResult">
+                <ScalarProperty Name="customer_account_number" ColumnName="customer_account_number" />
+                <ScalarProperty Name="pin_batch_reference" ColumnName="pin_batch_reference" />
+                <ScalarProperty Name="date_created" ColumnName="date_created" />
+                <ScalarProperty Name="issuer_name" ColumnName="issuer_name" />
+                <ScalarProperty Name="issuer_code" ColumnName="issuer_code" />
+                <ScalarProperty Name="branch_name" ColumnName="branch_name" />
+                <ScalarProperty Name="branch_code" ColumnName="branch_code" />
+                <ScalarProperty Name="customer_name" ColumnName="customer_name" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Default" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams />
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,238 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{03BF6364-DFE6-47D5-8AA3-17839EF44854}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Veneka.Indigo.Integration</RootNamespace>
+    <AssemblyName>Veneka.Indigo.Integration</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'indigo_app|AnyCPU'">
+    <OutputPath>bin\indigo_app\</OutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.3.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
+      <HintPath>..\packages\BouncyCastle.1.8.3.1\lib\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="Common.Logging, Version=3.4.1.0, Culture=neutral, PublicKeyToken=af08829b84f0328e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Common.Logging.3.4.1\lib\net40\Common.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Common.Logging.Core, Version=3.4.1.0, Culture=neutral, PublicKeyToken=af08829b84f0328e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Common.Logging.Core.3.4.1\lib\net40\Common.Logging.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Common.Logging.Log4Net1213, Version=3.4.1.0, Culture=neutral, PublicKeyToken=af08829b84f0328e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Common.Logging.Log4Net1213.3.4.1\lib\net40\Common.Logging.Log4Net1213.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.13.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.3\lib\net40-full\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Veneka.Licensing.Client, Version=1.0.6030.24587, Culture=neutral, PublicKeyToken=b2f9648779cc4168, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\veneka\licensing_references\Veneka.Licensing.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Veneka.Licensing.Common, Version=1.0.6606.21733, Culture=neutral, PublicKeyToken=b2f9648779cc4168, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\veneka\licensing_references\Veneka.Licensing.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Veneka.Licensing.Encryption, Version=1.0.6606.21730, Culture=neutral, PublicKeyToken=b2f9648779cc4168, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\veneka\licensing_references\Veneka.Licensing.Encryption.dll</HintPath>
+    </Reference>
+    <Reference Include="Veneka.Licensing.License, Version=1.0.6606.21767, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\veneka\licensing_references\Veneka.Licensing.License.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Common\ISequenceGenerator.cs" />
+    <Compile Include="Common\FileSequenceGenerator.cs" />
+    <Compile Include="Common\PseudoGenerator.cs" />
+    <Compile Include="Common\TerminalCardData.cs" />
+    <Compile Include="Common\Track2.cs" />
+    <Compile Include="Common\Utility.cs" />
+    <Compile Include="Config\ActiveDirectoryConfig.cs" />
+    <Compile Include="Config\Config.cs" />
+    <Compile Include="Config\ConfigFactory.cs" />
+    <Compile Include="Config\FileSystemConfig.cs" />
+    <Compile Include="Config\IConfig.cs" />
+    <Compile Include="Config\ConfigDAL.cs" />
+    <Compile Include="Config\SMTPConfig.cs" />
+    <Compile Include="Config\ThalesConfig.cs" />
+    <Compile Include="Config\SocketConfig.cs" />
+    <Compile Include="Config\WebServiceConfig.cs" />
+    <Compile Include="Cryptography\PinBlockDecode.cs" />
+    <Compile Include="Cryptography\TripleDes.cs" />
+    <Compile Include="Cryptography\Utility.cs" />
+    <Compile Include="Common\CardNumberGenerator.cs" />
+    <Compile Include="Common\FilePath.cs" />
+    <Compile Include="Common\General.cs" />
+    <Compile Include="DAL\IBranchDAL.cs" />
+    <Compile Include="DAL\ICardGeneratorDAL.cs" />
+    <Compile Include="DAL\ICardsDAL.cs" />
+    <Compile Include="DAL\ICustomDataDAL.cs" />
+    <Compile Include="DAL\IFileLoaderDAL.cs" />
+    <Compile Include="DAL\INotificationDAL.cs" />
+    <Compile Include="DAL\LookupDAL.cs" />
+    <Compile Include="Enumerations\CardActivationMethod.cs" />
+    <Compile Include="ICardRenewalFileProcessor.cs" />
+    <Compile Include="IDataSource.cs" />
+    <Compile Include="DAL\IExportBatchDAL.cs" />
+    <Compile Include="DAL\IIssuerDAL.cs" />
+    <Compile Include="DAL\ILookupDAL.cs" />
+    <Compile Include="DAL\InterfaceDAL.cs" />
+    <Compile Include="DAL\IParametersDAL.cs" />
+    <Compile Include="DAL\IProductDAL.cs" />
+    <Compile Include="DAL\ITerminalDAL.cs" />
+    <Compile Include="DAL\ITransactionSequenceDAL.cs" />
+    <Compile Include="DAL\UtilityClass.cs" />
+    <Compile Include="Email\EmailSender.cs" />
+    <Compile Include="ExportBatchGenerator.cs" />
+    <Compile Include="External\ExternalSystemDAL.cs" />
+    <Compile Include="External\ExternalSystemFields.cs" />
+    <Compile Include="FileLoader\BLL\FileLoaderBLL.cs" />
+    <Compile Include="FileLoader\BLL\LoadToExisting.cs" />
+    <Compile Include="FileLoader\BulkRequests.cs" />
+    <Compile Include="FileLoader\Crypto\ICryptoProvider.cs" />
+    <Compile Include="Cryptography\PGP.cs" />
+    <Compile Include="FileLoader\Crypto\FileDecryptionFactory.cs" />
+    <Compile Include="Cryptography\IOHelper.cs" />
+    <Compile Include="FileLoader\DAL\FileLoaderDAL.cs" />
+    <Compile Include="FileLoader\ExportProcessor.cs" />
+    <Compile Include="FileLoader\FileProcessor.cs" />
+    <Compile Include="FileLoader\Objects\BranchLookup.cs" />
+    <Compile Include="FileLoader\Objects\CardFile.cs" />
+    <Compile Include="FileLoader\Objects\CardFileRecord.cs" />
+    <Compile Include="FileLoader\Objects\BulkRequestsFile.cs" />
+    <Compile Include="FileLoader\Objects\BulkRequestRecord.cs" />
+    <Compile Include="FileLoader\Objects\CardOrderCard.cs" />
+    <Compile Include="FileLoader\Objects\CardsOrder.cs" />
+    <Compile Include="FileLoader\Objects\FileCommentsObject.cs" />
+    <Compile Include="FileLoader\Objects\FileHistory.cs" />
+    <Compile Include="FileLoader\Objects\IFile.cs" />
+    <Compile Include="FileLoader\Objects\IRecord.cs" />
+    <Compile Include="FileLoader\Objects\Issuer.cs" />
+    <Compile Include="FileLoader\Objects\IssuerProduct.cs" />
+    <Compile Include="FileLoader\Processor.cs" />
+    <Compile Include="FileLoader\Validation\FileValidation.cs" />
+    <Compile Include="FileLoader\Validation\BranchValidation.cs" />
+    <Compile Include="FileLoader\Validation\CardValidation.cs" />
+    <Compile Include="FileLoader\Validation\IssuerValidation.cs" />
+    <Compile Include="FileLoader\Validation\ProductValidation.cs" />
+    <Compile Include="FileLoader\Validation\Validation.cs" />
+    <Compile Include="ICardFileProcessor.cs" />
+    <Compile Include="ICommon.cs" />
+    <Compile Include="IExternalAuthentication.cs" />
+    <Compile Include="IFeeScheme.cs" />
+    <Compile Include="IMutiFactorAuthentication.cs" />
+    <Compile Include="INotificationSystem.cs" />
+    <Compile Include="IntegrationExportAttribute.cs" />
+    <Compile Include="I3DSecureRegistration.cs" />
+    <Compile Include="IPrepaidAccountProcessor.cs" />
+    <Compile Include="Objects\AccountDetails.cs" />
+    <Compile Include="ICardProductionSystem.cs" />
+    <Compile Include="IHardwareSecurityModule.cs" />
+    <Compile Include="ILoggingService.cs" />
+    <Compile Include="Objects\CardLimitData.cs" />
+    <Compile Include="Objects\CardObject.cs" />
+    <Compile Include="ICardManagementSystem.cs" />
+    <Compile Include="ICoreBankingSystem.cs" />
+    <Compile Include="Objects\CMSCard.cs" />
+    <Compile Include="Objects\CustomerDetails.cs" />
+    <Compile Include="Objects\DecryptedFields.cs" />
+    <Compile Include="Objects\ExportBatchGeneration.cs" />
+    <Compile Include="Objects\Notification.cs" />
+    <Compile Include="Objects\Parameters.cs" />
+    <Compile Include="Objects\PinObject.cs" />
+    <Compile Include="Objects\PrepaidAccountDetail.cs" />
+    <Compile Include="Objects\PrepaidCreditResponse.cs" />
+    <Compile Include="Objects\Product.cs" />
+    <Compile Include="Objects\TerminalMK.cs" />
+    <Compile Include="Objects\TerminalParameters.cs" />
+    <Compile Include="Objects\TerminalSessionKey.cs" />
+    <Compile Include="Objects\ThreeDSecureDetails.cs" />
+    <Compile Include="Objects\ZoneMasterKey.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Objects\UserObject.cs" />
+    <Compile Include="Remote\Constants.cs" />
+    <Compile Include="Remote\IRemoteCMS.cs" />
+    <Compile Include="Remote\RemoteCardUpdates.cs" />
+    <Compile Include="Remote\IRemoteComponent.cs" />
+    <Compile Include="Remote\RemoteCardUpdatesResponse.cs" />
+    <Compile Include="WebServices\Helper.cs" />
+    <Compile Include="WebServices\WebService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="ClassDiagram1.cd" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Veneka.Indigo.Common\Veneka.Indigo.Common.csproj">
+      <Project>{6A1456B1-52A5-4975-942C-7810FE4097B9}</Project>
+      <Name>Veneka.Indigo.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Veneka.Indigo.Integration.ProductPrinting\Veneka.Indigo.Integration.ProductPrinting.csproj">
+      <Project>{3c248c1c-aa7e-4656-b851-1c591a1ebe51}</Project>
+      <Name>Veneka.Indigo.Integration.ProductPrinting</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

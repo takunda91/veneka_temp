@@ -1,0 +1,35 @@
+﻿<UserControl x:Uid="UserControl_1" x:Class="Veneka.Indigo.BackOffice.Application.Views.BulkPrinting.BulkPrintingListView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Veneka.Indigo.BackOffice.Application.Views.BulkPrinting"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="700">
+
+    <Grid x:Uid="Grid_1" HorizontalAlignment="Center"  Margin="0,15,0,0">
+        <Grid.RowDefinitions>
+            <RowDefinition x:Uid="RowDefinition_1" Height="auto"></RowDefinition>
+            <RowDefinition x:Uid="RowDefinition_2" Height="auto"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition x:Uid="ColumnDefinition_1" Width="Auto"/>
+            <ColumnDefinition x:Uid="ColumnDefinition_1" Width="Auto"/>
+
+        </Grid.ColumnDefinitions>
+      
+
+        <DataGrid x:Uid="BatchPrintList" Name="BatchPrintList" Height="160" Margin="10,10,10,10" VerticalAlignment="Top" Grid.ColumnSpan="3"  Grid.Column="0" Width="500"
+                  ItemsSource="{Binding Batches}" Background="LightGray" RowBackground="LightYellow" AlternatingRowBackground="LightBlue"  AutoGenerateColumns="False" SelectedItem="{Binding SelectedPrint}" Grid.Row="0">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Print Batch Reference" Binding="{Binding PrintBatchReference}"/>
+                <DataGridTextColumn Header="No of Requests" Binding="{Binding NoOfRequests}"/>
+                <DataGridTextColumn Header="Print Batch Status" Binding="{Binding printBatchStatus}"/>
+
+            </DataGrid.Columns>
+
+        </DataGrid>
+        
+        <Button x:Uid="Button_1" Content="Print" Command="{Binding PrintCommand}" Height="27" Width="500" VerticalAlignment="Bottom" Grid.Row="1" Grid.ColumnSpan="2" Margin="150,0,150,-27"/>
+    </Grid>
+</UserControl>

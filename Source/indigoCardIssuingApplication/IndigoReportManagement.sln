@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27428.2037
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{F14B399A-7131-4C87-9E4B-1186C45EF12D}") = "Veneka.Indigo.ReportManagement", "Veneka.Indigo.ReportManagement\Veneka.Indigo.ReportManagement.rptproj", "{52C094E4-FBAC-4EC1-A005-FAF4E5548A99}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Default = Debug|Default
+		DebugLocal|Default = DebugLocal|Default
+		Release|Default = Release|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{52C094E4-FBAC-4EC1-A005-FAF4E5548A99}.Debug|Default.ActiveCfg = Debug
+		{52C094E4-FBAC-4EC1-A005-FAF4E5548A99}.Debug|Default.Build.0 = Debug
+		{52C094E4-FBAC-4EC1-A005-FAF4E5548A99}.Debug|Default.Deploy.0 = Debug
+		{52C094E4-FBAC-4EC1-A005-FAF4E5548A99}.DebugLocal|Default.ActiveCfg = DebugLocal
+		{52C094E4-FBAC-4EC1-A005-FAF4E5548A99}.DebugLocal|Default.Build.0 = DebugLocal
+		{52C094E4-FBAC-4EC1-A005-FAF4E5548A99}.DebugLocal|Default.Deploy.0 = DebugLocal
+		{52C094E4-FBAC-4EC1-A005-FAF4E5548A99}.Release|Default.ActiveCfg = Release
+		{52C094E4-FBAC-4EC1-A005-FAF4E5548A99}.Release|Default.Build.0 = Release
+		{52C094E4-FBAC-4EC1-A005-FAF4E5548A99}.Release|Default.Deploy.0 = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6600B0D7-6768-41E3-8977-27205AB48C57}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 2
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://veneka.visualstudio.com/
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = Veneka.Indigo.ReportManagement\\Veneka.Indigo.ReportManagement.rptproj
+		SccProjectName1 = Veneka.Indigo.ReportManagement
+		SccLocalPath1 = Veneka.Indigo.ReportManagement
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,118 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="IndigoCardIssuance.master.cs" Inherits="indigoCardIssuingWeb.IndigoCardIssuance" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title>        
+        <asp:Literal Text="<%$ Resources: MasterPage, AppName %>" runat="server" /></title>        
+
+        <asp:ContentPlaceHolder ID="cphCss" runat="server">
+            <link rel="stylesheet" type="text/css" href="<%=Page.ResolveClientUrl("~/css/CardStyle.css")%>" />
+            <link rel="stylesheet" type="text/css" href="<%=Page.ResolveClientUrl("~/css/indigo/jquery-ui-1.10.4.custom.css")%>"/>
+            <link rel="stylesheet" type="text/css" href="<%=Page.ResolveClientUrl("~/resources/prime-ui/css/primeui-1.0-min.css")%>"/>
+        </asp:ContentPlaceHolder>
+
+        <asp:ContentPlaceHolder ID="cphJquery" runat="server">
+            <script type="text/javascript" src="<%=Page.ResolveClientUrl("~/Scripts/jquery-1.10.2.js")%>"></script>        
+            <script type="text/javascript" src="<%=Page.ResolveClientUrl("~/Scripts/jquery-ui-1.10.4.custom.min.js")%>"></script>
+            <script type="text/javascript" src="<%=Page.ResolveClientUrl("~/resources/prime-ui/primeui-1.1-min.js")%>"></script>
+            <script type="text/javascript" src="<%=Page.ResolveClientUrl("~/Scripts/veneka-ui.js")%>"></script>
+            <% #if DEBUG %>
+            <script type="text/javascript" src="<%=Page.ResolveClientUrl("~/Scripts/terminal-test.js")%>"></script>
+            <% #endif %>
+        </asp:ContentPlaceHolder>
+
+        <asp:ContentPlaceHolder ID="cphCustom" runat="server">
+        <script type="text/javascript">           
+
+            javascript: window.history.forward();
+            var t;
+            window.onload = resetTimer;
+            document.onkeypress = resetTimer;
+            document.onclick = resetTimer;
+
+            function logout() {
+                var root = location.protocol + "//" + location.host;
+                var applicationPath = "<%=Request.ApplicationPath%>";
+                if (applicationPath == "/") {
+                    location.href = root + applicationPath + 'Logout.aspx'
+                }
+                else {
+                    location.href = root + applicationPath + '/Logout.aspx'
+                }
+            }
+
+            function resetTimer() {
+                clearTimeout(t);
+                t = setTimeout(logout, 590000); //600000 log out in 10 min1800000
+            }
+        </script>
+        </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server" style="width: 1200px; min-width: 600px;">        
+
+        <div id="top" class="LayoutTop">           
+            <asp:Image ID="logo" runat="server" ImageUrl="~/Handlers/LogoHandler.ashx" CssClass="LayoutTopLogo" />
+            <div class="LayoutTopBanner">
+                <asp:Label ID="Label2" runat="server" Text="<%$ Resources:MasterPage, AppName %>" />
+                
+                <div id="pnlLanguage" class="LanguagePanel" style="visibility:hidden">
+                    <asp:Label ID="lblLanguage" Text="<%$ Resources:MasterPage, lblLanguage %>" runat="server" style="float:left;" />
+                    <asp:DropDownList ID="ddlMasterLangueges" ClientIDMode="Static" AutoPostBack="true" runat="server" style="float:right;" >
+                        <asp:ListItem Value="" Text="-Select-" />
+                    </asp:DropDownList>
+                </div>                
+            </div>
+        </div>
+
+        <asp:LoginView ID="lgLogInView" runat="server" >
+            <AnonymousTemplate>
+                <div class="LoggedInPanel"> 
+                </div> 
+                <div class="LayoutLoginContent">
+                    <asp:ContentPlaceHolder ID="cphLogin" runat="server" />
+                </div>
+            </AnonymousTemplate>
+
+            <LoggedInTemplate>
+                <div class="LoggedInPanel">                
+                    <asp:Label runat="server" Text="<%$ Resources:MasterPage, lblLoggedInAs %>" CssClass="LayoutTopLoginView" />
+                    <asp:LoginName ID="lnLogInName" runat="server" Font-Bold="True" ForeColor="Black" CssClass="LayoutTopLoginView" />
+                    <asp:LoginStatus ID="LoginStatus1" runat="server" LoginText="" LogoutText="<%$ Resources:MasterPage, logoutText %>" OnLoggingOut="LoginStatus1_LoggingOut" LogoutAction="RedirectToLoginPage" CssClass="LayoutTopLoginStatus" /> 
+                </div>
+                <div class="LayoutMenu">
+                    <asp:Menu ID="mnNavigationMenu" ClientIDMode="Static" runat="server">                             
+                    </asp:Menu>
+                </div>  
+                                
+                <script type="text/javascript">
+                    $(document).ready(function () {                        
+                        $("#mnNavigationMenu").puitieredmenu();                        
+                    });
+                </script>
+            </LoggedInTemplate>
+        </asp:LoginView>      
+       
+        <div class="LayoutContent">
+             <div class="InfoPanel" >
+		 <marquee behavior="scroll" direction="right"><asp:Label runat="server" id="lblnotificationtext"  ></asp:Label> </marquee>
+           
+        </div>
+            <asp:ContentPlaceHolder ID="MainContent" runat="server" />
+        </div>  
+
+        <div class="LayoutFooter">            
+            <asp:Image ID="cpLogo" runat="server" AlternateText="VENEKA" ImageUrl="~/images/veneka_logo.png" CssClass="LayoutFooterLogo" />
+        </div>        
+    </form>
+
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+            window.onbeforeunload = disableButtons;
+            $("input").attr("autocomplete", "off");
+        });
+    </script>     
+</body>
+</html>

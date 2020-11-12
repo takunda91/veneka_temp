@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WixLocalization Culture="en-us" xmlns="http://schemas.microsoft.com/wix/2006/localization">
+  <String Id="Main_DowngradeErrorMessage">A newer version of [ProductName] is already installed.</String>
+  <String Id="SettingsDlg_Title">Application Settings</String>
+  <String Id="SettingsDlg_TcpPortLabel">Coms Core</String>
+</WixLocalization>

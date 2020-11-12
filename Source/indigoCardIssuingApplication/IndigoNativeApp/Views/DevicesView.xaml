@@ -1,0 +1,92 @@
+﻿<UserControl x:Class="IndigoDesktopApp.Views.DevicesView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:IndigoDesktopApp.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="500">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="100"/>
+            <ColumnDefinition Width="150"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Border Grid.Column="0" BorderBrush="Azure" BorderThickness="0,0,1,0" Padding="5" Background="{Binding ElementName=navPanel, Path=Background}">
+            <WrapPanel Name="navPanel" Orientation="Vertical">
+
+                <Button x:Name="HomeButton" Content="Home" BorderThickness="0" Width="50" Height="50" Margin="10" 
+                        Command="{Binding DataContext.ChangePageCommand, RelativeSource={RelativeSource AncestorType={x:Type Window}}}" CommandParameter="Home"/>
+            </WrapPanel>
+        </Border>
+
+        <Border Grid.Column="1" BorderBrush="Azure" BorderThickness="0,0,1,0" Padding="5" Background="{Binding ElementName=workPanel, Path=Background}">
+            <WrapPanel Name="workPanel" Orientation="Vertical">
+                <ComboBox x:Name="DeviceType" HorizontalAlignment="Stretch"
+                      ItemsSource="{Binding DeviceTypeList}" SelectedValuePath="Key" DisplayMemberPath="Value" SelectedIndex="0" Width="140">
+                </ComboBox>
+
+                <Button x:Name="DeviceSearch" Content="Search" Margin="0, 10, 0, 0" HorizontalAlignment="Stretch"
+                    Command="{ Binding DeviceSearchCommand }" CommandParameter="{Binding ElementName=DeviceType, Path=SelectedItem}" />
+
+                <ComboBox x:Name="Device" Margin="0, 10, 0, 0" ItemsSource="{Binding Devices}" SelectedIndex="0" >
+                    <ComboBox.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="{Binding Manufacturer}"></TextBlock>
+                                <TextBlock Text=" - "></TextBlock>
+                                <TextBlock Text="{Binding Name}"></TextBlock>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ComboBox.ItemTemplate>
+                </ComboBox>
+
+                <Button x:Name="DeviceInfo" Content="Device Info" Margin="0, 10, 0, 0"
+                    Command="{ Binding DeviceInfoCommand }" CommandParameter="{Binding ElementName=Device,Path=SelectedItem}" />
+
+                <Button x:Name="PrintTest" Content="Print Test" Margin="0, 10, 0, 0"
+                    Command="{ Binding PrintTestCommand }" CommandParameter="{Binding ElementName=Device,Path=SelectedItem}" />
+
+                <Button x:Name="MagTest" Content="Mag Read Test" Margin="0, 10, 0, 0"
+                    Command="{ Binding MagReadTestCommand }" CommandParameter="{Binding ElementName=Device,Path=SelectedItem}" />
+
+                <Button x:Name="PinTest" Content="PIN Test" Margin="0, 10, 0, 0"
+                    Command="{ Binding PinTestCommand }" CommandParameter="{Binding ElementName=Device,Path=SelectedItem}" />
+
+                <Button x:Name="Cancel" Content="Cancel" Margin="0, 10, 0, 0" 
+                    Command="{ Binding CancelCommand }" CommandParameter="{Binding ElementName=Device,Path=SelectedItem}" />
+                
+                <Button x:Name="Close" Content="Close" Margin="0, 10, 0, 0" 
+                    Command="{ Binding CloseCommand }" CommandParameter="{Binding ElementName=Device,Path=SelectedItem}" />
+            </WrapPanel>
+        </Border>
+
+        <Border Grid.Column="2" BorderBrush="Azure" BorderThickness="0,0,1,0" Padding="5" Background="{Binding ElementName=infoPanel, Path=Background}">
+
+            <DockPanel Name="infoPanel" LastChildFill="false">
+                <Border BorderBrush="Black" BorderThickness="1" Margin="5" Padding="5" HorizontalAlignment="Stretch" Width="auto" DockPanel.Dock="Top" >
+                    <Label Content="{Binding DeviceInfo}" />
+                </Border>
+
+                <Border BorderBrush="Blue" BorderThickness="1" Margin="5" Padding="5" HorizontalAlignment="Stretch" Width="auto" DockPanel.Dock="Top" >
+                    <TextBox Text="{Binding Info}" TextWrapping="Wrap" HorizontalAlignment="Left" IsReadOnly="True" Background="Transparent" BorderThickness="0" />
+                </Border>
+                
+                <Border BorderBrush="Red" BorderThickness="1" Margin="5" Padding="5" HorizontalAlignment="Stretch" Width="auto" DockPanel.Dock="Top">
+                    <TextBox Text="{Binding Error}" TextWrapping="Wrap" HorizontalAlignment="Left" IsReadOnly="True" Background="Transparent" BorderThickness="0" />
+                </Border>
+            </DockPanel>
+            <!--<WrapPanel Name="infoPanel" Orientation="Vertical" >
+                <Label Content="{Binding DeviceInfo}" Margin="5" />
+                
+                <Border BorderBrush="Blue" BorderThickness="1" Margin="5" Padding="5" HorizontalAlignment="Stretch" Width="auto" >
+                    <TextBox Text="{Binding Info}" TextWrapping="Wrap" HorizontalAlignment="Left" IsReadOnly="True" Background="Transparent" BorderThickness="0" />
+                </Border>
+                <Border BorderBrush="Red" BorderThickness="1" Margin="5" Padding="5" HorizontalAlignment="Stretch" Width="auto">
+                    <TextBox Text="{Binding Error}" TextWrapping="Wrap" HorizontalAlignment="Left" IsReadOnly="True" Background="Transparent" BorderThickness="0" />
+                </Border>                
+            </WrapPanel>-->
+        </Border>
+    </Grid>
+</UserControl>

@@ -1,0 +1,167 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{7024EE02-1C0A-4CD6-BFF0-6EBA0EDFE0B4}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>IndigoFileLoader</RootNamespace>
+    <AssemblyName>IndigoFileLoader</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'indigo_app|AnyCPU'">
+    <OutputPath>bin\indigo_app\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Indigo_web|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Indigo_web\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.3.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
+      <HintPath>..\packages\BouncyCastle.1.8.3.1\lib\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="Common.Logging, Version=3.3.1.0, Culture=neutral, PublicKeyToken=af08829b84f0328e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Common.Logging.3.3.1\lib\net40\Common.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Common.Logging.Core, Version=3.4.1.0, Culture=neutral, PublicKeyToken=af08829b84f0328e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Common.Logging.Core.3.4.1\lib\net40\Common.Logging.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Common.Logging.Log4Net1213, Version=3.4.1.0, Culture=neutral, PublicKeyToken=af08829b84f0328e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Common.Logging.Log4Net1213.3.4.1\lib\net40\Common.Logging.Log4Net1213.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.13.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.3\lib\net40-full\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.XML" />
+    <Reference Include="Veneka.Licensing.Client, Version=1.0.6030.24587, Culture=neutral, PublicKeyToken=b2f9648779cc4168, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\veneka\licensing_references\Veneka.Licensing.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Veneka.Licensing.Common, Version=1.0.6606.21733, Culture=neutral, PublicKeyToken=b2f9648779cc4168, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\veneka\licensing_references\Veneka.Licensing.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Veneka.Licensing.Encryption, Version=1.0.6606.21730, Culture=neutral, PublicKeyToken=b2f9648779cc4168, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\veneka\licensing_references\Veneka.Licensing.Encryption.dll</HintPath>
+    </Reference>
+    <Reference Include="Veneka.Licensing.License, Version=1.0.6606.21767, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\veneka\licensing_references\Veneka.Licensing.License.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="bll\PinFileLoaderBLL.cs" />
+    <Compile Include="bll\FileLoaderBLL.cs" />
+    <Compile Include="bll\FileLoaderService.cs" />
+    <Compile Include="FileProcessor.cs" />
+    <Compile Include="dal\FileLoaderDAL.cs" />
+    <Compile Include="dal\IssuerConfigDAL.cs" />
+    <Compile Include="exceptions\FileLoadingException.cs" />
+    <Compile Include="exceptions\InvalidFieldLength.cs" />
+    <Compile Include="exceptions\UnExpectedNumberOfRecords.cs" />
+    <Compile Include="Modules\Extensibility\ICardFileReader.cs" />
+    <Compile Include="Modules\IndigoFileReaderModule.cs" />
+    <Compile Include="objects\BatchRecord.cs" />
+    <Compile Include="objects\BranchLookup.cs" />
+    <Compile Include="objects\CardFileRecord.cs" />
+    <Compile Include="objects\FileCommentsObject.cs" />
+    <Compile Include="objects\LoadBatchStats.cs" />
+    <Compile Include="objects\ValidCard.cs" />
+    <Compile Include="objects\FileDetails.cs" />
+    <Compile Include="objects\impl\DetailRecord.cs" />
+    <Compile Include="objects\impl\files\TextFile.cs" />
+    <Compile Include="objects\impl\files\CSVFile.cs" />
+    <Compile Include="objects\impl\HeaderRecord.cs" />
+    <Compile Include="objects\impl\TrailerRecord.cs" />
+    <Compile Include="objects\IssuerFileConfig.cs" />
+    <Compile Include="objects\root\AFileRecord.cs" />
+    <Compile Include="objects\root\ACardsFile.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SystemEnums.cs" />
+    <Compile Include="utility\CryptoHelper.cs" />
+    <Compile Include="utility\FileLogger.cs" />
+    <Compile Include="utility\IoHelper.cs" />
+    <Compile Include="utility\PostilionDetailedRecordColumns.cs" />
+    <Compile Include="utility\UtilityClass.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Veneka.Indigo.CardManagement\Veneka.Indigo.CardManagement.csproj">
+      <Project>{53228D46-943F-408E-887E-437DA9E6E2D1}</Project>
+      <Name>Veneka.Indigo.CardManagement</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Veneka.Indigo.Common\Veneka.Indigo.Common.csproj">
+      <Project>{6A1456B1-52A5-4975-942C-7810FE4097B9}</Project>
+      <Name>Veneka.Indigo.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Veneka.Indigo.IssuerManagement\Veneka.Indigo.IssuerManagement.csproj">
+      <Project>{bfb348b9-8aa2-4326-8157-bbb7df8f6888}</Project>
+      <Name>Veneka.Indigo.IssuerManagement</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

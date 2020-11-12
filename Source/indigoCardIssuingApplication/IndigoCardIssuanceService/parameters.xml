@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<parameters>
+  <parameter
+    name="logs"
+    description="Path to the veneka config directory"
+    defaultValue="#{logs}#"
+    tags="">
+    <parameterEntry
+     kind="XmlFile"
+     scope="\\Web.config$"
+     match="//configuration/log4net/appender/file[@name='logs']/@value" />
+  </parameter>
+  <parameter
+    name="BaseConfigDir"
+    description="Path to the veneka config directory"
+    defaultValue="#{BaseConfigDir}#"
+    tags="">
+    <parameterEntry
+     kind="XmlFile"
+     scope="\\Web.config$"
+     match="//configuration/appSettings/add[@key='BaseConfigDir']/@value" />
+  </parameter>
+  <parameter
+  name="ApplicationInsights"
+  description="ApplicationInsights"
+  defaultValue="#{InstrumentationKey}#"
+  tags="">
+    <parameterEntry
+     kind="XmlFile"
+    scope="ApplicationInsights.config$"
+     match="//configuration/appSettings/add[@key='InstrumentationKey']/@value" />
+  </parameter>
+  <parameter
+     name="IgnoreUntrustedSSL"
+     description="IgnoreUntrustedSSL"
+     defaultValue="#{IgnoreUntrustedSSL}#"
+     tags="">
+    <parameterEntry
+     kind="XmlFile"
+     scope="\\Web.config$"
+     match="//configuration/appSettings/add[@key='IgnoreUntrustedSSL']/@value" />
+  </parameter>
+
+  <parameter
+    name="AllowIndigoAuth"
+    description="AllowIndigoAuth"
+    defaultValue="#{AllowIndigoAuth}#"
+    tags="">
+    <parameterEntry
+     kind="XmlFile"
+    scope="\\Web.config$"
+     match="//configuration/appSettings/add[@key='AllowIndigoAuth']/@value" />
+  </parameter>
+
+  <parameter
+    name="ContextOptions"
+    description="Context Options for AD Login"
+    defaultValue="#{ContextOptions}#"
+    tags="">
+    <parameterEntry
+     kind="XmlFile"
+     scope="\\Web.config$"
+     match="//configuration/appSettings/add[@key='ContextOptions']/@value" />
+  </parameter>
+  <parameter
+    name="FWSKey"
+    description="#{FWSKey}#"
+    defaultValue="6dc2cdc2-3fcd-4cad-bb67-37a7b1ff3370"
+    tags="">
+    <parameterEntry
+     kind="XmlFile"
+      scope="\\Web.config$"
+     match="//configuration/appSettings/add[@key='FWSKey']/@value" />
+  </parameter>
+  <parameter
+    name="ComsType"
+    description="#{ComsType}#"
+    defaultValue="0"
+    tags="">
+    <parameterEntry
+     kind="XmlFile"
+      scope="\\Web.config$"
+     match="//configuration/appSettings/add[@key='ComsType']/@value" />
+  </parameter>
+  <parameter
+   name="Uri"
+   description="Uri For WCF Coms"
+   defaultValue="#{Uri}#"
+   tags="">
+    <parameterEntry
+     kind="XmlFile"
+    scope="\\Web.config$"
+     match="//configuration/appSettings/add[@key='Uri']/@value" />
+  </parameter>
+  <parameter
+  name="IntegrationDir"
+  description="Path to the veneka integration directory"
+  defaultValue="#{IntegrationDir}#"
+  tags="">
+    <parameterEntry
+     kind="XmlFile"
+     scope="\\Web.config$"
+     match="//configuration/appSettings/add[@key='IntegrationDir']/@value" />
+  </parameter>
+</parameters>

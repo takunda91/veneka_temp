@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Operations Version="1.0" xmlns="http://schemas.microsoft.com/sqlserver/dac/Serialization/2012/02">
+  <Operation Name="Rename Refactor" Key="c19339e7-5031-4ce0-94f2-e5512db90589" ChangeDateTime="01/13/2017 10:19:55">
+    <Property Name="ElementName" Value="[dbo].[remote_update_statuses].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[remote_update_statuses]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="remote_update_statuses_id" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="572e42c5-aec2-467c-a49f-243f3b57288a" ChangeDateTime="01/13/2017 10:21:16">
+    <Property Name="ElementName" Value="[dbo].[remote_update_statuses_language].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[remote_update_statuses_language]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="remote_update_statuses_id" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="714b368e-e3c4-4e8a-a0e3-f152ba2046b3" ChangeDateTime="01/13/2017 10:25:33">
+    <Property Name="ElementName" Value="[dbo].[FK_remote_update_statuses_language_ToTable]" />
+    <Property Name="ElementType" Value="SqlForeignKeyConstraint" />
+    <Property Name="ParentElementName" Value="[dbo].[remote_update_statuses_language]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="[FK_remote_update_statuses_language_languages]" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="2e4dd327-761d-41e3-b5a1-b071e4a8198d" ChangeDateTime="01/13/2017 10:28:01">
+    <Property Name="ElementName" Value="[dbo].[remote_update_status].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[remote_update_status]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="remote_update_status_id" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="ebb25b7a-a73f-4387-a082-56fcc3323511" ChangeDateTime="01/13/2017 10:32:48">
+    <Property Name="ElementName" Value="[dbo].[FK_remote_update_status_users]" />
+    <Property Name="ElementType" Value="SqlForeignKeyConstraint" />
+    <Property Name="ParentElementName" Value="[dbo].[remote_update_status]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="[FK_remote_update_status_user]" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="fd5dcd4e-b048-44ca-841a-27cbb6839f9d" ChangeDateTime="01/17/2017 15:06:03">
+    <Property Name="ElementName" Value="[dbo].[remote_update_status].[remote_update_time]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[remote_update_status]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="remote_updated_time" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="44644149-7d10-4d2a-9dce-37b784882e07" ChangeDateTime="01/19/2017 13:50:19">
+    <Property Name="ElementName" Value="[dbo].[remote_component_logging].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[remote_component_logging]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="date_logged" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="a56eaf9a-5161-4de7-9375-fa851a5aa278" ChangeDateTime="01/19/2017 14:00:44">
+    <Property Name="ElementName" Value="[dbo].[remote_component_logging].[MethodCall]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[remote_component_logging]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="method_call_id" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="6b85635f-6039-4096-95ca-e2c96f2975e9" ChangeDateTime="01/23/2017 10:18:32">
+    <Property Name="ElementName" Value="[dbo].[card_fee_charge_status].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[card_fee_charge_status]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="card_fee_charge_status_id" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="4a19b21e-a5fb-4ff3-be16-19f057e57128" ChangeDateTime="01/23/2017 10:19:32">
+    <Property Name="ElementName" Value="[dbo].[card_fee_charge_status_language].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[card_fee_charge_status_language]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="card_fee_charge_status_id" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="c32669da-e267-49f6-8e79-0d18c14ef651" ChangeDateTime="02/09/2017 16:12:49">
+    <Property Name="ElementName" Value="[dbo].[connection_parameters].[ remote_port,]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[connection_parameters]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value=" remote_port" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="c568d4da-61b5-4677-a6f0-b6c4363ba9fe" ChangeDateTime="02/09/2017 16:25:36">
+    <Property Name="ElementName" Value="[dbo].[connection_parameters].[ remote_port]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[connection_parameters]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="remote_port" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="1e9f7c2c-8230-4f66-957f-2bb708f6adc4" ChangeDateTime="06/20/2017 11:04:25">
+    <Property Name="ElementName" Value="[dbo].[user].[time_zone_Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[user]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="time_zone_id" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="27376dc6-afe4-40f4-a041-e0b17d6276dd" ChangeDateTime="06/20/2017 11:04:33">
+    <Property Name="ElementName" Value="[dbo].[user].[approved_user_Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[user]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="approved_user_id" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="7a9e043b-ea5a-4e4a-9ae0-abebe6483a75" ChangeDateTime="10/08/2018 11:16:49">
+    <Property Name="ElementName" Value="[dbo].[threed_secure_batch].[threed_statutse_id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[threed_secure_batch]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="threed_a_id" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="b88d2929-eee9-487b-a140-aa09c4dd26f6" ChangeDateTime="10/08/2018 11:17:04">
+    <Property Name="ElementName" Value="[dbo].[threed_secure_batch].[threed_a_id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[threed_secure_batch]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="threed_batch_statuses_id" />
+  </Operation>
+
+  <Operation Name="Rename Refactor" Key="ff3fb7e7-f411-42c4-855c-c104f69cb738" ChangeDateTime="05/14/2019 08:41:30">
+    <Property Name="ElementName" Value="[dbo].[product_account_types_mapping].[account_type_id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[product_account_types_mapping]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="indigo_account_type" />
+  </Operation>
+</Operations>

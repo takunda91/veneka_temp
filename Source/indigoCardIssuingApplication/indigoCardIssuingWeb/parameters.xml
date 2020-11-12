@@ -1,0 +1,135 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<parameters>
+  <parameter
+  name="Veneka Config Directory"
+  description="Path to the veneka config directory"
+  defaultValue="#{logs}#"
+  tags="">
+    <parameterEntry
+     kind="XmlFile"
+     scope="Web.config$"
+     match="//configuration/log4net/appender/file[@name='logs']/@value" />
+  </parameter>
+  <parameter
+    name="Logo Location"
+    description="Logo Location"
+    defaultValue="#{TitleLogoLocation}#"
+    tags="">
+    <parameterEntry
+     kind="XmlFile"
+    scope="Web.config$"
+     match="//configuration/appSettings/add[@key='TitleLogoLocation']/@value" />
+  </parameter>
+  <parameter
+      name="Report Server Url"
+      description="Report Server Url"
+     defaultValue="#{urlReportServer}#"
+      tags="">
+    <parameterEntry
+     kind="XmlFile"
+     scope="Web.config$"
+     match="//configuration/appSettings/add[@key='urlReportServer']/@value" />
+  </parameter>
+  <parameter
+      name="Report Domain"
+      description="Report Domain"
+     defaultValue="#{ReportDomain}#"
+      tags="">
+    <parameterEntry
+     kind="XmlFile"
+     scope="Web.config$"
+     match="//configuration/appSettings/add[@key='ReportDomain']/@value" />
+  </parameter>
+
+  <parameter
+      name="Allow Option to Create DistBatch"
+      description="Allow Option to Create DistBatch"
+        defaultValue="#{AutoCreatedistbatch}#"
+      tags="">
+    <parameterEntry
+     kind="XmlFile"
+     scope="Web.config$"
+     match="//configuration/appSettings/add[@key='AutoCreatedistbatch']/@value" />
+  </parameter>
+  <parameter
+      name="Allow Re-upload "
+      description="Allow Re-upload "
+     defaultValue="#{AllowReuploads}#"
+      tags="">
+    <parameterEntry
+     kind="XmlFile"
+     scope="Web.config$"
+     match="//configuration/appSettings/add[@key='AllowReuploads']/@value" />
+  </parameter>
+  <parameter
+      name="Notification Duration for License Expiry "
+      description="Notification Duration for License Expiry"
+      defaultValue="#{LicenseNotificationDur(indays)}#"
+      tags="">
+    <parameterEntry
+     kind="XmlFile"
+    scope="Web.config$"
+     match="//configuration/appSettings/add[@key='LicenseNotificationDur(indays)']/@value" />
+  </parameter>
+  <parameter
+      name="Report Server Username"
+      description="Report Server Username"
+      defaultValue="#{ReportUserName}#"
+      tags="">
+    <parameterEntry
+     kind="XmlFile"
+   scope="Web.config$"
+     match="//configuration/appSettings/add[@key='ReportUserName']/@value" />
+  </parameter>
+  <parameter
+      name="Report Server Password"
+      description="Report Server Password"
+         defaultValue="#{ReportPassword}#"
+      tags="">
+    <parameterEntry
+     kind="XmlFile"
+    scope="Web.config$"
+     match="//configuration/appSettings/add[@key='ReportPassword']/@value" />
+  </parameter>
+  <parameter
+      name="Report Server FolderName"
+      description="Report Server FolderName"
+      defaultValue="#{ReportServerFolderName}#"
+      tags="">
+    <parameterEntry
+     kind="XmlFile"
+    scope="Web.config$"
+     match="//configuration/appSettings/add[@key='ReportServerFolderName']/@value" />
+  </parameter>
+  <parameter
+  name="ApplicationInsights"
+  description="ApplicationInsights"
+  defaultValue="#{InstrumentationKey}#"
+  tags="">
+    <parameterEntry
+     kind="XmlFile"
+    scope="Web.config$"
+     match="//configuration/appSettings/add[@key='InstrumentationKey']/@value" />
+  </parameter>
+  <parameter
+    name="ContextOptions"
+    description="ContextOptions"
+    defaultValue="#{ContextOptions}#"
+    tags="">
+    <parameterEntry
+     kind="XmlFile"
+    scope="Web.config$"
+     match="//configuration/appSettings/add[@key='ContextOptions']/@value" />
+  </parameter>
+
+  
+  <parameter name="appaddress" description="App server Address" defaultValue="#{appaddress}#" tags="">
+
+    <parameterEntry kind="XmlFile"
+
+     scope="Web.config$"
+
+    match="//configuration/system.serviceModel/client/endpoint[@name='appaddress']/@address" />
+
+  </parameter>
+</parameters>

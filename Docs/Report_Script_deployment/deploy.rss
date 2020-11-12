@@ -1,0 +1,249 @@
+'SSRS Report Deployment Tool from Reliable Business Reporting, Inc., 2010
+'Version 1.0; www.rbreporting.com; Works with SSRS 2005, 2008 and 2008 R2.
+'Deploys *.rdl files in the current folder to a specified Report Server.
+'Run this script in the command line. Change the URL to your SSRS report server:
+'rs -i deploy.rss -s http://192.168.0.42/reportserver -e Mgmt2005 -v reportFolder="SSRS Report Examples" -v suppressPrompting=0
+
+Public Sub Main()
+  Dim dataSourceFileName, dataSourceName, reportName as String
+' rs.Credentials = System.Net.CredentialCache.DefaultCredentials
+
+  Dim errorExitMessage as String = "Exiting the script..."
+  Dim reportItemType as String = Exists(reportFolder)
+  If reportItemType <> "False" and reportItemType <> "Unknown" Then
+    Console.Write("The '{0}' {1} exists. ", reportFolder, reportItemType.ToLower)
+    If reportItemType <> "Folder" Then
+      Console.WriteLine()
+      Console.WriteLine("Not action performed.")
+      Console.WriteLine("Provide different folder name.")
+      Return
+    End If
+    If suppressPrompting<>"1" Then
+      If not OverwriteReports(reportItemType) Then
+        Console.WriteLine("No action performed.")
+        Return
+      End If
+    Else
+      Console.WriteLine()
+    End If
+  Else
+    Try
+      CreateFolder(reportFolder)
+    Catch e As SoapException
+      Console.WriteLine(errorExitMessage)
+      Return
+    End Try
+  End If
+  Dim addedDataSources as System.Collections.ArrayList = new System.Collections.ArrayList
+  For Each dataSourceFileName in GetDataSourceNamesInCurrentFolder
+    dataSourceName = GetDataSourceNameFromXML(dataSourceFileName)
+    If Exists(dataSourceName, "/" + reportFolder, false) = "False" Then
+      Try
+        CreateDataSource(dataSourceFileName, reportFolder)
+        addedDataSources.add(dataSourceName)
+      Catch e As SoapException
+        If IsAccessDeniedException(e) Then
+          Console.Write("Skip this operation and proceed?")
+          If suppressPrompting<>"1" Then
+            If not Proceed() Then
+              Console.WriteLine(errorExitMessage)
+              Return
+            End If
+          Else
+            Console.WriteLine()
+          End If
+          Exit For
+        End If
+      End Try
+    End If
+  Next dataSourceFileName
+  For Each reportName in GetReportNamesInCurrentFolder()
+    Try
+      CreateReport(reportName, reportFolder)
+    Catch e As SoapException
+      If IsAccessDeniedException(e) Then
+        Console.WriteLine(errorExitMessage)
+        Exit For
+      End If
+    End Try
+  Next reportName
+  If addedDataSources.Count > 0 Then  ' Need to configure Data Sources
+    Console.WriteLine("--- PLEASE NOTE: Using Report Manager configure database connection string and credentials for these Data Sources:")
+    For Each dataSourceName in addedDataSources
+      Console.WriteLine("  '{0}' Data Source", dataSourceName)
+    Next dataSourceName
+  End If
+End Sub
+
+Private Function IsAccessDeniedException(e as SoapException) as Boolean
+  Return e.Detail("ErrorCode").InnerXml = "rsAccessDenied"
+End Function
+
+Private Function OverwriteReports(reportItemType as String) as Boolean
+  If reportItemType <> "Folder" Then
+    Return False
+  End If
+  Console.Write("Overwrite reports in the folder?")
+  Return Proceed()
+End Function
+
+Private Function Proceed() as Boolean
+  Dim input as String = "n"
+  Console.Write(" Y|N: ")
+  input = Console.ReadLine()
+  If input = "Y" or input = "y" Then
+    Return True
+  End If
+  Return False
+End Function
+
+Private Sub CreateFolder(folderName as String)
+  Try
+    rs.CreateFolder(folderName, "/", nothing)
+    Console.WriteLine("Folder created: {0}", folderName)
+  Catch e As SoapException
+    Console.WriteLine("Can't create folder '{0}': {1}", folderName, e.Detail("Message").InnerXml)
+    Throw e
+  End Try
+End Sub
+
+Private Sub CreateDataSource(dataSourceFileName as String, folderName as String)
+  Dim definition As New DataSourceDefinition()
+  Dim dataSourceName as String = GetDsDefinitionFromXML(dataSourceFileName, definition)
+  Try
+    rs.CreateDataSource(dataSourceName, "/" + folderName, False, definition, Nothing)
+    Console.WriteLine("Data Source created: {0}", dataSourceName)
+  Catch e As SoapException
+    Console.WriteLine("Can't create Data Source '{0}': {1}", dataSourceName, e.Detail("Message").InnerXml)
+    Throw e
+  End Try
+End Sub
+
+Private Function GetDsDefinitionFromXML(dataSourceFileName as String, definition as DataSourceDefinition) as String
+  Dim dataSourceName as String = dataSourceFileName
+  definition.CredentialRetrieval = CredentialRetrievalEnum.Integrated
+  definition.ConnectString = "Data Source=localhost;Initial Catalog=demo_database;"
+  definition.Enabled = True
+  definition.EnabledSpecified = True
+  definition.Extension = "SQL"
+  definition.ImpersonateUserSpecified = False
+  definition.Prompt = Nothing
+  definition.WindowsCredentials = False
+  Try
+    Dim doc As New System.Xml.XmlDocument
+    doc.Load(dataSourceFileName + ".rds")
+    dataSourceName = GetXmlAttributeValue("Name", doc.DocumentElement, dataSourceFileName)
+    definition.Extension = GetXmlNodeText("Extension", doc, definition.Extension)
+    definition.ConnectString = GetXmlNodeText("ConnectString", doc, definition.ConnectString)
+  Catch e As Exception
+    Console.WriteLine("Can't parse Data Source file '{0}': {1}", dataSourceFileName + ".rds", e.Message)
+  End Try
+  Return dataSourceName
+End Function
+
+Private Function GetDataSourceNameFromXML(dataSourceFileName as String) as String
+  Dim dataSourceName as String
+  Try
+    Dim doc As New System.Xml.XmlDocument
+    doc.Load(dataSourceFileName + ".rds")
+    dataSourceName = GetXmlAttributeValue("Name", doc.DocumentElement, dataSourceFileName)
+  Catch e As Exception
+    Return dataSourceFileName
+  End Try
+  Return dataSourceName
+End Function
+
+Private Function GetXmlAttributeValue(name as String, node as System.Xml.XmlElement, defaultValue as String) As String
+  Try
+    Dim value as String = node.GetAttribute(name)
+    If value = "" Then
+      value = defaultValue
+    End If
+    Return value
+  Catch e As Exception
+    Return defaultValue
+  End Try
+End Function
+
+Private Function GetXmlNodeText(nodeName as String, doc as XmlDocument, defaultValue as String) As String
+  Try
+    Dim value as String = doc.GetElementsByTagName(nodeName).ItemOf(0).InnerText
+    If value = "" Then
+      value = defaultValue
+    End If
+    Return value
+  Catch e As Exception
+    Return defaultValue
+  End Try
+End Function
+
+Private Sub CreateReport(reportName as String, folderName as String)
+  Dim definition As [Byte]() = Nothing
+  Dim warnings As Warning() = Nothing
+  Try
+    Dim objReader as StreamReader = New StreamReader(reportName + ".rdl")
+    definition = System.Text.Encoding.UTF8.GetBytes(objReader.ReadToEnd())
+    objReader.Close()
+  Catch e As IOException
+    Console.WriteLine(e.Message)
+  End Try
+  Try
+    warnings = rs.CreateReport(reportName, "/" + folderName, True, definition, Nothing)
+    If Not (warnings Is Nothing) Then
+      Dim warning As Warning
+      For Each warning In warnings
+        Console.WriteLine("{0}: {1}", reportName, warning.Message)
+      Next warning
+    Else
+      Console.WriteLine("Report uploaded: {0}", reportName)
+    End If
+  Catch e As SoapException
+    Console.WriteLine("Can't upload report '{0}': {1}", reportName, e.Detail("Message").InnerXml)
+    Throw e
+  End Try
+End Sub
+
+Private Function GetReportNamesInCurrentFolder() As System.Collections.ArrayList
+  Return GetFileNamesInFolder(System.Environment.CurrentDirectory, "rdl")
+End Function
+
+Private Function GetDataSourceNamesInCurrentFolder() As System.Collections.ArrayList
+  Return GetFileNamesInFolder(System.Environment.CurrentDirectory, "rds")
+End Function
+
+Private Function GetFileNamesInFolder(folderName as String, fileExtension as String) As System.Collections.ArrayList
+  Dim reports as System.Collections.ArrayList = new System.Collections.ArrayList
+  Dim file as FileInfo
+  Dim fullFileName as String
+  For Each fullFileName In Directory.GetFiles(folderName)
+    If fullFileName.EndsWith("." + fileExtension) Then
+      file = New FileInfo(fullFileName)
+      reports.Add(file.Name().substring(0, file.Name().LastIndexOf(".")))
+    End If
+  Next
+  Return reports
+End Function
+
+Private Function Exists(name As String) As String
+  Return Exists(name, False)
+End Function
+
+Private Function Exists(name As String, recursive as Boolean) As String
+  Return Exists(name, "/", recursive)
+End Function
+
+Private Function Exists(name As String, folderName As String, recursive as Boolean) As String
+  Try
+    Dim items As CatalogItem() = rs.ListChildren(folderName, recursive)
+    Dim item as CatalogItem
+    For Each item In items
+      If String.Compare(item.Name, name, True) = 0 Then
+        Return item.Type.toString()
+      End If
+    Next
+    Return False
+  Catch e As SoapException
+    Console.WriteLine("{0}: {1}", name, e.Detail.InnerXml.ToString())
+  End Try
+  Return "Unknown"
+End Function

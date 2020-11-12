@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  <Product Id="{D16E42B5-3C6F-4EE5-B2F4-727BF8B74A92}" Name="ComsCore" Language="1033" Version="1.0.0.0" Manufacturer="Veneka" UpgradeCode="9279b740-8419-45c4-9538-6a45f8e949c7">
+    <Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
+
+    <MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
+    <Media Id="1" Cabinet="ComsCore.cab" EmbedCab="yes" />
+
+   
+
+    <Feature Id="ProductFeature" Title="ComsCore.Setup" Level="1">
+      <ComponentGroupRef Id="ProductComponents" />
+      <ComponentGroupRef Id="BinComponents" />
+      <ComponentGroupRef Id="ComsCoreIssConfiguration" />
+    </Feature>
+    <!-- Specify UI -->
+    <UIRef Id="ComsCoreUI" />
+    <Property Id="WIXUI_INSTALLDIR" Value="INETPUB" />
+  </Product>
+
+  <Fragment>
+    <!-- Will default to C:\ if that is the main disk-->
+
+    <Directory Id="TARGETDIR" Name="SourceDir">
+      <!-- Will reference to C:\inetpub-->
+      <Directory Id="INETPUB" Name="Inetpub">
+        <!-- Will reference to c:\Inetpub\ComsCore-->
+        <Directory Id="INSTALLFOLDER" Name="ComsCore">
+          <Directory Id="BIN" Name="BIN" />
+
+        </Directory>
+
+      </Directory>
+    </Directory>
+    <ComponentGroup Id="ProductComponents" Directory="INSTALLFOLDER">
+      <Component Id="ProductComponent" Guid="{6F44232F-1C0B-4278-AB2B-BFD34FAE863C}">
+        <File Id="SystemsAPI.wcf" Source="$(var.Veneka.Indigo.COMS.WCF.TargetDir)\release\publish\SystemsAPI.svc" />
+        <File Id="Web.config" Source="$(var.Veneka.Indigo.COMS.WCF.TargetDir)\release\publish\Web.config" />
+      </Component>
+    </ComponentGroup>
+    <ComponentGroup Id="BinComponents" Directory="BIN">
+      <Component Id="BinComponent" Guid="{A41811D7-49DD-462B-98D2-56DF1202008E}">
+        <File Id="BouncyCastle.Crypto.dll" Source="$(var.Veneka.Indigo.COMS.WCF.TargetDir)\BouncyCastle.Crypto.dll" />
+        <File Id="Common.Logging.Core.dll" Source="$(var.Veneka.Indigo.COMS.WCF.TargetDir)\Common.Logging.Core.dll" />
+        <!--<File Id="log4net.dll" Source="$(var.Veneka.Indigo.COMS.WCF.TargetDir)\log4net.dll" />-->
+        <File Id="Common.Logging.Log4Net1213.dll" Source="$(var.Veneka.Indigo.COMS.WCF.TargetDir)\Common.Logging.Log4Net1213.dll" />
+
+        <File Id="Common.Logging.dll" Source="$(var.Veneka.Indigo.COMS.WCF.TargetDir)\Common.Logging.dll" />
+        <File Id="Veneka.Indigo.Common.dll" Source="$(var.Veneka.Indigo.COMS.WCF.TargetDir)\Veneka.Indigo.Common.dll" />
+        <File Id="Veneka.Indigo.COMS.Core.dll" Source="$(var.Veneka.Indigo.COMS.WCF.TargetDir)\Veneka.Indigo.COMS.Core.dll" />
+        <File Id="Veneka.Indigo.COMS.DataSource.dll" Source="$(var.Veneka.Indigo.COMS.WCF.TargetDir)\Veneka.Indigo.COMS.DataSource.dll" />
+        <File Id="Veneka.Indigo.COMS.WCF.dll" Source="$(var.Veneka.Indigo.COMS.WCF.TargetDir)\Veneka.Indigo.COMS.WCF.dll" />
+        <File Id="Veneka.Indigo.Integration.dll" Source="$(var.Veneka.Indigo.COMS.WCF.TargetDir)\Veneka.Indigo.Integration.dll" />
+        <File Id="Veneka.Indigo.Integration.ProductPrinting.dll" Source="$(var.Veneka.Indigo.COMS.WCF.TargetDir)\Veneka.Indigo.Integration.ProductPrinting.dll" />
+        <File Id="Veneka.Indigo.Security.dll" Source="$(var.Veneka.Indigo.COMS.WCF.TargetDir)\Veneka.Indigo.Security.dll" />
+        <File Id="Veneka.Licensing.Client.dll" Source="$(var.Veneka.Indigo.COMS.WCF.TargetDir)\Veneka.Licensing.Client.dll" />
+        <!--<File Id="Veneka.Licensing.Common.dll" Source="$(var.Veneka.Indigo.COMS.WCF.TargetDir)\Veneka.Licensing.Common.dll" />
+        <File Id="Veneka.Licensing.Encryption.dll" Source="$(var.Veneka.Indigo.COMS.WCF.TargetDir)\Veneka.Licensing.Encryption.dll" />-->
+
+        <!-- And so on and on -->
+      </Component>
+    </ComponentGroup>
+  </Fragment>
+</Wix>

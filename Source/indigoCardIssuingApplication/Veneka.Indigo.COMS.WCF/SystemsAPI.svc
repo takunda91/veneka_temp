@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="Veneka.Indigo.COMS.WCF.SystemsAPI" CodeBehind="SystemsAPI.svc.cs" %>

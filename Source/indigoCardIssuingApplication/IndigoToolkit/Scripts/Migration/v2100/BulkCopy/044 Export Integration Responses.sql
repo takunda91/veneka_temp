@@ -1,0 +1,8 @@
+[{DATABASE_NAME}].[dbo].[integration_responses]
+SELECT [integration_id]
+      ,[integration_object_id]
+      ,[integration_field_id]
+      ,[integration_response_id]
+      ,[integration_response_value]
+      ,[integration_response_valid_response]
+FROM [{SOURCE_DATABASE_NAME}].[dbo].[integration_responses]

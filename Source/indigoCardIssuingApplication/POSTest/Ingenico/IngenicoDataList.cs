@@ -1,0 +1,156 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using Veneka.Module.ISO8583.Data;
+using Veneka.Module.ISO8583.Data.ASCII;
+
+namespace POSTest.Ingenico
+{
+    public class IngenicoDataList : DataElementList
+    {
+        private IngenicoDataList() : base(Version1987) { }
+    
+        public static IngenicoDataList Create()
+        {
+            return new IngenicoDataList();
+        }
+
+        public static IDataElement[] Version1987
+        {
+            get
+            {
+                return new IDataElement[128] {
+                    /*   1*/ new Binary(1, true, 0, "Reserved"),
+                    /*   2*/ new Numeric(2, false, 19, "PAN"),
+                    /*   3*/ new Numeric(3, true, 6, "Processing Code"),
+                    /*   4*/ new Numeric(4, true, 12, "Transaction Amount"),
+                    /*   5*/ new Numeric(5, true, 12, "Transaction Settlement"),
+                    /*   6*/ new Numeric(6, true, 12, "Cardholder Billing"),
+                    /*   7*/ new Numeric(7, true, 10, "Transmission date & time"),
+                    /*   8*/ new Numeric(8, true, 8, "cardholder billing fee"),
+                    /*   9*/ new Numeric(9, true, 8, "Conversion rate, settlement"),
+                    /*  10*/ new Numeric(10, true, 8, "Conversion rate, cardholder billing"),
+                    /*  11*/ new Numeric(11, true, 6, "System trace audit number"),
+                    /*  12*/ new Numeric(12, true, 6, "Time, local transaction (hhmmss)"),
+                    /*  13*/ new Numeric(13, true, 4, "local transaction (MMDD)"),
+                    /*  14*/ new Numeric(14, true, 4, "Date, expiration"),
+                    /*  15*/ new Numeric(15, true, 4, "Date, settlement"),
+                    /*  16*/ new Numeric(16, true, 4, "Date, conversion"),
+                    /*  17*/ new Numeric(17, true, 4, "Date, capture"),
+                    /*  18*/ new Numeric(18, true, 4, "Merchant type"),
+                    /*  19*/ new Numeric(19, true, 3, "Acquiring institution country code"),
+                    /*  20*/ new Numeric(20, true, 3, "PAN extended, country code"),
+                    /*  21*/ new Numeric(21, true, 3, "Forwarding institution. country code"),
+                    /*  22*/ new Numeric(22, true, 3, "Point of service entry mode"),
+                    /*  23*/ new Numeric(23, true, 3, "Application PAN sequence number"),
+                    /*  24*/ new Numeric(24, true, 3, "Function code (ISO 8583:1993)/Network International identifier (NII)"),
+                    /*  25*/ new Numeric(25, true, 2, "Point of service condition code"),
+                    /*  26*/ new Numeric(26, true, 2, "Point of service capture code"),
+                    /*  27*/ new Numeric(27, true, 1, "Authorizing identification response length"),
+                    /*  28*/ new Amount(28, true, 8, "Amount, transaction fee"),
+                    /*  29*/ new Amount(29, true, 8, "Amount, settlement fee"),
+                    /*  30*/ new Amount(30, true, 8, "Amount, transaction processing fee"),
+                    /*  31*/ new Amount(31, true, 8, "Amount, settlement processing fee"),
+                    /*  32*/ new Numeric(32, false, 11, "Acquiring institution identification code"),
+                    /*  33*/ new Numeric(33, false, 11, "Forwarding institution identification code"),
+                    /*  34*/ new NumericSpecial(34, false, 28, "Primary account number, extended"),
+                    /*  35*/ new AlphaNumericSpecial(35, false, 37, "Track 2 data"), //TODO: z type
+                    /*  36*/ new Numeric(36, false, 104, "Track 3 data"),
+                    /*  37*/ new AlphaNumeric(37, true, 12, "Retrieval reference number"),
+                    /*  38*/ new AlphaNumeric(38, true, 6, "Authorization identification response"),
+                    /*  39*/ new AlphaNumeric(39, true, 2, "Response code"),
+                    /*  40*/ new AlphaNumeric(40, true, 3, "Service restriction code"),
+                    /*  41*/ new AlphaNumericSpecial(41, true, 8, "Card acceptor terminal identification"),
+                    /*  42*/ new AlphaNumericSpecial(42, true, 15, "Card acceptor identification code"),
+                    /*  43*/ new AlphaNumericSpecial(43, true, 40, "Card acceptor name/location (1-23 address 24-36 city 37-38 state 39-40 country)"),
+                    /*  44*/ new AlphaNumeric(44, false, 25, "Additional response data"),
+                    /*  45*/ new AlphaNumeric(45, false, 76, "Track 1 data"),
+                    /*  46*/ new AlphaNumeric(46, false, 999, "Additional data - ISO"),
+                    /*  47*/ new AlphaNumeric(47, false, 999, "Additional data - national"),
+                    /*  48*/ new AlphaNumeric(48, false, 999, "Additional data - private"),
+                    /*  49*/ new AlphaNumeric(49, true, 3, "Currency code, transaction"),
+                    /*  50*/ new AlphaNumeric(50, true, 3, "Currency code, settlement"),
+                    /*  51*/ new AlphaNumeric(51, true, 3, "Currency code, cardholder billing"),
+                    /*  52*/ new Binary(52, true, 8, "Personal identification number data"),
+                    /*  53*/ new Numeric(53, true, 16, "Security related control information"),
+                    /*  54*/ new AlphaNumeric(54, false, 120, "Additional amounts"),
+                    /*  55*/ new AlphaNumericSpecial(55, false, 999, "Reserved ISO"),
+                    /*  56*/ new AlphaNumericSpecial(56, false, 999, "Reserved ISO"),
+                    /*  57*/ new Binary(57, false, 999, "Reserved national"),
+                    /*  58*/ new AlphaNumericSpecial(58, false, 999, "Reserved national"),
+                    /*  59*/ new AlphaNumericSpecial(59, false, 999, "Reserved national"),
+                    /*  60*/ new AlphaNumericSpecial(60, false, 999, "Reserved national"),
+                    /*  61*/ new Binary(61, false, 999, "Reserved private"),
+                    /*  62*/ new AlphaNumericSpecial(62, false, 999, "Reserved private"),
+                    /*  63*/ new AlphaNumericSpecial(63, false, 999, "Reserved private"),
+                    /*  64*/ new Binary(64, true, 16, "Message authentication code (MAC)"),
+                    /*  65*/ new Binary(65, true, 0, "Bitmap, extended"),
+                    /*  66*/ new Numeric(66, true, 1, "Settlement code"),
+                    /*  67*/ new Numeric(67, true, 2, "Extended payment code"),
+                    /*  68*/ new Numeric(68, true, 3, "Receiving institution country code"),
+                    /*  69*/ new Numeric(69, true, 3, "Settlement institution country code"),
+                    /*  70*/ new Numeric(70, true, 3, "Network management information code"),
+                    /*  71*/ new Numeric(71, true, 4, "Message number"),
+                    /*  72*/ new Numeric(72, true, 4, "Message number, last"),
+                    /*  73*/ new Numeric(73, true, 6, "Date, action (YYMMDD)"),
+                    /*  74*/ new Numeric(74, true, 10, "Credits, number"),
+                    /*  75*/ new Numeric(75, true, 10, "Credits, reversal number"),
+                    /*  76*/ new Numeric(76, true, 10, "Debits, number"),
+                    /*  77*/ new Numeric(77, true, 10, "Debits, reversal number"),
+                    /*  78*/ new Numeric(78, true, 10, "Transfer number"),
+                    /*  79*/ new Numeric(79, true, 10, "Transfer, reversal number"),
+                    /*  80*/ new Numeric(80, true, 10, "Inquiries number"),
+                    /*  81*/ new Numeric(81, true, 10, "Authorizations, number"),
+                    /*  82*/ new Numeric(82, true, 12, "Credits, processing fee amount"),
+                    /*  83*/ new Numeric(83, true, 12, "Credits, transaction fee amount"),
+                    /*  84*/ new Numeric(84, true, 12, "Debits, processing fee amount"),
+                    /*  85*/ new Numeric(85, true, 12, "Debits, transaction fee amount"),
+                    /*  86*/ new Numeric(86, true, 16, "Credits, amount"),
+                    /*  87*/ new Numeric(87, true, 16, "Credits, reversal amount"),
+                    /*  88*/ new Numeric(88, true, 16, "Debits, amount"),
+                    /*  89*/ new Numeric(89, true, 16, "Debits, reversal amount"),
+                    /*  90*/ new Numeric(90, true, 42, "Original data elements"),
+                    /*  91*/ new AlphaNumeric(91, true, 1, "File update code"),
+                    /*  92*/ new AlphaNumeric(92, true, 2, "File security code"),
+                    /*  93*/ new AlphaNumeric(93, true, 5, "Response indicator"),
+                    /*  94*/ new AlphaNumeric(94, true, 7, "Service indicator"),
+                    /*  95*/ new AlphaNumeric(95, true, 42, "Replacement amounts"),
+                    /*  96*/ new Binary(96, true, 64, "Message security code"),
+                    /*  97*/ new Amount(97, true, 16, "Amount, net settlement"),
+                    /*  98*/ new AlphaNumericSpecial(98, true, 25, "Payee"),
+                    /*  99*/ new Numeric(99, false, 11, "Settlement institution identification code"),
+                    /* 100*/ new Numeric(100, false, 11, "Receiving institution identification code"),
+                    /* 101*/ new AlphaNumericSpecial(101, false, 17, "File name"),
+                    /* 102*/ new AlphaNumericSpecial(102, false, 28, "Account identification 1"),
+                    /* 103*/ new AlphaNumericSpecial(103, false, 28, "Account identification 2"),
+                    /* 104*/ new AlphaNumericSpecial(104, false, 100, "Transaction description"),
+                    /* 105*/ new AlphaNumericSpecial(105, false, 999, "Reserved for ISO use"),
+                    /* 106*/ new AlphaNumericSpecial(106, false, 999, "Reserved for ISO use"),
+                    /* 107*/ new AlphaNumericSpecial(107, false, 999, "Reserved for ISO use"),
+                    /* 108*/ new AlphaNumericSpecial(108, false, 999, "Reserved for ISO use"),
+                    /* 109*/ new AlphaNumericSpecial(109, false, 999, "Reserved for ISO use"),
+                    /* 110*/ new AlphaNumericSpecial(110, false, 999, "Reserved for ISO use"),
+                    /* 111*/ new AlphaNumericSpecial(111, false, 999, "Reserved for ISO use"),
+                    /* 112*/ new AlphaNumericSpecial(112, false, 999, "Reserved for national use"),
+                    /* 113*/ new AlphaNumericSpecial(113, false, 999, "Reserved for national use"),
+                    /* 114*/ new AlphaNumericSpecial(114, false, 999, "Reserved for national use"),
+                    /* 115*/ new AlphaNumericSpecial(115, false, 999, "Reserved for national use"),
+                    /* 116*/ new AlphaNumericSpecial(116, false, 999, "Reserved for national use"),
+                    /* 117*/ new AlphaNumericSpecial(117, false, 999, "Reserved for national use"),
+                    /* 118*/ new AlphaNumericSpecial(118, false, 999, "Reserved for national use"),
+                    /* 119*/ new AlphaNumericSpecial(119, false, 999, "Reserved for national use"),
+                    /* 120*/ new AlphaNumericSpecial(120, false, 999, "Reserved for private use"),
+                    /* 121*/ new AlphaNumericSpecial(121, false, 999, "Reserved for private use"),
+                    /* 122*/ new AlphaNumericSpecial(122, false, 999, "Reserved for private use"),
+                    /* 123*/ new AlphaNumericSpecial(123, false, 999, "Reserved for private use"),
+                    /* 124*/ new AlphaNumericSpecial(124, false, 999, "Reserved for private use"),
+                    /* 125*/ new AlphaNumericSpecial(125, false, 999, "Reserved for private use"),
+                    /* 126*/ new AlphaNumericSpecial(126, false, 999, "Reserved for private use"),
+                    /* 127*/ new AlphaNumericSpecial(127, false, 999, "Reserved for private use"),
+                    /* 128*/ new Binary(128, true, 64, "Message authentication code")
+                 };
+            }
+        }
+    }
+}

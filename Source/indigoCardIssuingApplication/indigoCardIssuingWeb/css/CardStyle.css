@@ -1,0 +1,456 @@
+@font-face {
+    font-family: 'OCRB';
+    src: url(fonts/ocrb.woff); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+@font-face {
+    font-family: myFirstFont;
+    src: url(sansation_light.woff);
+}
+
+body {
+    font-family: Verdana;
+    font-size: small;
+    font-style: normal;
+    height: 313px;
+    width: 96%;
+}
+
+img[src=""] {
+    display: none;
+}
+
+.ui-widget {
+    font-size: 12px !important;
+}
+
+.LayoutTop {
+    width: 100%;
+    overflow: auto;
+    float: left;
+    clear: both;
+}
+
+.LayoutTopLogo {
+    background-color: #0082B6;
+    border: 1px solid #FFFFFF;
+    margin: 0px 1px 1px 0px;
+    border-color: #0082B6;
+    height: 45px;
+    max-height: 45px;
+    width: 90px;
+    max-width: 90px;
+    vertical-align: top;
+    float: left;
+}
+
+.LanguagePanel {
+    float: right;
+    overflow: visible;
+    width: 200px;
+    font-size: small;
+    font-style: normal;
+    margin-top: 14px;
+    margin-right: 14px;
+    line-height: 1.1em;
+}
+
+.LoggedInPanel {
+    width: 100%;
+    overflow: auto;
+    float: left;
+    clear: both;
+    border-bottom-style: solid;
+    border-color: #0082B6;
+    border-width: thin;
+    margin-bottom: 6px;
+    padding-bottom: 3px;
+}
+
+.LayoutTopBanner {
+    display: inline-block;
+    background-color: #0082B6;
+    border: 1px solid #FFFFFF;
+    margin: 0px 0px 1px 1px;
+    padding-left: 4px;
+    border-color: #0082B6;
+    font-weight: bold;
+    font-size: large;
+    color: White;
+    height: 45px;
+    max-height: 45px;
+    line-height: 45px;
+    width: 100%;
+    max-width: 1100px;
+    vertical-align: top;
+    float: left;
+}
+
+.LayoutTopLoginView {
+    margin-left: 7px;
+    display: inline-block;
+    float: left;
+}
+
+.LayoutTopLoginStatus {
+    margin-right: 7px;
+    display: inline-block;
+    float: right;
+}
+
+.LayoutMenu {
+    width: 15%;
+    overflow: visible;
+    float: left;
+    clear: left;
+}
+
+.LayoutLoginContent {
+    width: 100%;
+    overflow: visible;
+    float: left;
+    clear: both;
+}
+
+.LayoutContent {
+    width: 85%;
+    overflow: visible;
+    float: right;
+    clear: right;
+}
+
+.LayoutFooter {
+    width: 100%;
+    border-top-style: solid;
+    border-color: #0082B3;
+    border-width: thin;
+    margin-top: 8px;
+    padding-top: 3px;
+    overflow: visible;
+    float: left;
+    clear: both;
+}
+
+.LayoutFooterLogo {
+    width: 100px;
+    float: right;
+}
+
+.LoginTable {
+    width: 40%; /*336px;*/
+    margin-left: 30%;
+    margin-right: 30%;
+}
+
+.ContentPanel {
+    background-color: #FFFFFF;
+    border: thin solid #0082B6;
+    width: 99%;
+    padding: 2px;
+    overflow: visible;
+    float: right;
+}
+
+.ContentHeader {
+    text-align: center;
+    font-weight: bold;
+    background-color: #FFFFFF;
+    border: thin solid #0082B6;
+    margin-bottom: 5px;
+}
+
+.HeaderFill {
+    background-color: #0082B6;
+    color: #FFFFFF;
+}
+
+.Panel {
+    overflow: visible;
+}
+
+.InfoPanel {
+    text-align: center;
+    font-weight: bold;
+    color: Blue;
+    clear: both;
+    width: 99%;
+}
+
+.ErrorPanel {
+    text-align: center;
+    font-weight: bold;
+    color: Red;
+    clear: both;
+    width: 99%;
+}
+
+.ButtonPanel {
+    margin-top: 10px;
+    text-align: center;
+    clear: both;
+    width: 99%;
+}
+
+.PaginationPanel {
+    margin-top: 10px;
+    text-align: center;
+    clear: both;
+}
+
+.label {
+    display: inline-block;
+    text-align: right;
+    vertical-align: middle;
+    width: 25%;
+    margin: 3px;
+    float: left;
+    /*clear: left;*/
+}
+
+.label2col {
+    display: inline-block;
+    text-align: right;
+    vertical-align: middle;
+    width: 40%;
+    margin: 3px;
+    float: left;
+    /*clear: left;*/
+}
+
+.labelclr {
+    display: inline-block;
+    text-align: left;
+    padding-bottom: 10px;
+    margin-left: 20px;
+    clear: both;
+    float: left;
+}
+
+.input {
+    display: inline-block;
+    width: 30%;
+    float: left;
+    margin: 3px;
+}
+
+.input2col {
+    display: inline-block;
+    width: 55%;
+    float: left;
+    margin: 3px;
+}
+
+.btn2col {
+    display: inline-block;
+    width: 25%;
+    float: none;
+    margin: 3px;
+}
+
+.input-pui {
+    width: 30%;
+    margin: 3px;
+    float: left;
+}
+
+.input-pin {
+    width: 30%;
+    margin-bottom: 3px;
+    margin-top: 3px;
+    margin-left: 0px;
+    float: left;
+}
+
+.leftclr {
+    clear: left;
+}
+
+.rightclr {
+    /*display: inline-block;    
+	width: 75%;
+	margin: 3px;
+	float: left;*/
+    clear: right;
+}
+
+.bothclr {
+    clear: both;
+}
+
+.validation {
+    color: Red;
+    display: inline-block;
+    /*width: 48%;
+	clear: right;*/
+    margin: 3px;
+    float: left;
+}
+
+.button {
+    width: 150px;
+    margin: 5px;
+    border-color: #CCCCCC;
+    border-style: solid;
+}
+
+.buttonNoDisable {
+    width: 150px;
+    margin: 5px;
+    border-color: #CCCCCC;
+    border-style: solid;
+}
+
+.button:hover {
+    border-color: #0082B6;
+}
+
+.ItemSelect {
+}
+
+    .ItemSelect:hover {
+        color: White;
+        background-color: #0082B6;
+    }
+
+tr.ItemSelect:hover a {
+    color: White;
+    background-color: #0082B6;
+}
+
+/*.ui-state-hover 
+{
+	background: #d3d3d3 !important; 
+}*/
+
+.ui-state-highlight {
+    background: #0082B6 !important;
+    color: White !important;
+}
+
+/*.pui-picklist-item .ui-state-hover 
+{
+	background: #d3d3d3 !important;    
+}
+
+.pui-picklist-item.ui-state-hover 
+{
+	background: #d3d3d3 !important;    
+}
+
+.pui-dropdown-list-item.ui-state-hover
+{
+	background: #d3d3d3 !important; 
+}*/
+
+.pui-picklist .pui-picklist-listwrapper {
+    width: 349px !important;
+}
+
+.pui-picklist .pui-picklist-filter {
+    width: 94.5% !important;
+    background-color: White !important;
+    color: #525252 !important;
+}
+
+a.popout {
+    background-image: none !important;
+}
+
+.level1 {
+    width: 95% !important;
+}
+
+#userGroupPickList.pui-picklist .pui-picklist-listwrapper {
+    width: 200px !important;
+}
+
+.pui-listbox {
+    width: 85% !important;
+    height: 150px !important;
+}
+
+.indigo-tab .ui-state-default {
+    background: wheat;
+}
+
+.chkboxlist {
+    width: 100% !important;
+}
+
+    .chkboxlist td {
+        width: 30%;
+    }
+
+
+/*
+ ui-corner-top
+	*/
+
+/*   .level1
+	{
+		background-color: #CCCCCC;
+		border: 2px solid black;
+		color: Black;
+		font-family: Verdana;
+		font-size: Medium;
+		font-style: normal;
+		font-weight: normal;
+	}
+
+	.level2
+	{
+		background-color: #CCCCCC;
+		color: Black;
+		font-family: Verdana;
+		font-size: small;
+		font-style: normal;
+	}
+
+
+	.style3
+	{
+		height: 95px;
+		width: 180px;
+	}
+
+		.menu2
+		{
+		}
+
+		.style7
+		{
+			height: 95px;
+			width: 800px;
+
+
+	.formLayout
+	{
+		background-color: #f3f3f3;
+		border: solid 1px #a1a1a1;
+		padding: 10px;
+		width: 300px;
+	}
+	
+	.formLayout label, .formLayout input
+	{
+		display: block;
+		width: 120px;
+		float: left;
+		margin-bottom: 10px;
+	}
+ 
+	.formLayout label
+	{
+		text-align: right;
+		padding-right: 20px;
+	}
+ 
+	br
+	{
+		clear: left;
+	}
+*/
+
+.break-word {
+    word-wrap: break-word;
+}

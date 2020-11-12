@@ -1,0 +1,41 @@
+﻿<UserControl x:Uid="UserControl_4" x:Class="Veneka.Indigo.BackOffice.Application.Views.BulkPrinting.BulkPrintingSummaryView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Veneka.Indigo.BackOffice.Application.Views.BulkPrinting"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid x:Uid="Grid_1" HorizontalAlignment="Center"  Margin="0,15,0,0" RenderTransformOrigin="0.491,0.222">
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="300"/>
+            <ColumnDefinition Width="75"/>
+
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition x:Uid="RowDefinition_1" Height="Auto"/>
+            <RowDefinition x:Uid="RowDefinition_1" Height="Auto"/>
+            <RowDefinition x:Uid="RowDefinition_1" Height="Auto"/>
+            <RowDefinition x:Uid="RowDefinition_1" Height="Auto"/>
+            <RowDefinition x:Uid="RowDefinition_2" Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Label x:Uid="Label_1" Content="Batch Ref :" Grid.Column="0" Grid.Row="1" />
+        <Label x:Uid="TextBox_1" Height="23"  Content="{Binding SelectedPrint.PrintBatchReference}" Grid.Column="1" Grid.Row="1" />
+
+        <Label x:Uid="Label_2" Content="Number Of Cards(in batch) :" Grid.Column="0" Grid.Row="2" />
+        <Label x:Uid="TextBox_2" Height="23"  Content="{Binding SelectedPrint.NoOfRequests}" Grid.Column="1" Grid.Row="2" />
+
+        <TextBlock x:Uid="TextBlock_1" Height="20"  Text="{Binding InfoMessage}" Grid.Row="3" VerticalAlignment="Top"
+               FontSize="14"  TextWrapping="Wrap" FontWeight="Bold"  TextAlignment="Left" Margin="0,15,0,141" Width="390"  HorizontalAlignment="Left" Grid.ColumnSpan="3"
+              />
+        <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Grid.Row="4" Grid.ColumnSpan="3" Grid.Column="0" Margin="0,10,0,-3">
+            <Button x:Uid="Button_1" Content="View Report"  Command="{Binding ViewReportCommand}"  Height="27"  Width="100" Margin="120,0,0,0"/>
+
+            <Button x:Uid="Button_1" Content="Upload" Command="{Binding UploadCommand}" Height="27" VerticalAlignment="Top"  Margin="10,0,-108,-61"/>
+        </StackPanel>
+
+    </Grid>
+</UserControl>

@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{BCA9E337-2A5C-4B33-AFA2-6C392985E7DD}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Veneka.Indigo.COMS.Core</RootNamespace>
+    <AssemblyName>Veneka.Indigo.COMS.Core</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Indigo_app|AnyCPU'">
+    <OutputPath>bin\Indigo_app\</OutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Common.Logging, Version=3.4.1.0, Culture=neutral, PublicKeyToken=af08829b84f0328e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Common.Logging.3.4.1\lib\net40\Common.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Common.Logging.Core, Version=3.4.1.0, Culture=neutral, PublicKeyToken=af08829b84f0328e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Common.Logging.Core.3.4.1\lib\net40\Common.Logging.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Common.Logging.Log4Net1213, Version=3.4.1.0, Culture=neutral, PublicKeyToken=af08829b84f0328e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Common.Logging.Log4Net1213.3.4.1\lib\net40\Common.Logging.Log4Net1213.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.13.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.3\lib\net40-full\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.IO.Compression.FileSystem" />
+    <Reference Include="System.Runtime">
+      <HintPath>..\..\..\..\..\..\..\..\veneka\indigo_main_dev\integration\System.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Caching" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AuditInfo.cs" />
+    <Compile Include="Behavior\ClientTrackerChannelInitializer.cs" />
+    <Compile Include="Behavior\ClientTrackerEndpointBehavior.cs" />
+    <Compile Include="ComPrepaidSystem.cs" />
+    <Compile Include="ComsCore.cs" />
+    <Compile Include="ComsResponse.cs" />
+    <Compile Include="Constants.cs" />
+    <Compile Include="CardManagement\IComCardManagementCallback.cs" />
+    <Compile Include="CardManagement\IComCardManagement.cs" />
+    <Compile Include="CoreBanking\IComCoreBankingSystem.cs" />
+    <Compile Include="IComPrepaidSystem.cs" />
+    <Compile Include="IManagementAPI.cs" />
+    <Compile Include="Indigo\DataContracts\PINReissue.cs" />
+    <Compile Include="Indigo\IPINReissue.cs" />
+    <Compile Include="Indigo\IPINReissueCallback.cs" />
+    <Compile Include="Integration\IIntegrationController.cs" />
+    <Compile Include="Integration\IntegrationController.cs" />
+    <Compile Include="HardwareSecurityModule\IComHardwareSecurityModuleCallback.cs" />
+    <Compile Include="HardwareSecurityModule\IComHardwareSecurityModule.cs" />
+    <Compile Include="IComsCallback.cs" />
+    <Compile Include="IComsCore.cs" />
+    <Compile Include="IComsDataSource.cs" />
+    <Compile Include="Integration\InterfaceMetaData.cs" />
+    <Compile Include="InterfaceInfo.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Terminal\ITerminalCallback.cs" />
+    <Compile Include="Terminal\ProductDetails.cs" />
+    <Compile Include="Terminal\TerminalController.cs" />
+    <Compile Include="Terminal\TerminalDetails.cs" />
+    <Compile Include="Terminal\TerminalResponse.cs" />
+    <Compile Include="WcfComsCallbackClient.cs" />
+    <Compile Include="WcfComsClient.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Veneka.Indigo.Common\Veneka.Indigo.Common.csproj">
+      <Project>{6a1456b1-52a5-4975-942c-7810fe4097b9}</Project>
+      <Name>Veneka.Indigo.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Veneka.Indigo.Integration.ProductPrinting\Veneka.Indigo.Integration.ProductPrinting.csproj">
+      <Project>{3c248c1c-aa7e-4656-b851-1c591a1ebe51}</Project>
+      <Name>Veneka.Indigo.Integration.ProductPrinting</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Veneka.Indigo.Integration\Veneka.Indigo.Integration.csproj">
+      <Project>{03bf6364-dfe6-47d5-8aa3-17839ef44854}</Project>
+      <Name>Veneka.Indigo.Integration</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Veneka.Indigo.Security\Veneka.Indigo.Security.csproj">
+      <Project>{a585b1f6-3cff-41fd-ba3e-736a133a6210}</Project>
+      <Name>Veneka.Indigo.Security</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

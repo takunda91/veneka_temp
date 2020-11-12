@@ -1,0 +1,67 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25123.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EProcess.Indigo.2.0.0.Migration", "EProcess.Indigo.2.0.0.Migration\EProcess.Indigo.2.0.0.Migration.csproj", "{B9DC5A37-9558-4393-99B0-14DEAF7EA024}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NewIndigoDAL", "NewIndigoDAL\NewIndigoDAL.csproj", "{E099BBE2-604F-4449-8F41-91DA0D643B29}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OriginalIndigoDAL", "OriginalIndigoDAL\OriginalIndigoDAL.csproj", "{EB1A54C0-B5A5-4A9A-9C0A-43A10634EE10}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EProcess.Indigo.2.0.0.Migration.Common", "EProcess.Indigo.2.0.0.Migration.Common\EProcess.Indigo.2.0.0.Migration.Common.csproj", "{398F1125-F9D9-40F9-886C-26FBFC8570B5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IndigoMigrationToolkit", "IndigoMigrationToolkit\IndigoMigrationToolkit.csproj", "{D3970F4D-2B09-49F5-B68F-0D7E34D4FA7A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B9DC5A37-9558-4393-99B0-14DEAF7EA024}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B9DC5A37-9558-4393-99B0-14DEAF7EA024}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B9DC5A37-9558-4393-99B0-14DEAF7EA024}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B9DC5A37-9558-4393-99B0-14DEAF7EA024}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E099BBE2-604F-4449-8F41-91DA0D643B29}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E099BBE2-604F-4449-8F41-91DA0D643B29}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E099BBE2-604F-4449-8F41-91DA0D643B29}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E099BBE2-604F-4449-8F41-91DA0D643B29}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EB1A54C0-B5A5-4A9A-9C0A-43A10634EE10}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB1A54C0-B5A5-4A9A-9C0A-43A10634EE10}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EB1A54C0-B5A5-4A9A-9C0A-43A10634EE10}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB1A54C0-B5A5-4A9A-9C0A-43A10634EE10}.Release|Any CPU.Build.0 = Release|Any CPU
+		{398F1125-F9D9-40F9-886C-26FBFC8570B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{398F1125-F9D9-40F9-886C-26FBFC8570B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{398F1125-F9D9-40F9-886C-26FBFC8570B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{398F1125-F9D9-40F9-886C-26FBFC8570B5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D3970F4D-2B09-49F5-B68F-0D7E34D4FA7A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D3970F4D-2B09-49F5-B68F-0D7E34D4FA7A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D3970F4D-2B09-49F5-B68F-0D7E34D4FA7A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D3970F4D-2B09-49F5-B68F-0D7E34D4FA7A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 6
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://veneka.visualstudio.com/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = EProcess.Indigo.2.0.0.Migration\\EProcess.Indigo.2.0.0.Migration.csproj
+		SccProjectName1 = EProcess.Indigo.2.0.0.Migration
+		SccLocalPath1 = EProcess.Indigo.2.0.0.Migration
+		SccProjectUniqueName2 = NewIndigoDAL\\NewIndigoDAL.csproj
+		SccProjectName2 = NewIndigoDAL
+		SccLocalPath2 = NewIndigoDAL
+		SccProjectUniqueName3 = OriginalIndigoDAL\\OriginalIndigoDAL.csproj
+		SccProjectName3 = OriginalIndigoDAL
+		SccLocalPath3 = OriginalIndigoDAL
+		SccProjectUniqueName4 = EProcess.Indigo.2.0.0.Migration.Common\\EProcess.Indigo.2.0.0.Migration.Common.csproj
+		SccProjectName4 = EProcess.Indigo.2.0.0.Migration.Common
+		SccLocalPath4 = EProcess.Indigo.2.0.0.Migration.Common
+		SccProjectUniqueName5 = IndigoMigrationToolkit\\IndigoMigrationToolkit.csproj
+		SccProjectName5 = IndigoMigrationToolkit
+		SccLocalPath5 = IndigoMigrationToolkit
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,1 @@
+insert into dbo.interface_type (interface_type_id, interface_type_name) values (12, 'PREPAID_FUNDS_LOAD')

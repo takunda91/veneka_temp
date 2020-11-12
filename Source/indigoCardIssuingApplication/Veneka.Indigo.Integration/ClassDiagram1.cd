@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Interface Name="Veneka.Indigo.Integration.ICoreBankingSystem">
+    <Position X="0.5" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAAAAAAAAAACAAAQAAAAAAAAAAAAAAAAAAAgIA=</HashCode>
+      <FileName>ICoreBankingSystem.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Veneka.Indigo.Integration.IExternalAuthentication">
+    <Position X="4.75" Y="0.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAQAAAAAAA=</HashCode>
+      <FileName>IExternalAuthentication.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Veneka.Indigo.Integration.ICardManagementSystem">
+    <Position X="2.5" Y="0.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAAAAAAAAAAAAgAgAAAAAAAACAQRAAAQAAAAAAA=</HashCode>
+      <FileName>ICardManagementSystem.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Veneka.Indigo.Integration.ICardProductionSystem">
+    <Position X="7.25" Y="0.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAA=</HashCode>
+      <FileName>ICardProductionSystem.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

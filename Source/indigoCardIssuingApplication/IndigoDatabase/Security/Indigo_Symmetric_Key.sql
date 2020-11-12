@@ -1,0 +1,5 @@
+﻿CREATE SYMMETRIC KEY [Indigo_Symmetric_Key]
+    AUTHORIZATION [dbo]
+    WITH ALGORITHM = AES_256
+    ENCRYPTION BY CERTIFICATE [Indigo_Certificate];
+

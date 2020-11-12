@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{724E43E5-3797-4017-AE0F-DAB3B67DBCA2}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Veneka.Indigo.Integration.TMB</RootNamespace>
+    <AssemblyName>Veneka.Indigo.Integration.TMB</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Common.Logging">
+      <HintPath>..\..\..\..\Indigo\Source\indigoCardIssuingApplication\Veneka.Indigo.Common\bin\Debug\Common.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Common.Logging.Core">
+      <HintPath>..\..\..\..\Indigo\Source\indigoCardIssuingApplication\Veneka.Indigo.Common\bin\Debug\Common.Logging.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.ComponentModel.Composition.Registration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Veneka.Indigo.Common">
+      <HintPath>..\..\..\..\Indigo\Source\indigoCardIssuingApplication\Veneka.Indigo.Common\bin\Debug\Veneka.Indigo.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Veneka.Indigo.Integration, Version=2.1.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\binaries\Veneka.Indigo.Integration.dll</HintPath>
+    </Reference>
+    <Reference Include="Veneka.Indigo.Integration.ProductPrinting, Version=2.1.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\binaries\Veneka.Indigo.Integration.ProductPrinting.dll</HintPath>
+    </Reference>
+    <Reference Include="Veneka.Module.Delta, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Module\Veneka.Module.Delta\bin\Debug\Veneka.Module.Delta.dll</HintPath>
+    </Reference>
+    <Reference Include="Veneka.Module.IntegrationDataControl">
+      <HintPath>C:\veneka\binaries\Veneka.Module.IntegrationDataControl.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CBS\FlexcubeWebService.cs" />
+    <Compile Include="CBS\Inspector\LogClientBehaviour.cs" />
+    <Compile Include="CBS\Inspector\MessageInspector.cs" />
+    <Compile Include="CBS\TagPayResponse\tagpay.cs" />
+    <Compile Include="CBS\TagPayService.cs" />
+    <Compile Include="CBS\Utils\General.cs" />
+    <Compile Include="Common\WebService.cs" />
+    <Compile Include="MD5Hash\MD5Hash.cs" />
+    <Compile Include="TagSMSService\TagSMSRESTAPIService.cs" />
+    <Compile Include="TagSMSService\TagSmSService.cs" />
+    <Compile Include="TMBFLEXCBS.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TMBFUNDSLOADCBS.cs" />
+    <Compile Include="TMBNS.cs" />
+    <Compile Include="TMBPREPAIDCBS.cs" />
+    <Compile Include="TMBTAGPAY.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Resources\WSDL\NanoVenekaFlexcubeWsService.xml.wsdl" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\WSDL\XSD.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

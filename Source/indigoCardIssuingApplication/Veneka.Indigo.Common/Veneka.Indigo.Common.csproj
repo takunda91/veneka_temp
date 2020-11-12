@@ -1,0 +1,215 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{6A1456B1-52A5-4975-942C-7810FE4097B9}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Veneka.Indigo.Common</RootNamespace>
+    <AssemblyName>Veneka.Indigo.Common</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'indigo_app|AnyCPU'">
+    <OutputPath>bin\indigo_app\</OutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Common.Logging, Version=3.4.1.0, Culture=neutral, PublicKeyToken=af08829b84f0328e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Common.Logging.3.4.1\lib\net40\Common.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Common.Logging.Core, Version=3.4.1.0, Culture=neutral, PublicKeyToken=af08829b84f0328e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Common.Logging.Core.3.4.1\lib\net40\Common.Logging.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Common.Logging.Log4Net1213, Version=3.4.1.0, Culture=neutral, PublicKeyToken=af08829b84f0328e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Common.Logging.Log4Net1213.3.4.1\lib\net40\Common.Logging.Log4Net1213.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp, Version=5.5.13.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\iTextSharp.5.5.13\lib\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.13.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.3\lib\net40-full\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Veneka.Indigo.Integration">
+      <HintPath>..\..\..\..\integrations\Integrations\Source\Veneka.Indigo.Integration.MockServices\Veneka.Indigo.Integration.EMP\Veneka.Indigo.Integration.EMP\bin\Debug\Veneka.Indigo.Integration.dll</HintPath>
+    </Reference>
+    <Reference Include="Veneka.Licensing.Client, Version=1.0.6030.24587, Culture=neutral, PublicKeyToken=b2f9648779cc4168, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\veneka\licensing_references\Veneka.Licensing.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Veneka.Licensing.Common, Version=1.0.6606.21733, Culture=neutral, PublicKeyToken=b2f9648779cc4168, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\veneka\licensing_references\Veneka.Licensing.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Veneka.Licensing.Encryption, Version=1.0.6606.21730, Culture=neutral, PublicKeyToken=b2f9648779cc4168, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\veneka\licensing_references\Veneka.Licensing.Encryption.dll</HintPath>
+    </Reference>
+    <Reference Include="Veneka.Licensing.License, Version=1.0.6606.21767, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\veneka\licensing_references\Veneka.Licensing.License.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CommonEnums.cs" />
+    <Compile Include="CommonGeneral.cs" />
+    <Compile Include="DataAccess\BaseDataAccess.cs" />
+    <Compile Include="DataAccess\IssuerManagementDataAccess.cs" />
+    <Compile Include="Database\DatabaseConnectionObject.cs" />
+    <Compile Include="Exceptions\BaseIndigoException.cs" />
+    <Compile Include="Exceptions\AccountValidationException.cs" />
+    <Compile Include="Exceptions\CoreBankingException.cs" />
+    <Compile Include="Exceptions\LoginFailedException.cs" />
+    <Compile Include="Language\IResponseTranslator.cs" />
+    <Compile Include="Language\ResponseTranslator.cs" />
+    <Compile Include="License\LicenseManager.cs" />
+    <Compile Include="Models\Indigo.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Indigo.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\IssuerManagement\CurrencyResult.cs" />
+    <Compile Include="Models\IssuerManagement\DistBatchFlows.cs" />
+    <Compile Include="Models\IssuerManagement\issuer_product.cs" />
+    <Compile Include="Models\IssuerManagement\Messaging.cs" />
+    <Compile Include="Models\IssuerManagement\PinRequestList.cs" />
+    <Compile Include="Models\IssuerManagement\PinRequestViewDetails.cs" />
+    <Compile Include="Models\IssuerManagement\ProductAccountTypesResult.cs" />
+    <Compile Include="Models\IssuerManagement\ProductIssueReasonsResult.cs" />
+    <Compile Include="Models\IssuerManagement\ProductlistResult.cs" />
+    <Compile Include="Models\IssuerManagement\product_interface.cs" />
+    <Compile Include="Models\IssuerManagement\RestWebservicesHandler.cs" />
+    <Compile Include="Models\IssuerManagement\ZMKZPKDetails.cs" />
+    <Compile Include="Models\Reports.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reports.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Objects\AccountDetails.cs" />
+    <Compile Include="Models\Objects\ProductListValidated.cs" />
+    <Compile Include="Models\Objects\ResultObject.cs" />
+    <Compile Include="Models\Objects\DatabaseResponse.cs" />
+    <Compile Include="Database\DBConnectInfo.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="SystemConfiguration.cs" />
+    <Compile Include="Utilities\LogFileWriter.cs" />
+    <Compile Include="Utilities\StaticFields.cs" />
+    <Compile Include="Utilities\StaticNames.cs" />
+    <Compile Include="Utilities\UtilityClass.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="app.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <EntityDeploy Include="Models\Indigo.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Indigo.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Models\Indigo.edmx.diagram">
+      <DependentUpon>Indigo.edmx</DependentUpon>
+    </None>
+    <EntityDeploy Include="Models\Reports.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Reports.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Models\Reports.edmx.diagram">
+      <DependentUpon>Reports.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Modules\Extensibility\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Veneka.Indigo.Security\Veneka.Indigo.Security.csproj">
+      <Project>{a585b1f6-3cff-41fd-ba3e-736a133a6210}</Project>
+      <Name>Veneka.Indigo.Security</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<columns>
+  <Page Name="cardcapture" >
+    <column key="Reason" name="Reason for issue" length="30" visible="true" required="true" type="textbox" values=""></column>
+    <column key="NameOnCard" name="NameOnCard" length="25"  visible="true" required="true" type="textbox" values="" ></column>
+    <column key="userTitle" name="Title" length="30" visible="true" required="true" type="textbox" values=""></column>
+    <column key="FirstName" name="First Name" length="30"  visible="true" required="true" type="textbox" values=""></column>
+    <column key="MiddleName" name="Middle Name" length="30"  visible="true" required="false" type="textbox" values=""></column>
+    <column key="LastName" name="Last Name" length="30"  visible="true" required="true" type="textbox" values=""></column>
+    <column key="Contactnumber" name="Contact Number" length="13"  visible="true" required="true" type="textbox" values=""></column>
+    <column key="IDNumber" name="ID Number/Passport Number"  visible="true" length="25" required="true" type="textbox" values=""></column>
+    <column key="AccountType" name="Account Type" length="30"  visible="true" required="true" type="textbox" values=""></column>
+    <column key="Currency" name="Currency" length="30"  visible="true" required="true" type="textbox" values=""></column>
+    <column key="CustomerType" name="Currency" length="30"  visible="true" required="true" type="textbox" values=""></column>
+    <column key="Resident" name="Resident" length="30"  visible="true" required="true" type="textbox" values=""></column>
+    <column key="CustomerID" name="CustomerID" length="30"  visible="true" required="false" type="textbox" values=""></column>
+    <column key="ContractNumber" name="ContractNumber" length="30"  visible="false" required="true" type="textbox" values=""></column>
+    <column key="InternalAccountNo" name="InternalAccountNo" length="30"  visible="true" required="false" type="textbox" values=""></column>
+    <column key="Passporttype" name="Passporttype"  length="0" visible="false" required="false" type="dropdown" values="UK;RSA;USA"></column>
+  </Page>
+</columns>

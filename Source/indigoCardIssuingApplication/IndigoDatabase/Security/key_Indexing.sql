@@ -1,0 +1,5 @@
+﻿CREATE SYMMETRIC KEY [key_Indexing]
+    AUTHORIZATION [dbo]
+    WITH ALGORITHM = AES_256
+    ENCRYPTION BY CERTIFICATE [cert_ProtectIndexingKeys];
+

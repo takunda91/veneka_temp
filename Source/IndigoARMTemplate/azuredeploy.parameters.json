@@ -1,0 +1,41 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "appVMName": {
+            "value": "IndigoAppDemoVM"
+        },
+        "appVMAdminUserName": {
+            "value": "adminuser"
+        },
+        "appPublicIPDnsName": {
+            "value": "IndigoAppDemoVnet"
+        },        
+        "vaultName": {
+            "value": "DemoKeyVault"
+        },
+        "vaultResourceGroup": {
+            "value": "rg_IndigoTest_01"
+        },
+        "httpssecretUrlWithVersion": {
+            "value": "https://indigodemovault.vault.azure.net/keys/httpssecretUrlWithVersion/48c383d06e76450c8bcd16e93bef4069"
+        },
+        "httpssecretCaUrlWithVersion": {
+            "value": "https://indigodemovault.vault.azure.net/keys/httpssecretCaUrlWithVersion/f3f895f548874d41bdfc99a02c6e1e53"
+        },
+        "appVMAdminPassword": {
+          "reference": {
+            "keyVault": {
+              "id": "/subscriptions/b6a5488e-6bc7-4f5a-9e72-8322bb6d19a9/resourceGroups/rg_IndigoTest_01/providers/Microsoft.KeyVault/vaults/IndigoDemoVault"
+            },
+            "secretName": "pwd"
+          }
+        },
+        "certificateStore": {
+            "value": "certificateStore"
+        },
+        "certificateDomain": {
+            "value": "indigotest.com"
+        }
+    }
+}

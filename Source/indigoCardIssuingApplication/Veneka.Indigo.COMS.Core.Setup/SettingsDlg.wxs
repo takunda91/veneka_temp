@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  <Fragment>
+    <UI>
+      <Dialog Id="SettingsDlg"  Width="370" Height="270" Title="ComsCore Token Validation" NoMinimize="yes">
+        <Control Id="TokenLabel" Type="Text" X="45" Y="73" Width="220" Height="15" TabSkip="no" Text="Token"  />
+        <Control Id="TokenEdit" Type="Edit" X="45" Y="85" Width="220" Height="18" Property="Token" Text="{500}"    />
+      
+        <Control Id="Back" Type="PushButton" X="180" Y="243" Width="56" Height="17" Text="Back"></Control>
+        <Control Id="Next" Type="PushButton" X="236" Y="243" Width="56" Height="17" Default="yes" Text="Next">
+          <Publish Event="DoAction" Value="Veneka.Indigo.COMS.Core.Validations">1</Publish>
+          <Publish Event="EndDialog" Value="Return">1</Publish>
+        </Control>
+        <Control Id="Cancel" Type="PushButton" X="304" Y="243" Width="56" Height="17" Cancel="yes" Text="!(loc.WixUICancel)">
+          <Publish Event="SpawnDialog" Value="CancelDlg">1</Publish>
+        </Control>
+      
+      </Dialog>
+    </UI>
+  </Fragment>
+
+  <Fragment>
+    <Binary Id="CustomActionBinary" SourceFile="$(var.Veneka.Indigo.COMS.Core.Validations.TargetDir)$(var.Veneka.Indigo.COMS.Core.Validations.TargetName).CA.dll"/>
+
+    <!--<Binary Id="CustomActionBinary" SourceFile="$(var.Veneka.Indigo.COMS.Core.Validations.TargetDir)\Veneka.Indigo.COMS.Core.Validations.dll"/>-->
+    <CustomAction Id="Veneka.Indigo.COMS.Core.Validations" BinaryKey="CustomActionBinary" DllEntry="Validate"  />
+  </Fragment>
+</Wix>

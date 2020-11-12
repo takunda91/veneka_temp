@@ -1,0 +1,1 @@
+  UPDATE [dist_batch_statuses_flow] SET [sub_menu_id] = 20 WHERE [dist_batch_statuses_id] = 19

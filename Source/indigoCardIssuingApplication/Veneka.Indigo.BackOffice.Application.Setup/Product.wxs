@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi"
+     xmlns:util="http://schemas.microsoft.com/wix/UtilExtension"
+     xmlns:ui="http://schemas.microsoft.com/wix/UIExtension">
+	<Product Id="*" Name="Veneka.Indigo.BackOffice.Application" Language="1033" Version="1.0.0.0" Manufacturer="Veneka" UpgradeCode="dab1865e-3f50-418e-a2f9-d8cfb7b6b70d">
+		<Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
+
+    <MajorUpgrade
+      AllowDowngrades="no"
+      AllowSameVersionUpgrades="no"
+      IgnoreRemoveFailure="no"
+      DowngradeErrorMessage="loc.Main_DowngradeErrorMessage"
+      Schedule="afterInstallInitialize"/>
+    
+		<MediaTemplate />
+    <Icon Id="INAIcon" SourceFile="$(var.Veneka.Indigo.BackOffice.Application.ProjectDir)Assets\Icons\INA.ico"/>
+    <Property Id="ARPPRODUCTICON" Value="INAIcon" />
+
+    <Property Id="IndigoBackOfficeAppEXE" Value="$(var.Veneka.Indigo.BackOffice.Application.TargetFileName)" />
+    <Property Id="Printer" Value="Veneka"/>
+
+    <Feature Id="ProductFeature" Title="Veneka.Indigo.BackOffice.Application.Setup" Level="1">
+      <ComponentGroupRef Id="ProductComponents" />
+      <ComponentRef Id="RegistryEntries" />
+      <ComponentRef Id="cmpA1B1E83CAE5B4A6DED6F20D6E3CB4498" />
+      <ComponentRef Id="ApplicationShortcut" />
+      <ComponentRef Id="DesktopShortcut"/>
+    </Feature>
+    <Feature Id="VCRedist"
+           Title="Visual C++ 2010 Runtime"
+           AllowAdvertise="no"
+           Display="hidden"
+           Level="1">
+      <MergeRef Id="VCRedist"/>
+    </Feature>
+    <Property Id="WIXUI_INSTALLDIR" Value="INSTALLFOLDER" ></Property>
+    <UIRef Id="WixUI_InstallDir"/>
+    <UIRef Id="WixUI_Common" />
+      
+<CustomAction Id="RunBatch"                 
+                  Execute="deferred" 
+                  Return="ignore"             
+                  Impersonate="no"   
+              
+                  ExeCommand="&quot;[SystemFolder]cmd.exe&quot; /C &quot;[INSTALLFOLDER]Register_ZXP7.bat&quot;"
+                  Directory="INSTALLFOLDER"/>
+<InstallExecuteSequence>
+  <Custom Action="RunBatch" Before="InstallFinalize"/>
+</InstallExecuteSequence>  
+	</Product>
+  
+  <Fragment>
+    <Directory Id="TARGETDIR" Name="SourceDir">
+    
+      <Directory Id="ProgramMenuFolder">
+        <Directory Id="ApplicationProgramsFolder" Name="Veneka.BackOffice.Application"/>
+
+      </Directory>
+        <Directory Id="ProgramFilesFolder">
+          <Directory Id="DesktopFolder"  SourceName="Desktop"/>
+        <Directory Id="Veneka" Name="Veneka">
+          <Directory Id="INSTALLFOLDER" Name="Indigo.BackOffice.Application">
+            <Directory Id="DEVICEFOLDER" Name="Device">
+              <Directory Id="PRINTERFOLDER" Name="Printer">
+                <Directory Id="ZEBRAFOLDER" Name="Zebra">
+                  <Directory Id="dir3F65056A339C4AA7858889A00442C621" Name="ZXP7" />
+                </Directory>
+              </Directory>
+              
+            </Directory>
+          </Directory>
+        </Directory>
+      </Directory>
+    
+    </Directory>
+  </Fragment>
+
+  <Fragment>
+    <Component Id="DesktopShortcut" Directory="INSTALLFOLDER" Guid="*">
+      <RegistryValue Id="RegShortcutDesktop" Root="HKCU"
+              Key="SOFTWARE\ACME\settings" Name="DesktopSC" Value="1"
+              Type="integer" KeyPath="yes" />
+      <Shortcut Id="desktopSC" Target="[INSTALLFOLDER]Veneka.Indigo.BackOffice.Application.exe"
+              Directory="DesktopFolder" Name="Veneka.Indigo.BackOffice.Application"
+              Icon="INAIcon" IconIndex="0"
+              WorkingDirectory="APPLICATIONFOLDER" Advertise="no"/>
+    </Component>
+  </Fragment>
+  <Fragment>
+  
+    <DirectoryRef Id="ApplicationProgramsFolder">
+
+      <Component Id="ApplicationShortcut" Guid="{D72006DA-A3E1-484F-AFF4-34B3D16F5204}">
+        <Shortcut Id="ApplicationStartMenuShortcut" 
+             Name="Veneka.BackOffice.Application"
+           Description="Veneka.Indigo.BackOffice.Application"
+            Target="[INSTALLFOLDER]Veneka.Indigo.BackOffice.Application.exe"
+                  WorkingDirectory="INSTALLFOLDER"/>
+        <RemoveFolder Id="ApplicationProgramsFolder" On="uninstall"/>
+        <RegistryValue Root="HKCU" Key="Software\Veneka\Veneka.Indigo.BackOffice.Application" Name="installed" Type="integer" Value="1" KeyPath="yes"/>
+      </Component>
+    </DirectoryRef>
+  </Fragment>
+  <Fragment>
+    <DirectoryRef Id="TARGETDIR">
+      
+      <Component Id="RegistryEntries" Guid="9E4987E9-1241-4486-88E1-1DCECE66AD8B">
+        <RegistryKey Root="HKCR"
+                     Key="IndigoBackOfficeApp"
+                     ForceCreateOnInstall="yes"
+                     ForceDeleteOnUninstall="yes">
+          <RegistryKey Key="DefaultIcon">
+            <RegistryValue Type="string" Value="[INSTALLFOLDER][Veneka.BackOffice.ApplicationEXE]" />
+          </RegistryKey>
+          <RegistryKey Key="Shell">
+            <RegistryKey Key="Open">
+              <RegistryKey Key="command">
+                <RegistryValue Type="string" Value='"[INSTALLFOLDER][Veneka.BackOffice.ApplicationEXE]" "%1"' />
+              </RegistryKey>
+            </RegistryKey>
+          </RegistryKey>
+          <RegistryValue Type="string" Value="URL:Veneka.BackOffice.Application Protocol" KeyPath="yes"/>
+          <RegistryValue Type="string" Name="URL Protocol" Value="" />
+        </RegistryKey>
+      </Component>
+      <Merge Id="VCRedist"
+           SourceFile="$(var.Veneka.Indigo.BackOffice.Application.ProjectDir)MergeModules\Microsoft_VC110_CRT_x86.msm"
+           DiskId="1"
+           Language="0"/>
+    </DirectoryRef>
+  </Fragment>
+
+  <Fragment>
+    <ComponentGroup Id="ProductComponents" Directory="INSTALLFOLDER">
+      <Component Id="ProductComponent" Guid="AE104F5C-4B60-416A-852D-8CCBE28B20AB">
+        <File Id="fileIndigoBackofficeEXE" Source="$(var.Veneka.Indigo.BackOffice.Application.TargetPath)" />
+        <File Id="fileIndigoBackofficeAppCONFIG" Source="$(var.Veneka.Indigo.BackOffice.Application.TargetPath).config" />
+        <File Id="fileBackOfficeAppApiDLL" Source="$(var.Veneka.Indigo.BackOffice.Application.TargetDir)Veneka.Indigo.BackOffice.API.dll" />
+        <File Id="fileServiceAuthApiDLL" Source="$(var.Veneka.Indigo.BackOffice.Application.TargetDir)Veneka.Indigo.ServicesAuthentication.API.dll" />
+        <File Id="fileCommonLoggingCore" Source="$(var.Veneka.Indigo.BackOffice.Application.TargetDir)Common.Logging.Core.dll" />
+        <File Id="fileCommonLogging" Source="$(var.Veneka.Indigo.BackOffice.Application.TargetDir)Common.Logging.dll" />
+        <File Id="fileCommonLog4net" Source="$(var.Veneka.Indigo.BackOffice.Application.TargetDir)Common.Logging.Log4Net1213.dll" />
+        <File Id="fileLog4net" Source="$(var.Veneka.Indigo.BackOffice.Application.TargetDir)log4net.dll" />
+        <File Id="fileVenekaDataDLL" Source="$(var.Veneka.Indigo.BackOffice.Application.TargetDir)bc-fips-1.0.1.dll" />
+        <File Id="fileSQLLiteDLL" Source="$(var.Veneka.Indigo.BackOffice.Application.TargetDir)System.Data.SQLite.dll" />
+        <File Id="fileSQLIiteEF6DLL" Source="$(var.Veneka.Indigo.BackOffice.Application.TargetDir)System.Data.SQLite.EF6.dll" />
+        <!--<File Id="fileProductDLL" Source="$(var.Veneka.Indigo.BackOffice.Application.TargetDir)Veneka.Indigo.Integration.ProductPrinting.dll" />-->
+        <File Id="fileSQLLiteInteropDLL" Source="$(var.Veneka.Indigo.BackOffice.Application.TargetDir)\x86\SQLite.Interop.dll" />
+
+        
+      </Component>
+    </ComponentGroup>
+  </Fragment>
+  <!--Generate the Fragment for ZMotifPrinter dll-->
+  <!--C:\Program Files (x86)\WiX Toolset v3.11\bin>heat file "C:\Repos\Indigo\Source\indigoCardIssuingApplication\Veneka.Indigo.BackOffice.Application\Devices\Zebra\SDK\ZMotifPrinter.dll" -ag -template fragment -out "file.wxs"-->
+  <Fragment>
+    <DirectoryRef Id="dir3F65056A339C4AA7858889A00442C621">
+      <Component Id="cmpA1B1E83CAE5B4A6DED6F20D6E3CB4498" Guid="5C3C2D42-EF33-41CB-8CC5-A3DFA3949F99">
+        <AppId Description="ZMOTIFPRINTER.DLL" Id="{9EACDE35-D6B1-49B8-BDBB-737D297774E0}" />
+        <File Id="fil850985FA57767B4CB0285C98241F4F7E" KeyPath="yes" Source="$(var.Veneka.Indigo.BackOffice.Application.ProjectDir)Devices\Zebra\SDK\ZMotifPrinter.dll">
+          <TypeLib Id="{1D2498AA-D4EB-4F0C-975E-C7B157B0C2DA}" Description="ZMotifPrinter 1.0 Type Library" HelpDirectory="dir3F65056A339C4AA7858889A00442C621" Language="0" MajorVersion="1" MinorVersion="0">
+            <Class Id="{05D8B0D6-1FBD-4DF9-B261-3A579F585D87}" Context="InprocServer32" Description="JobControl Class" ThreadingModel="apartment" Programmable="yes">
+              <ProgId Id="ZMotifPrinter.JobControl.1" Description="JobControl Class">
+                <ProgId Id="ZMotifPrinter.JobControl" Description="JobControl Class" />
+              </ProgId>
+            </Class>
+            <Class Id="{1DDB7CC2-C04F-4432-A286-A84FB0545335}" Context="InprocServer32" Description="Utilities Class" ThreadingModel="apartment" Programmable="yes">
+              <ProgId Id="ZMotifPrinter.Utilities.1" Description="Utilities Class">
+                <ProgId Id="ZMotifPrinter.Utilities" Description="Utilities Class" />
+              </ProgId>
+            </Class>
+            <Class Id="{3A36272A-DF5E-48EB-94C8-A70EDC269057}" Context="InprocServer32" Description="Laminator Class" ThreadingModel="apartment" Programmable="yes">
+              <ProgId Id="ZMotifPrinter.Laminator.1" Description="Laminator Class">
+                <ProgId Id="ZMotifPrinter.Laminator" Description="Laminator Class" />
+              </ProgId>
+            </Class>
+            <Class Id="{66CAC209-8EA3-4308-990A-F2B5AD38A12E}" Context="InprocServer32" Description="Device Class" ThreadingModel="apartment" Programmable="yes">
+              <ProgId Id="ZMotifPrinter.Device.1" Description="Device Class">
+                <ProgId Id="ZMotifPrinter.Device" Description="Device Class" />
+              </ProgId>
+            </Class>
+            <Class Id="{840177AB-C69A-463C-8FAF-8137489EF565}" Context="InprocServer32" Description="Job Class" ThreadingModel="apartment" Programmable="yes">
+              <ProgId Id="ZMotifPrinter.Job.1" Description="Job Class">
+                <ProgId Id="ZMotifPrinter.Job" Description="Job Class" />
+              </ProgId>
+            </Class>
+            <Class Id="{9C8BC933-215D-4961-9F85-2ABC11F2F9A0}" Context="InprocServer32" Description="CustomMagSettings Class" ThreadingModel="apartment" Programmable="yes">
+              <ProgId Id="ZMotifPrinter.CustomMagSettings.1" Description="CustomMagSettings Class">
+                <ProgId Id="ZMotifPrinter.CustomMagSettings" Description="CustomMagSettings Class" />
+              </ProgId>
+            </Class>
+            <Class Id="{A3250E26-5974-457E-85E3-FE41958F9C10}" Context="InprocServer32" Description="FileSystem Class" ThreadingModel="apartment" Programmable="yes">
+              <ProgId Id="ZMotifPrinter.FileSystem.1" Description="FileSystem Class">
+                <ProgId Id="ZMotifPrinter.FileSystem" Description="FileSystem Class" />
+              </ProgId>
+            </Class>
+            <Interface Id="{0D430192-2572-4349-A166-D82A7F8D9DA0}" Name="ICustomMagSettings" ProxyStubClassId32="{00020424-0000-0000-C000-000000000046}" />
+            <Interface Id="{3DF5AB2E-21FB-41DF-B58E-83328784A26F}" Name="ILaminator" ProxyStubClassId32="{00020424-0000-0000-C000-000000000046}" />
+            <Interface Id="{44A3D77A-41B9-47B2-8ECE-0E6C404D40CA}" Name="IFileSystem" ProxyStubClassId32="{00020424-0000-0000-C000-000000000046}" />
+            <Interface Id="{85A47042-3655-463F-A03F-4331A3C56431}" Name="IJobControl" ProxyStubClassId32="{00020424-0000-0000-C000-000000000046}" />
+            <Interface Id="{930C6AF2-2A33-4948-9A13-9A28F5F92E2E}" Name="IUtilities" ProxyStubClassId32="{00020424-0000-0000-C000-000000000046}" />
+            <Interface Id="{E9A73FF4-8669-4802-9983-F37877FB93C5}" Name="IDevice" ProxyStubClassId32="{00020424-0000-0000-C000-000000000046}" />
+            <Interface Id="{FBD1FB49-9BD1-40A8-B45D-2095C5564154}" Name="IJob" ProxyStubClassId32="{00020424-0000-0000-C000-000000000046}" />
+          </TypeLib>
+        </File>
+        <RegistryValue Root="HKCR" Key="AppID\{9EACDE35-D6B1-49b8-BDBB-737D297774E0}" Name="AppID" Value="{9EACDE35-D6B1-49b8-BDBB-737D297774E0}" Type="string" Action="write" />
+        <RegistryValue Root="HKLM" Key="SYSTEM\CurrentControlSet\Services\EventLog\Application\Zebra ZXP Series Card Printer" Name="EventMessageFile" Value="[#fil850985FA57767B4CB0285C98241F4F7E]" Type="string" Action="write" />
+        <RegistryValue Root="HKLM" Key="SYSTEM\CurrentControlSet\Services\EventLog\Application\Zebra ZXP Series Card Printer" Name="TypesSupported" Value="7" Type="integer" Action="write" />
+        <File Id="fileZMotifGraphicsDLL" Source="$(var.Veneka.Indigo.BackOffice.Application.ProjectDir)Devices\Zebra\SDK\ZMotifGraphics.DLL" />
+      </Component>
+    </DirectoryRef>
+  </Fragment>
+</Wix>

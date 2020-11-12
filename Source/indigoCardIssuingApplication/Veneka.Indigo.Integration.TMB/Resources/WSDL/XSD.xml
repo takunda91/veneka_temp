@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Published by JAX-WS RI (http://jax-ws.java.net). RI's version is Metro/2.3.1-b419 (branches/2.3.1.x-7937; 2014-08-04T08:11:03+0000) JAXWS-RI/2.2.10-b140803.1500 JAXWS-API/2.2.11 JAXB-RI/2.2.10-b140802.1033 JAXB-API/2.2.12-b140109.1041 svn-revision#unknown. -->
+<xs:schema xmlns:tns="http://ws.application.nano.jetsol.hu/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://ws.application.nano.jetsol.hu/">
+
+<xs:element name="chargeFeeUpload" type="tns:chargeFeeUpload"/>
+
+<xs:element name="chargeFeeUploadResponse" type="tns:chargeFeeUploadResponse"/>
+
+<xs:element name="getDecryptedString" type="tns:getDecryptedString"/>
+
+<xs:element name="getDecryptedStringResponse" type="tns:getDecryptedStringResponse"/>
+
+<xs:element name="getEncryptedString" type="tns:getEncryptedString"/>
+
+<xs:element name="getEncryptedStringResponse" type="tns:getEncryptedStringResponse"/>
+
+<xs:element name="queryAccBal" type="tns:queryAccBal"/>
+
+<xs:element name="queryAccBalResponse" type="tns:queryAccBalResponse"/>
+
+<xs:element name="queryCustAcc" type="tns:queryCustAcc"/>
+
+<xs:element name="queryCustAccResponse" type="tns:queryCustAccResponse"/>
+
+<xs:complexType name="queryAccBal">
+<xs:sequence>
+<xs:element name="queryAccBalRequest" type="tns:queryAccBalRequest" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="queryAccBalRequest">
+<xs:sequence>
+<xs:element name="accountNumber" type="xs:string" minOccurs="0"/>
+<xs:element name="appName" type="xs:string" minOccurs="0"/>
+<xs:element name="branchCode" type="xs:string" minOccurs="0"/>
+<xs:element name="userId" type="xs:string" minOccurs="0"/>
+<xs:element name="userToken" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="queryAccBalResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:queryAccBalWSResponse" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="queryAccBalWSResponse">
+<xs:sequence>
+<xs:element name="avlBal" type="xs:string" minOccurs="0"/>
+<xs:element name="ECode" type="xs:string" minOccurs="0"/>
+<xs:element name="EMessage" type="xs:string" minOccurs="0"/>
+<xs:element name="userToken" type="xs:string" minOccurs="0"/>
+<xs:element name="WCode" type="xs:string" minOccurs="0"/>
+<xs:element name="WMessage" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="queryCustAcc">
+<xs:sequence>
+<xs:element name="queryCustAccRequest" type="tns:queryCustAccRequest" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="queryCustAccRequest">
+<xs:sequence>
+<xs:element name="accountNumber" type="xs:string" minOccurs="0"/>
+<xs:element name="appName" type="xs:string" minOccurs="0"/>
+<xs:element name="branchCode" type="xs:string" minOccurs="0"/>
+<xs:element name="userId" type="xs:string" minOccurs="0"/>
+<xs:element name="userToken" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="queryCustAccResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:queryCustAccWSResponse" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="queryCustAccWSResponse">
+<xs:sequence>
+<xs:element name="accType" type="xs:string" minOccurs="0"/>
+<xs:element name="acstatNoCr" type="xs:string" minOccurs="0"/>
+<xs:element name="acstatNoDr" type="xs:string" minOccurs="0"/>
+<xs:element name="addr1" type="xs:string" minOccurs="0"/>
+<xs:element name="addr2" type="xs:string" minOccurs="0"/>
+<xs:element name="addr3" type="xs:string" minOccurs="0"/>
+<xs:element name="adesc" type="xs:string" minOccurs="0"/>
+<xs:element name="ccy" type="xs:string" minOccurs="0"/>
+<xs:element name="custName" type="xs:string" minOccurs="0"/>
+<xs:element name="custNo" type="xs:string" minOccurs="0"/>
+<xs:element name="dateOfBirth" type="xs:string" minOccurs="0"/>
+<xs:element name="dorm" type="xs:string" minOccurs="0"/>
+<xs:element name="ECode" type="xs:string" minOccurs="0"/>
+<xs:element name="EMessage" type="xs:string" minOccurs="0"/>
+<xs:element name="frozen" type="xs:string" minOccurs="0"/>
+<xs:element name="postCode" type="xs:string" minOccurs="0"/>
+<xs:element name="txnStat" type="xs:string" minOccurs="0"/>
+<xs:element name="userToken" type="xs:string" minOccurs="0"/>
+<xs:element name="WCode" type="xs:string" minOccurs="0"/>
+<xs:element name="WMessage" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="chargeFeeUpload">
+<xs:sequence>
+<xs:element name="chargeFeeUploadRequest" type="tns:chargeFeeUploadRequest" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="chargeFeeUploadRequest">
+<xs:sequence>
+<xs:element name="appName" type="xs:string" minOccurs="0"/>
+<xs:element name="branchCode" type="xs:string" minOccurs="0"/>
+<xs:element name="cardType" type="xs:string" minOccurs="0"/>
+<xs:element name="sourceAccount" type="xs:string" minOccurs="0"/>
+<xs:element name="txnAmount" type="xs:string" minOccurs="0"/>
+<xs:element name="txnRefnum" type="xs:string" minOccurs="0"/>
+<xs:element name="userId" type="xs:string" minOccurs="0"/>
+<xs:element name="userToken" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="chargeFeeUploadResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:chargeFeeUploadWSResponse" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="chargeFeeUploadWSResponse">
+<xs:sequence>
+<xs:element name="ECode" type="xs:string" minOccurs="0"/>
+<xs:element name="EMessage" type="xs:string" minOccurs="0"/>
+<xs:element name="transRef" type="xs:string" minOccurs="0"/>
+<xs:element name="userToken" type="xs:string" minOccurs="0"/>
+<xs:element name="WCode" type="xs:string" minOccurs="0"/>
+<xs:element name="WMessage" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getEncryptedString">
+<xs:sequence>
+<xs:element name="appName" type="xs:string" minOccurs="0"/>
+<xs:element name="message" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getEncryptedStringResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getDecryptedString">
+<xs:sequence>
+<xs:element name="appName" type="xs:string" minOccurs="0"/>
+<xs:element name="message" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getDecryptedStringResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>

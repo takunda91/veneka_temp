@@ -1,0 +1,294 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="btnLinkCardResource.Text" xml:space="preserve">
+    <value>Subir Detalles de la Tarjeta</value>
+  </data>
+  <data name="btnManualLinkResource.Text" xml:space="preserve">
+    <value>Manual de la tarjeta de Enlace</value>
+  </data>
+  <data name="btnPinCaptureResource.Text" xml:space="preserve">
+    <value>PIN de captura</value>
+  </data>
+  <data name="btnPrintFailedResource.Text" xml:space="preserve">
+    <value>Error de impresión</value>
+  </data>
+  <data name="btnPrintResource.Text" xml:space="preserve">
+    <value>Tarjeta de la impresión</value>
+  </data>
+  <data name="btnPrintSuccessResource.Text" xml:space="preserve">
+    <value>El éxito de impresión</value>
+  </data>
+  <data name="InfoCardPrintedCorrectly" xml:space="preserve">
+    <value>Por favor, compruebe que la tarjeta está impresa correctamente. &lt;Se /&gt; Si es así, haga clic en Imprimir Éxito, de lo contrario haga clic en Imprimir Falló</value>
+  </data>
+  <data name="InfoConfirmApprove" xml:space="preserve">
+    <value>Por favor, confirme la información titular de la cuenta es correcta.</value>
+  </data>
+  <data name="InfoConfirmPrint" xml:space="preserve">
+    <value>Haga clic en "Imprimir" para imprimir la tarjeta &lt;estar /&gt; Si la tarjeta impresa correctamente, haga clic en "Imprimir Éxito 'otra cosa' impresión no se pudo'</value>
+  </data>
+  <data name="InfoConfirmPrintFailed" xml:space="preserve">
+    <value>Por favor, compruebe que la tarjeta no imprime correctamente</value>
+  </data>
+  <data name="InfoConfirmPrintSuccessful" xml:space="preserve">
+    <value>Por favor, confirme que la tarjeta ha impreso correctamente</value>
+  </data>
+  <data name="InfoConfirmReject" xml:space="preserve">
+    <value>¿Está seguro de que desea rechazar esta carta?</value>
+  </data>
+  <data name="InfoConfirmSpoil" xml:space="preserve">
+    <value>¿Seguro que quieres estropear esta carta?</value>
+  </data>
+  <data name="InfoRefresh" xml:space="preserve">
+    <value>Información de la tarjeta ha sido actualizada.</value>
+  </data>
+  <data name="lblAccountNumberResource.Text" xml:space="preserve">
+    <value>Número de cuenta</value>
+  </data>
+  <data name="lblAccountTypeResource.Text" xml:space="preserve">
+    <value>Tipo de cuenta</value>
+  </data>
+  <data name="lblBatchReferenceResource1.Text" xml:space="preserve">
+    <value>Lote de referencia</value>
+  </data>
+  <data name="lblBrachCardStatusResource.Text" xml:space="preserve">
+    <value>Estado de la tarjeta rama</value>
+  </data>
+  <data name="lblCardDetailsResource.Text" xml:space="preserve">
+    <value>Detalles de tarjeta</value>
+  </data>
+  <data name="lblCardNumberResource.Text" xml:space="preserve">
+    <value>Número de tarjeta</value>
+  </data>
+  <data name="lblCardStatusResource1.Text" xml:space="preserve">
+    <value>Estado de la tarjeta</value>
+  </data>
+  <data name="lblCmsagreementResource.Text" xml:space="preserve">
+    <value>Acuerdo de la CMS #</value>
+  </data>
+  <data name="lblContractIdResource.Text" xml:space="preserve">
+    <value>CMS ID de cliente</value>
+  </data>
+  <data name="lblCurrencyResource.Text" xml:space="preserve">
+    <value>Moneda</value>
+  </data>
+  <data name="lblCustomerDetailsResource1.Text" xml:space="preserve">
+    <value>Detalles del cliente</value>
+  </data>
+  <data name="lblCustomerTypeResource.Text" xml:space="preserve">
+    <value>Customer Type_sp</value>
+  </data>
+  <data name="lblDateIssuedResource.Text" xml:space="preserve">
+    <value>Fecha de publicación</value>
+  </data>
+  <data name="lblDistBatchRefResource.Text" xml:space="preserve">
+    <value>Ref lotes dist</value>
+  </data>
+  <data name="lblDistCardStatusResource.Text" xml:space="preserve">
+    <value>Estado de la tarjeta dist</value>
+  </data>
+  <data name="lblErrorMessageResource.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblFirstNamesResource.Text" xml:space="preserve">
+    <value>Nombre de pila</value>
+  </data>
+  <data name="lblFirstNamesResource1.Text" xml:space="preserve">
+    <value>Nombre de pila</value>
+  </data>
+  <data name="lblInfoMessageResource.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblIssuedByResource.Text" xml:space="preserve">
+    <value>Expedido por</value>
+  </data>
+  <data name="lblIssuingBranchResource.Text" xml:space="preserve">
+    <value>Rama de emitir</value>
+  </data>
+  <data name="lblIssuingDetailsResource1.Text" xml:space="preserve">
+    <value>La emisión de detalles</value>
+  </data>
+  <data name="lblLastNameResource.Text" xml:space="preserve">
+    <value>Apellido</value>
+  </data>
+  <data name="lblLoadBatchRefResource.Text" xml:space="preserve">
+    <value>Ref carga por lotes</value>
+  </data>
+  <data name="lblLoadCardStatusResource.Text" xml:space="preserve">
+    <value>Estado de la tarjeta de carga</value>
+  </data>
+  <data name="lblMiddleNameResource.Text" xml:space="preserve">
+    <value>Segundo nombre</value>
+  </data>
+  <data name="lblReasonForIssueResource.Text" xml:space="preserve">
+    <value>Motivo de su emisión</value>
+  </data>
+  <data name="lblResidentResource.Text" xml:space="preserve">
+    <value>Residente</value>
+  </data>
+  <data name="lblSpoilCommentsResource.Text" xml:space="preserve">
+    <value>Comentarios</value>
+  </data>
+  <data name="lblSpoilReasonResource.Text" xml:space="preserve">
+    <value>Motivo botín</value>
+  </data>
+  <data name="PageResource.Title" xml:space="preserve">
+    <value>Detalles de tarjeta</value>
+  </data>
+  <data name="userTitleResource.Text" xml:space="preserve">
+    <value>Título</value>
+  </data>
+  <data name="nameOnCardResource" xml:space="preserve">
+    <value>Nombre en la tarjeta</value>
+  </data>
+  <data name="lblProductNameResource.Text" xml:space="preserve">
+    <value>Ficha de producto</value>
+  </data>
+  <data name="lblCardDetailsResource.GroupingText" xml:space="preserve">
+    <value>Detalles de tarjeta</value>
+  </data>
+  <data name="lblCustomerDetailsResource1.GroupingText" xml:space="preserve">
+    <value>Detalles del cliente</value>
+  </data>
+  <data name="lblIssuingDetailsResource1.GroupingText" xml:space="preserve">
+    <value>La emisión de detalles</value>
+  </data>
+  <data name="lblContactNumberResource.Text" xml:space="preserve">
+    <value>Número de contacto</value>
+  </data>
+  <data name="lblIDNumberResource.Text" xml:space="preserve">
+    <value>ID / Número de pasaporte</value>
+  </data>
+  <data name="InfoConfirmRePrintPinMailer" xml:space="preserve">
+    <value>¿Está seguro de que desea volver a imprimir el envío de PIN para esta tarjeta?</value>
+  </data>
+  <data name="InfoConfirmRePrintPinMailerReject" xml:space="preserve">
+    <value>¿Está seguro de que desea rechazar la reimpresión envío de PIN</value>
+  </data>
+  <data name="lblCardRefNoResource.Text" xml:space="preserve">
+    <value>Tarjeta de referencia n</value>
+  </data>
+  <data name="InfoConfirmuploadcardsuccess" xml:space="preserve">
+    <value>Tarjeta subido correctamente a la CMS.</value>
+  </data>
+  <data name="InfoConfrimPincapturedsuccess" xml:space="preserve">
+    <value>Pin capturado con éxito. Por favor, sube datos de su tarjeta de CMS.</value>
+  </data>
+</root>

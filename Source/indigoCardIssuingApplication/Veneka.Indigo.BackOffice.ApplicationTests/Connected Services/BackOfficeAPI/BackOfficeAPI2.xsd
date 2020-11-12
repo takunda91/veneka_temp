@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Veneka.Indigo.BackOffice.API" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Veneka.Indigo.BackOffice.API" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://localhost:8443/BackOfficeAPI.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:complexType name="ResponseOfstring">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ResponseOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/Veneka.Indigo.BackOffice.API" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="string" Namespace="http://www.w3.org/2001/XMLSchema" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AdditionalInfo" nillable="true" type="xs:string" />
+      <xs:element name="Session" nillable="true" type="xs:string" />
+      <xs:element name="Success" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Value" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ResponseOfstring" nillable="true" type="tns:ResponseOfstring" />
+  <xs:complexType name="ResponseOfArrayOfGetPrintBatchDetailsyE57n4_PG">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ResponseOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/Veneka.Indigo.BackOffice.API" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="ArrayOfGetPrintBatchDetails" Namespace="http://schemas.datacontract.org/2004/07/Veneka.Indigo.BackOffice.API" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AdditionalInfo" nillable="true" type="xs:string" />
+      <xs:element name="Session" nillable="true" type="xs:string" />
+      <xs:element name="Success" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Value" nillable="true" type="tns:ArrayOfGetPrintBatchDetails" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ResponseOfArrayOfGetPrintBatchDetailsyE57n4_PG" nillable="true" type="tns:ResponseOfArrayOfGetPrintBatchDetailsyE57n4_PG" />
+  <xs:complexType name="ArrayOfGetPrintBatchDetails">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="GetPrintBatchDetails" nillable="true" type="tns:GetPrintBatchDetails" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGetPrintBatchDetails" nillable="true" type="tns:ArrayOfGetPrintBatchDetails" />
+  <xs:complexType name="GetPrintBatchDetails">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:PrintBatchData">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CreatedBy" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CreatedDateTime" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="NoOfRequests" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetPrintBatchDetails" nillable="true" type="tns:GetPrintBatchDetails" />
+  <xs:complexType name="PrintBatchData">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="PrintBatchId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="PrintBatchStatusId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Print_Batch_Status" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ProductId" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PrintBatchData" nillable="true" type="tns:PrintBatchData" />
+  <xs:complexType name="ResponseOfArrayOfProductTemplateyE57n4_PG">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ResponseOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/Veneka.Indigo.BackOffice.API" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="ArrayOfProductTemplate" Namespace="http://schemas.datacontract.org/2004/07/Veneka.Indigo.BackOffice.API" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AdditionalInfo" nillable="true" type="xs:string" />
+      <xs:element name="Session" nillable="true" type="xs:string" />
+      <xs:element name="Success" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Value" nillable="true" type="tns:ArrayOfProductTemplate" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ResponseOfArrayOfProductTemplateyE57n4_PG" nillable="true" type="tns:ResponseOfArrayOfProductTemplateyE57n4_PG" />
+  <xs:complexType name="ArrayOfProductTemplate">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ProductTemplate" nillable="true" type="tns:ProductTemplate" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfProductTemplate" nillable="true" type="tns:ArrayOfProductTemplate" />
+  <xs:complexType name="ProductTemplate">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ProductTemplateResult">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="MappedName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="font" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="fontColourRGB" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="font_size" type="xs:int" />
+          <xs:element minOccurs="0" name="productPrintFieldTypeId" type="xs:int" />
+          <xs:element minOccurs="0" name="x" type="xs:int" />
+          <xs:element minOccurs="0" name="y" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ProductTemplate" nillable="true" type="tns:ProductTemplate" />
+  <xs:complexType name="ProductTemplateResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ProductPrintFieldId" type="xs:int" />
+      <xs:element minOccurs="0" name="Value" nillable="true" type="xs:base64Binary" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ProductTemplateResult" nillable="true" type="tns:ProductTemplateResult" />
+  <xs:complexType name="ResponseOfArrayOfRequestDetailsyE57n4_PG">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ResponseOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/Veneka.Indigo.BackOffice.API" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="ArrayOfRequestDetails" Namespace="http://schemas.datacontract.org/2004/07/Veneka.Indigo.BackOffice.API" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AdditionalInfo" nillable="true" type="xs:string" />
+      <xs:element name="Session" nillable="true" type="xs:string" />
+      <xs:element name="Success" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Value" nillable="true" type="tns:ArrayOfRequestDetails" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ResponseOfArrayOfRequestDetailsyE57n4_PG" nillable="true" type="tns:ResponseOfArrayOfRequestDetailsyE57n4_PG" />
+  <xs:complexType name="ArrayOfRequestDetails">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="RequestDetails" nillable="true" type="tns:RequestDetails" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRequestDetails" nillable="true" type="tns:ArrayOfRequestDetails" />
+  <xs:complexType name="RequestDetails">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="PAN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ProdTemplateList" nillable="true" type="tns:ArrayOfProductTemplateResult" />
+      <xs:element minOccurs="0" name="RequestId" type="xs:long" />
+      <xs:element minOccurs="0" name="RequestReference" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RequestStatuesId" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RequestDetails" nillable="true" type="tns:RequestDetails" />
+  <xs:complexType name="ArrayOfProductTemplateResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ProductTemplateResult" nillable="true" type="tns:ProductTemplateResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfProductTemplateResult" nillable="true" type="tns:ArrayOfProductTemplateResult" />
+  <xs:complexType name="UpdatePrintBatchDetails">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:PrintBatchData">
+        <xs:sequence>
+          <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Cardstobespoiled" nillable="true" type="q1:ArrayOfstring" />
+          <xs:element minOccurs="0" name="RequestDetails" nillable="true" type="tns:ArrayOfRequestDetails" />
+          <xs:element minOccurs="0" name="Successful" type="xs:boolean" />
+          <xs:element minOccurs="0" name="notes" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="UpdatePrintBatchDetails" nillable="true" type="tns:UpdatePrintBatchDetails" />
+  <xs:complexType name="ResponseOfboolean">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ResponseOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/Veneka.Indigo.BackOffice.API" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="boolean" Namespace="http://www.w3.org/2001/XMLSchema" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AdditionalInfo" nillable="true" type="xs:string" />
+      <xs:element name="Session" nillable="true" type="xs:string" />
+      <xs:element name="Success" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Value" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ResponseOfboolean" nillable="true" type="tns:ResponseOfboolean" />
+</xs:schema>

@@ -1,0 +1,393 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AuditAdminHeading" xml:space="preserve">
+    <value>Gestionnaire d'audit</value>
+    <comment>the heading for audit admin</comment>
+  </data>
+  <data name="AuditAdminView" xml:space="preserve">
+    <value>Consulter le rapport d'audit</value>
+  </data>
+  <data name="BranchAdminCreate" xml:space="preserve">
+    <value>Creer Agence</value>
+  </data>
+  <data name="BranchAdminHeading" xml:space="preserve">
+    <value>Admin Agence</value>
+    <comment>The heading for branch admin</comment>
+  </data>
+  <data name="BranchAdminManage" xml:space="preserve">
+    <value>Gestion d'Agence</value>
+  </data>
+  <data name="CardAdminHeading" xml:space="preserve">
+    <value>Emission de carte</value>
+    <comment>The heading for card admin</comment>
+  </data>
+  <data name="CardAdminInError" xml:space="preserve">
+    <value>Cartes erronnées</value>
+  </data>
+  <data name="CardAdminInProgress" xml:space="preserve">
+    <value>En cours</value>
+  </data>
+  <data name="CardAdminIssueCard" xml:space="preserve">
+    <value>Emettre la carte</value>
+  </data>
+  <data name="CardAdminReviewCards" xml:space="preserve">
+    <value>Vérifier les cartes</value>
+  </data>
+  <data name="CardAdminSearch" xml:space="preserve">
+    <value>Rechercher</value>
+  </data>
+  <data name="DistBatchAdminApproval" xml:space="preserve">
+    <value>En attente d'approbation</value>
+  </data>
+  <data name="DistBatchAdminCreate" xml:space="preserve">
+    <value>Créer un batch de distribution</value>
+  </data>
+  <data name="DistBatchAdminDispatch" xml:space="preserve">
+    <value>Dispatch à la Direction générale</value>
+  </data>
+  <data name="DistBatchAdminHeading" xml:space="preserve">
+    <value>Batch de distribution</value>
+    <comment>The heading for dist batch admin</comment>
+  </data>
+  <data name="DistBatchAdminReceive" xml:space="preserve">
+    <value>Recevoir le Batch</value>
+  </data>
+  <data name="DistBatchAdminSearch" xml:space="preserve">
+    <value>Rechercher</value>
+  </data>
+  <data name="FileLoaderAdminHeading" xml:space="preserve">
+    <value>Chargeur de fichier</value>
+    <comment>The heading for file loader admin</comment>
+  </data>
+  <data name="FileLoaderAdminView" xml:space="preserve">
+    <value>Consulter le journal</value>
+  </data>
+  <data name="IssuerAdminCreate" xml:space="preserve">
+    <value>Créer Emetteur</value>
+  </data>
+  <data name="IssuerAdminHeading" xml:space="preserve">
+    <value>Admin Emetteur</value>
+    <comment>The heading for issuer admin</comment>
+  </data>
+  <data name="IssuerAdminManage" xml:space="preserve">
+    <value>Gestion des Emetteurs</value>
+  </data>
+  <data name="LicenceAdminHeading" xml:space="preserve">
+    <value>Admin Licence</value>
+    <comment>The heading for Licence admin</comment>
+  </data>
+  <data name="LicenceAdminIssuer" xml:space="preserve">
+    <value>Ajouter une licence</value>
+  </data>
+  <data name="LicenceAdminList" xml:space="preserve">
+    <value>Liste de Licence</value>
+  </data>
+  <data name="LoadBatchAdminAwaitingApproval" xml:space="preserve">
+    <value>En attente d'approbation</value>
+  </data>
+  <data name="LoadBatchAdminHeading" xml:space="preserve">
+    <value>Batch chargé</value>
+    <comment>The heading for load batch admin</comment>
+  </data>
+  <data name="LoadBatchAdminSearch" xml:space="preserve">
+    <value>Rechercher</value>
+  </data>
+  <data name="MyAdminHeading" xml:space="preserve">
+    <value>Mon compte</value>
+    <comment>The heading for my adming</comment>
+  </data>
+  <data name="MyAdminLanguage" xml:space="preserve">
+    <value>Changer la langue</value>
+  </data>
+  <data name="MyAdminPassword" xml:space="preserve">
+    <value>Changer le mot de passe</value>
+  </data>
+  <data name="ProductsCreate" xml:space="preserve">
+    <value>Créer un Produit</value>
+  </data>
+  <data name="ProductsHeading" xml:space="preserve">
+    <value>Admin Produit</value>
+    <comment>The heading for products menu item</comment>
+  </data>
+  <data name="ProductsManage" xml:space="preserve">
+    <value>Gestion des Produits</value>
+  </data>
+  <data name="ReportInventory" xml:space="preserve">
+    <value>Inventaire</value>
+  </data>
+  <data name="ReportIssuecardSummary" xml:space="preserve">
+    <value>Résumé des cartes émises</value>
+  </data>
+  <data name="ReportsHeading" xml:space="preserve">
+    <value>Rapport</value>
+    <comment>The heading for Reports menu item</comment>
+  </data>
+  <data name="ReportsIssedCards" xml:space="preserve">
+    <value>Cartes émises</value>
+  </data>
+  <data name="ReportSpoilCardReport" xml:space="preserve">
+    <value>Rapport des cartes  détruites</value>
+  </data>
+  <data name="SystemAdminHeading" xml:space="preserve">
+    <value>Admin Système</value>
+    <comment>The heading for system admin</comment>
+  </data>
+  <data name="SystemAdminInterface" xml:space="preserve">
+    <value>Connexions d'interface</value>
+  </data>
+  <data name="SystemAdminLDAP" xml:space="preserve">
+    <value>Connexions LDAP</value>
+  </data>
+  <data name="UserAdminCreate" xml:space="preserve">
+    <value>Creer un Utilisateur</value>
+  </data>
+  <data name="UserAdminHeading" xml:space="preserve">
+    <value>Utilisateur Admin</value>
+    <comment>The heading for User Admin menu item</comment>
+  </data>
+  <data name="UserAdminManage" xml:space="preserve">
+    <value>Gestion des utilisateurs</value>
+  </data>
+  <data name="UserAdminSearch" xml:space="preserve">
+    <value>Rechercher</value>
+  </data>
+  <data name="UserGroupAdminCreate" xml:space="preserve">
+    <value>Créer un groupe d'utilisateur</value>
+  </data>
+  <data name="UserGroupAdminHeading" xml:space="preserve">
+    <value>Groupe d'utilisateur Admin</value>
+    <comment>The heading for user group admin</comment>
+  </data>
+  <data name="UserGroupAdminManage" xml:space="preserve">
+    <value>Gestion des groupes d'utilisateur </value>
+  </data>
+  <data name="VaultAdminCheckInOut" xml:space="preserve">
+    <value>Desallocation / Allocation</value>
+  </data>
+  <data name="VaultAdminHeading" xml:space="preserve">
+    <value>Gestion de coffre</value>
+    <comment>The heading for Vault Adming</comment>
+  </data>
+  <data name="ReportspoilcadsSummary" xml:space="preserve">
+    <value>Résumé des cartes détruites</value>
+  </data>
+  <data name="FileLoadList" xml:space="preserve">
+    <value>Chargement du fichier</value>
+  </data>
+  <data name="CardRequestBatchApprove" xml:space="preserve">
+    <value>Approuver</value>
+  </data>
+  <data name="CardProductionHeading" xml:space="preserve">
+    <value>Production</value>
+    <comment>Heading for Card Production</comment>
+  </data>
+  <data name="CardProductionUpload" xml:space="preserve">
+    <value>Télécharger</value>
+  </data>
+  <data name="CardProductionWorkInProgress" xml:space="preserve">
+    <value>Travail en cours</value>
+  </data>
+  <data name="CardStocktBatchPostApprove" xml:space="preserve">
+    <value>Post-Approuver</value>
+  </data>
+  <data name="CardStocktBatchPreApprove" xml:space="preserve">
+    <value>Pré-approuvé</value>
+  </data>
+  <data name="SubProductCreate" xml:space="preserve">
+    <value>Créer Sous Produit</value>
+  </data>
+  <data name="SubProductList" xml:space="preserve">
+    <value>Gérer les produits sous</value>
+    <comment>The heading for sub products menu item</comment>
+  </data>
+  <data name="MyAdminPinAuthorisation" xml:space="preserve">
+    <value>Gérer Autorisation Pin</value>
+    <comment>Add / Change Authorisation Pin</comment>
+  </data>
+  <data name="ReportBranchcardStockHeading" xml:space="preserve">
+    <value>Bulletin Direction Gestion des stocks</value>
+  </data>
+  <data name="ReportBurnRateReportHeading" xml:space="preserve">
+    <value>Graver Taux de rapport</value>
+  </data>
+  <data name="ReportFeeRevenueHeading" xml:space="preserve">
+    <value>Fee Rapport du revenu</value>
+  </data>
+  <data name="UseradminSettingMaintanance" xml:space="preserve">
+    <value>Paramètres administrateur de l'utilisateur</value>
+  </data>
+  <data name="External System Fields" xml:space="preserve">
+    <value>Les champs système externe</value>
+  </data>
+  <data name="ExternalSystems" xml:space="preserve">
+    <value>Systèmes externes</value>
+  </data>
+  <data name="ManageExternalSystemFields" xml:space="preserve">
+    <value>Gérer les champs système externe</value>
+  </data>
+  <data name="ManageExternalSystems" xml:space="preserve">
+    <value>Gérer les systèmes externes</value>
+  </data>
+  <data name="ReportCardsInProgress" xml:space="preserve">
+    <value>Card InProgress Report_fr</value>
+  </data>
+  <data name="CMSErrorReport" xml:space="preserve">
+    <value>CMS Error Report</value>
+  </data>
+  <data name="FeeStatusReport" xml:space="preserve">
+    <value>Fee Status Report </value>
+  </data>
+  <data name="RenewalApproveBatch" xml:space="preserve">
+    <value>Approve Batch</value>
+  </data>
+  <data name="RenewalApproveIncomingBatch" xml:space="preserve">
+    <value>Approve Incoming Batch</value>
+  </data>
+  <data name="RenewalApproveLoadedFile" xml:space="preserve">
+    <value>Approve File</value>
+  </data>
+  <data name="RenewalBranchReceival" xml:space="preserve">
+    <value>Receive at Branch</value>
+  </data>
+  <data name="RenewalCreateBatch" xml:space="preserve">
+    <value>Create Batch</value>
+  </data>
+  <data name="RenewalDistribute" xml:space="preserve">
+    <value>Create Distribution Batch</value>
+  </data>
+  <data name="RenewalFileLoad" xml:space="preserve">
+    <value>Load File</value>
+  </data>
+  <data name="RenewalHeader" xml:space="preserve">
+    <value>Card Renewal</value>
+  </data>
+  <data name="RenewalIssueCards" xml:space="preserve">
+    <value>Issue Cards</value>
+  </data>
+  <data name="RenewalReceiveIncomingBatch" xml:space="preserve">
+    <value>Receive Incoming Batch</value>
+  </data>
+  <data name="RenewalUploadToCMS" xml:space="preserve">
+    <value>Upload to CMS</value>
+  </data>
+  <data name="RenewalVerifyRenewalRequest" xml:space="preserve">
+    <value>Verify Card Renewals</value>
+  </data>
+</root>

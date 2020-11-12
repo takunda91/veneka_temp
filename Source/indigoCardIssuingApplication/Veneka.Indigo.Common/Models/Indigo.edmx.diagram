@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2007/06/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="e9b7a673791b40c2909174b5f1885186" Name="Diagram1" ZoomLevel="77">
+        <EntityTypeShape EntityType="indigo_databaseModel.application_user" Width="1.5" PointX="14.25" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="indigo_databaseModel.audit_controll" Width="1.5" PointX="9.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="indigo_databaseModel.batch_statuses" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="indigo_databaseModel.dist_cards" Width="1.5" PointX="7.5" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="indigo_databaseModel.distribution_batch" Width="1.5" PointX="5.25" PointY="10.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="indigo_databaseModel.PasswordChangeTracker" Width="1.5" PointX="11.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="indigo_databaseModel.TEMP_dist_cards" Width="1.5" PointX="13.75" PointY="13.75" IsExpanded="true" />
+        <AssociationConnector Association="indigo_databaseModel.FK_application_user_user_group" ManuallyRouted="false" />
+        <AssociationConnector Association="indigo_databaseModel.FK_dist_cards_branch" ManuallyRouted="false" />
+        <AssociationConnector Association="indigo_databaseModel.FK_dist_cards_distribution_batch" ManuallyRouted="false" />
+        <AssociationConnector Association="indigo_databaseModel.FK_load_batch_issuer" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="indigo_databaseModel.issuer" Width="1.5" PointX="12.5" PointY="1.125" />
+        <EntityTypeShape EntityType="indigo_databaseModel.issuer_interface" Width="1.5" PointX="14.75" PointY="3.75" />
+        <AssociationConnector Association="indigo_databaseModel.FK_issuer_interface_issuer" />
+        <EntityTypeShape EntityType="indigo_databaseModel.Issuer_product_font" Width="1.5" PointX="5.375" PointY="0.75" />
+        <AssociationConnector Association="indigo_databaseModel.FK_Issuer_product_font_Issuer_product_font" />
+        <EntityTypeShape EntityType="indigo_databaseModel.country" Width="1.5" PointX="7.375" PointY="6.75" />
+        <EntityTypeShape EntityType="indigo_databaseModel.branch_card_codes" Width="1.5" PointX="5.375" PointY="6.75" />
+        <EntityTypeShape EntityType="indigo_databaseModel.card_priority" Width="1.5" PointX="7.375" PointY="0.75" />
+        <EntityTypeShape EntityType="indigo_databaseModel.interface_type" Width="1.5" PointX="7.375" PointY="3.875" />
+        <AssociationConnector Association="indigo_databaseModel.FK_issuer_interface_interface_type" />
+        <EntityTypeShape EntityType="indigo_databaseModel.user_group" Width="1.5" PointX="3" PointY="9.75" />
+        <AssociationConnector Association="indigo_databaseModel.FK_user_group_issuer" />
+        <EntityTypeShape EntityType="indigo_databaseModel.language" Width="1.5" PointX="0.75" PointY="5.25" />
+        <AssociationConnector Association="indigo_databaseModel.FK_issuer_has_languages" />
+        <EntityTypeShape EntityType="indigo_databaseModel.file_history" Width="1.5" PointX="3" PointY="14.75" />
+        <AssociationConnector Association="indigo_databaseModel.FK_file_history_issuer" />
+        <EntityTypeShape EntityType="indigo_databaseModel.file_statuses" Width="1.5" PointX="0.875" PointY="16.5" />
+        <EntityTypeShape EntityType="indigo_databaseModel.file_types" Width="1.5" PointX="9.375" PointY="0.875" />
+        <AssociationConnector Association="indigo_databaseModel.FK_file_history_file_history" />
+        <AssociationConnector Association="indigo_databaseModel.FK_file_history_file_statuses" />
+        <EntityTypeShape EntityType="indigo_databaseModel.branch" Width="1.5" PointX="14.75" PointY="0.75" />
+        <AssociationConnector Association="indigo_databaseModel.FK_branch_issuer" />
+        <EntityTypeShape EntityType="indigo_databaseModel.user" Width="1.5" PointX="9.375" PointY="3.75" />
+        </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

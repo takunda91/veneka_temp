@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="4a903c19-92b3-4297-93c3-09d8c9c01e6b" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="https://localhost:8443/BackOfficeAPI.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="BackOfficeAPI.xsd" MetadataType="Schema" ID="358f3436-d4e9-4ec3-8c1f-0dff7f6a190f" SourceId="1" SourceUrl="https://localhost:8443/BackOfficeAPI.svc?xsd=xsd4" />
+    <MetadataFile FileName="BackOfficeAPI1.xsd" MetadataType="Schema" ID="0879e33f-7695-4119-ade6-44c02e7c13da" SourceId="1" SourceUrl="https://localhost:8443/BackOfficeAPI.svc?xsd=xsd5" />
+    <MetadataFile FileName="BackOfficeAPI.wsdl" MetadataType="Wsdl" ID="40943377-c04b-4a02-bca0-08a998c0203e" SourceId="1" SourceUrl="https://localhost:8443/BackOfficeAPI.svc?wsdl" />
+    <MetadataFile FileName="BackOfficeAPI.disco" MetadataType="Disco" ID="d7573a7c-04eb-488d-a715-0c7c4f57451f" SourceId="1" SourceUrl="https://localhost:8443/BackOfficeAPI.svc?disco" />
+    <MetadataFile FileName="BackOfficeAPI2.xsd" MetadataType="Schema" ID="1bb26f44-1bc0-4aa2-af0e-2898ec73cdb0" SourceId="1" SourceUrl="https://localhost:8443/BackOfficeAPI.svc?xsd=xsd2" />
+    <MetadataFile FileName="BackOfficeAPI3.xsd" MetadataType="Schema" ID="e4f0c11d-ce80-4a62-becd-f7258c0c03c1" SourceId="1" SourceUrl="https://localhost:8443/BackOfficeAPI.svc?xsd=xsd3" />
+    <MetadataFile FileName="BackOfficeAPI4.xsd" MetadataType="Schema" ID="ffd80c51-b440-41ae-b63b-288650a515bb" SourceId="1" SourceUrl="https://localhost:8443/BackOfficeAPI.svc?xsd=xsd0" />
+    <MetadataFile FileName="BackOfficeAPI5.xsd" MetadataType="Schema" ID="8b478dff-9655-48ce-9842-82e630fbb987" SourceId="1" SourceUrl="https://localhost:8443/BackOfficeAPI.svc?xsd=xsd1" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

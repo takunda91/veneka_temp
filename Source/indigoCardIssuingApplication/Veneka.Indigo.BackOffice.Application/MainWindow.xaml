@@ -1,0 +1,58 @@
+﻿<Window x:Uid="Window_1" x:Class="Veneka.Indigo.BackOffice.Application.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"        
+        xmlns:local="clr-namespace:Veneka.Indigo.BackOffice.Application"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="481" Width="804" xml:lang="en-US">
+    <Window.Resources>
+        
+        <ResourceDictionary x:Uid="ResourceDictionary_1">
+                <BooleanToVisibilityConverter x:Uid="BooleanToVisibilityConverter_1" x:Key="booleanToVisibilityConverter"/>
+            
+            <ResourceDictionary.MergedDictionaries>
+
+                <ResourceDictionary x:Uid="ResourceDictionary_2" Source="MainViewResources.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+   
+    <Grid x:Uid="main_window_grid_1" >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition x:Uid="RowDefinition_1" Height="Auto"/>
+            <RowDefinition x:Uid="RowDefinition_2" Height="*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal" Grid.Row="0" Grid.Column="1"  HorizontalAlignment="Right" VerticalAlignment="Top">
+            <TextBlock x:Uid="TextBlock_1"  TextAlignment="Right" Text="{Binding AuthenticatedUser}"  
+               FontSize="14"  TextWrapping="Wrap" FontWeight="Bold" Margin="0,0,5,0" Width="200"  HorizontalAlignment="Right" Grid.RowSpan="2" VerticalAlignment="Top"   Visibility="{Binding ShowLogoutButton,Mode=TwoWay, Converter={StaticResource booleanToVisibilityConverter}}"
+              />
+            <Button x:Uid="Button_1" Content="Log out"  Command="{Binding LogoutCommand}"  Height="20" Width="50" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="5,0,0,0"  Visibility="{Binding ShowLogoutButton,Mode=TwoWay, Converter={StaticResource booleanToVisibilityConverter}}" RenderTransformOrigin="4.781,0.549"/>
+        </StackPanel>
+        <!--<StackPanel Name="LoginPanel" Visibility="{Binding IsAuthenticated, RelativeSource={RelativeSource AncestorType={x:Type Window}}, Converter={StaticResource booleanToVisibilityConverter}}">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Username:"/>
+                <TextBox Text="{Binding Username}" Width="200"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Password:"/>            
+                <PasswordBox x:Name="passwordBox" Width="200"/>
+            </StackPanel>
+            
+            <StackPanel Orientation="Horizontal">
+                <Button Content="Log in" Command="{Binding LoginCommand, Mode=OneTime}" CommandParameter="{Binding ElementName=passwordBox}" HorizontalAlignment="Center"/>
+                <Button Content="Log out" Command="{Binding LogoutCommand, Mode=OneTime}" Visibility="{Binding IsAuthenticated, RelativeSource={RelativeSource AncestorType={x:Type Window}}, Converter={StaticResource booleanToVisibilityConverter}}" HorizontalAlignment="Center" Margin="2,0,0,0"/>
+            </StackPanel>
+        </StackPanel>-->
+
+        <ContentControl x:Uid="ContentControl_1" Content="{Binding AuthViewModel}" Grid.Row="0"/>
+
+        <ContentControl x:Uid="ContentControl_2" Content="{Binding CurrentPageViewModel}" Grid.Row="1" />
+        
+    </Grid>
+</Window>

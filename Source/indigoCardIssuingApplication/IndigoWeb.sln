@@ -1,0 +1,196 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2027
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Indigo.UX.Tests", "Indigo.UX.Tests\Indigo.UX.Tests.csproj", "{C75A84A4-9186-4343-9C85-4F9EF0988F4D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "indigoCardIssuingWeb", "indigoCardIssuingWeb\indigoCardIssuingWeb.csproj", "{3F754A57-FD8E-4EA3-8AAB-1BCFE805B8FF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IndigoNativeApp", "IndigoNativeApp\IndigoNativeApp.csproj", "{D7D4D577-3037-4491-B570-7EA154A5282B}"
+EndProject
+Project("{930C7802-8A8C-48F9-8165-68863BCCD9DD}") = "IndigoNativeApp.Bootstrapper", "IndigoNativeApp.Bootstrapper\IndigoNativeApp.Bootstrapper.wixproj", "{702F8977-18F5-43F8-84A8-1F5862B71E3D}"
+EndProject
+Project("{930C7802-8A8C-48F9-8165-68863BCCD9DD}") = "IndigoNativeApp.Setup", "IndigoNativeApp.Setup\IndigoNativeApp.Setup.wixproj", "{3EF448AB-4AFD-47C2-9052-0C837D8CBFCF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Veneka.Indigo.UX.NativeAppAPI", "Veneka.Indigo.UX.NativeAppAPI\Veneka.Indigo.UX.NativeAppAPI.csproj", "{C4D3A6FE-EA61-447E-8016-C6B1DA78D810}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Veneka.Indigo.Integration.ProductPrinting", "Veneka.Indigo.Integration.ProductPrinting\Veneka.Indigo.Integration.ProductPrinting.csproj", "{3C248C1C-AA7E-4656-B851-1C591A1EBE51}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Veneka.Indigo.MachineKeyGeneration", "Veneka.Indigo.MachineKeyGeneration\Veneka.Indigo.MachineKeyGeneration.csproj", "{D28D2320-E0FD-4873-94F8-DB7EA7F76D7D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Veneka.Indigo.Integration", "Veneka.Indigo.Integration\Veneka.Indigo.Integration.csproj", "{03BF6364-DFE6-47D5-8AA3-17839EF44854}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Veneka.Indigo.Common", "Veneka.Indigo.Common\Veneka.Indigo.Common.csproj", "{6A1456B1-52A5-4975-942C-7810FE4097B9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x86 = Debug|x86
+		indigo_app|Any CPU = indigo_app|Any CPU
+		indigo_app|x86 = indigo_app|x86
+		indigo_web|Any CPU = indigo_web|Any CPU
+		indigo_web|x86 = indigo_web|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C75A84A4-9186-4343-9C85-4F9EF0988F4D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C75A84A4-9186-4343-9C85-4F9EF0988F4D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C75A84A4-9186-4343-9C85-4F9EF0988F4D}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{C75A84A4-9186-4343-9C85-4F9EF0988F4D}.Debug|x86.Build.0 = Debug|Any CPU
+		{C75A84A4-9186-4343-9C85-4F9EF0988F4D}.indigo_app|Any CPU.ActiveCfg = Indigo_app|Any CPU
+		{C75A84A4-9186-4343-9C85-4F9EF0988F4D}.indigo_app|Any CPU.Build.0 = Indigo_app|Any CPU
+		{C75A84A4-9186-4343-9C85-4F9EF0988F4D}.indigo_app|x86.ActiveCfg = Indigo_app|Any CPU
+		{C75A84A4-9186-4343-9C85-4F9EF0988F4D}.indigo_app|x86.Build.0 = Indigo_app|Any CPU
+		{C75A84A4-9186-4343-9C85-4F9EF0988F4D}.indigo_web|Any CPU.ActiveCfg = Debug|Any CPU
+		{C75A84A4-9186-4343-9C85-4F9EF0988F4D}.indigo_web|x86.ActiveCfg = indigo_web|Any CPU
+		{C75A84A4-9186-4343-9C85-4F9EF0988F4D}.indigo_web|x86.Build.0 = indigo_web|Any CPU
+		{C75A84A4-9186-4343-9C85-4F9EF0988F4D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C75A84A4-9186-4343-9C85-4F9EF0988F4D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C75A84A4-9186-4343-9C85-4F9EF0988F4D}.Release|x86.ActiveCfg = Release|Any CPU
+		{C75A84A4-9186-4343-9C85-4F9EF0988F4D}.Release|x86.Build.0 = Release|Any CPU
+		{3F754A57-FD8E-4EA3-8AAB-1BCFE805B8FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3F754A57-FD8E-4EA3-8AAB-1BCFE805B8FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3F754A57-FD8E-4EA3-8AAB-1BCFE805B8FF}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{3F754A57-FD8E-4EA3-8AAB-1BCFE805B8FF}.Debug|x86.Build.0 = Debug|Any CPU
+		{3F754A57-FD8E-4EA3-8AAB-1BCFE805B8FF}.indigo_app|Any CPU.ActiveCfg = Indigo_app|Any CPU
+		{3F754A57-FD8E-4EA3-8AAB-1BCFE805B8FF}.indigo_app|Any CPU.Build.0 = Indigo_app|Any CPU
+		{3F754A57-FD8E-4EA3-8AAB-1BCFE805B8FF}.indigo_app|x86.ActiveCfg = Indigo_app|Any CPU
+		{3F754A57-FD8E-4EA3-8AAB-1BCFE805B8FF}.indigo_app|x86.Build.0 = Indigo_app|Any CPU
+		{3F754A57-FD8E-4EA3-8AAB-1BCFE805B8FF}.indigo_web|Any CPU.ActiveCfg = Debug|Any CPU
+		{3F754A57-FD8E-4EA3-8AAB-1BCFE805B8FF}.indigo_web|Any CPU.Build.0 = Debug|Any CPU
+		{3F754A57-FD8E-4EA3-8AAB-1BCFE805B8FF}.indigo_web|x86.ActiveCfg = Release|Any CPU
+		{3F754A57-FD8E-4EA3-8AAB-1BCFE805B8FF}.indigo_web|x86.Build.0 = Release|Any CPU
+		{3F754A57-FD8E-4EA3-8AAB-1BCFE805B8FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3F754A57-FD8E-4EA3-8AAB-1BCFE805B8FF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3F754A57-FD8E-4EA3-8AAB-1BCFE805B8FF}.Release|x86.ActiveCfg = Release|Any CPU
+		{3F754A57-FD8E-4EA3-8AAB-1BCFE805B8FF}.Release|x86.Build.0 = Release|Any CPU
+		{D7D4D577-3037-4491-B570-7EA154A5282B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D7D4D577-3037-4491-B570-7EA154A5282B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D7D4D577-3037-4491-B570-7EA154A5282B}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{D7D4D577-3037-4491-B570-7EA154A5282B}.Debug|x86.Build.0 = Debug|Any CPU
+		{D7D4D577-3037-4491-B570-7EA154A5282B}.indigo_app|Any CPU.ActiveCfg = Indigo_app|Any CPU
+		{D7D4D577-3037-4491-B570-7EA154A5282B}.indigo_app|Any CPU.Build.0 = Indigo_app|Any CPU
+		{D7D4D577-3037-4491-B570-7EA154A5282B}.indigo_app|x86.ActiveCfg = Indigo_app|Any CPU
+		{D7D4D577-3037-4491-B570-7EA154A5282B}.indigo_app|x86.Build.0 = Indigo_app|Any CPU
+		{D7D4D577-3037-4491-B570-7EA154A5282B}.indigo_web|Any CPU.ActiveCfg = Debug|Any CPU
+		{D7D4D577-3037-4491-B570-7EA154A5282B}.indigo_web|x86.ActiveCfg = indigo_web|Any CPU
+		{D7D4D577-3037-4491-B570-7EA154A5282B}.indigo_web|x86.Build.0 = indigo_web|Any CPU
+		{D7D4D577-3037-4491-B570-7EA154A5282B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D7D4D577-3037-4491-B570-7EA154A5282B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D7D4D577-3037-4491-B570-7EA154A5282B}.Release|x86.ActiveCfg = Release|Any CPU
+		{D7D4D577-3037-4491-B570-7EA154A5282B}.Release|x86.Build.0 = Release|Any CPU
+		{702F8977-18F5-43F8-84A8-1F5862B71E3D}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{702F8977-18F5-43F8-84A8-1F5862B71E3D}.Debug|x86.ActiveCfg = Debug|x86
+		{702F8977-18F5-43F8-84A8-1F5862B71E3D}.Debug|x86.Build.0 = Debug|x86
+		{702F8977-18F5-43F8-84A8-1F5862B71E3D}.indigo_app|Any CPU.ActiveCfg = Release|x86
+		{702F8977-18F5-43F8-84A8-1F5862B71E3D}.indigo_app|Any CPU.Build.0 = Release|x86
+		{702F8977-18F5-43F8-84A8-1F5862B71E3D}.indigo_app|x86.ActiveCfg = Release|x86
+		{702F8977-18F5-43F8-84A8-1F5862B71E3D}.indigo_app|x86.Build.0 = Release|x86
+		{702F8977-18F5-43F8-84A8-1F5862B71E3D}.indigo_web|Any CPU.ActiveCfg = Release|x86
+		{702F8977-18F5-43F8-84A8-1F5862B71E3D}.indigo_web|x86.ActiveCfg = Release|x86
+		{702F8977-18F5-43F8-84A8-1F5862B71E3D}.indigo_web|x86.Build.0 = Release|x86
+		{702F8977-18F5-43F8-84A8-1F5862B71E3D}.Release|Any CPU.ActiveCfg = Release|x86
+		{702F8977-18F5-43F8-84A8-1F5862B71E3D}.Release|x86.ActiveCfg = Release|x86
+		{702F8977-18F5-43F8-84A8-1F5862B71E3D}.Release|x86.Build.0 = Release|x86
+		{3EF448AB-4AFD-47C2-9052-0C837D8CBFCF}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{3EF448AB-4AFD-47C2-9052-0C837D8CBFCF}.Debug|x86.ActiveCfg = Debug|x86
+		{3EF448AB-4AFD-47C2-9052-0C837D8CBFCF}.Debug|x86.Build.0 = Debug|x86
+		{3EF448AB-4AFD-47C2-9052-0C837D8CBFCF}.indigo_app|Any CPU.ActiveCfg = Release|x86
+		{3EF448AB-4AFD-47C2-9052-0C837D8CBFCF}.indigo_app|Any CPU.Build.0 = Release|x86
+		{3EF448AB-4AFD-47C2-9052-0C837D8CBFCF}.indigo_app|x86.ActiveCfg = Release|x86
+		{3EF448AB-4AFD-47C2-9052-0C837D8CBFCF}.indigo_app|x86.Build.0 = Release|x86
+		{3EF448AB-4AFD-47C2-9052-0C837D8CBFCF}.indigo_web|Any CPU.ActiveCfg = Release|x86
+		{3EF448AB-4AFD-47C2-9052-0C837D8CBFCF}.indigo_web|x86.ActiveCfg = Release|x86
+		{3EF448AB-4AFD-47C2-9052-0C837D8CBFCF}.indigo_web|x86.Build.0 = Release|x86
+		{3EF448AB-4AFD-47C2-9052-0C837D8CBFCF}.Release|Any CPU.ActiveCfg = Release|x86
+		{3EF448AB-4AFD-47C2-9052-0C837D8CBFCF}.Release|x86.ActiveCfg = Release|x86
+		{3EF448AB-4AFD-47C2-9052-0C837D8CBFCF}.Release|x86.Build.0 = Release|x86
+		{C4D3A6FE-EA61-447E-8016-C6B1DA78D810}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C4D3A6FE-EA61-447E-8016-C6B1DA78D810}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C4D3A6FE-EA61-447E-8016-C6B1DA78D810}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{C4D3A6FE-EA61-447E-8016-C6B1DA78D810}.Debug|x86.Build.0 = Debug|Any CPU
+		{C4D3A6FE-EA61-447E-8016-C6B1DA78D810}.indigo_app|Any CPU.ActiveCfg = Indigo_app|Any CPU
+		{C4D3A6FE-EA61-447E-8016-C6B1DA78D810}.indigo_app|Any CPU.Build.0 = Indigo_app|Any CPU
+		{C4D3A6FE-EA61-447E-8016-C6B1DA78D810}.indigo_app|x86.ActiveCfg = Indigo_app|Any CPU
+		{C4D3A6FE-EA61-447E-8016-C6B1DA78D810}.indigo_app|x86.Build.0 = Indigo_app|Any CPU
+		{C4D3A6FE-EA61-447E-8016-C6B1DA78D810}.indigo_web|Any CPU.ActiveCfg = Debug|Any CPU
+		{C4D3A6FE-EA61-447E-8016-C6B1DA78D810}.indigo_web|Any CPU.Build.0 = Debug|Any CPU
+		{C4D3A6FE-EA61-447E-8016-C6B1DA78D810}.indigo_web|x86.ActiveCfg = indigo_web|Any CPU
+		{C4D3A6FE-EA61-447E-8016-C6B1DA78D810}.indigo_web|x86.Build.0 = indigo_web|Any CPU
+		{C4D3A6FE-EA61-447E-8016-C6B1DA78D810}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C4D3A6FE-EA61-447E-8016-C6B1DA78D810}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C4D3A6FE-EA61-447E-8016-C6B1DA78D810}.Release|x86.ActiveCfg = Release|Any CPU
+		{C4D3A6FE-EA61-447E-8016-C6B1DA78D810}.Release|x86.Build.0 = Release|Any CPU
+		{3C248C1C-AA7E-4656-B851-1C591A1EBE51}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C248C1C-AA7E-4656-B851-1C591A1EBE51}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C248C1C-AA7E-4656-B851-1C591A1EBE51}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{3C248C1C-AA7E-4656-B851-1C591A1EBE51}.Debug|x86.Build.0 = Debug|Any CPU
+		{3C248C1C-AA7E-4656-B851-1C591A1EBE51}.indigo_app|Any CPU.ActiveCfg = indigo_app|Any CPU
+		{3C248C1C-AA7E-4656-B851-1C591A1EBE51}.indigo_app|Any CPU.Build.0 = indigo_app|Any CPU
+		{3C248C1C-AA7E-4656-B851-1C591A1EBE51}.indigo_app|x86.ActiveCfg = indigo_app|Any CPU
+		{3C248C1C-AA7E-4656-B851-1C591A1EBE51}.indigo_app|x86.Build.0 = indigo_app|Any CPU
+		{3C248C1C-AA7E-4656-B851-1C591A1EBE51}.indigo_web|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C248C1C-AA7E-4656-B851-1C591A1EBE51}.indigo_web|Any CPU.Build.0 = Debug|Any CPU
+		{3C248C1C-AA7E-4656-B851-1C591A1EBE51}.indigo_web|x86.ActiveCfg = Release|Any CPU
+		{3C248C1C-AA7E-4656-B851-1C591A1EBE51}.indigo_web|x86.Build.0 = Release|Any CPU
+		{3C248C1C-AA7E-4656-B851-1C591A1EBE51}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C248C1C-AA7E-4656-B851-1C591A1EBE51}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3C248C1C-AA7E-4656-B851-1C591A1EBE51}.Release|x86.ActiveCfg = Release|Any CPU
+		{3C248C1C-AA7E-4656-B851-1C591A1EBE51}.Release|x86.Build.0 = Release|Any CPU
+		{D28D2320-E0FD-4873-94F8-DB7EA7F76D7D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D28D2320-E0FD-4873-94F8-DB7EA7F76D7D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D28D2320-E0FD-4873-94F8-DB7EA7F76D7D}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{D28D2320-E0FD-4873-94F8-DB7EA7F76D7D}.Debug|x86.Build.0 = Debug|Any CPU
+		{D28D2320-E0FD-4873-94F8-DB7EA7F76D7D}.indigo_app|Any CPU.ActiveCfg = Indigo_app|Any CPU
+		{D28D2320-E0FD-4873-94F8-DB7EA7F76D7D}.indigo_app|Any CPU.Build.0 = Indigo_app|Any CPU
+		{D28D2320-E0FD-4873-94F8-DB7EA7F76D7D}.indigo_app|x86.ActiveCfg = Indigo_app|Any CPU
+		{D28D2320-E0FD-4873-94F8-DB7EA7F76D7D}.indigo_app|x86.Build.0 = Indigo_app|Any CPU
+		{D28D2320-E0FD-4873-94F8-DB7EA7F76D7D}.indigo_web|Any CPU.ActiveCfg = Debug|Any CPU
+		{D28D2320-E0FD-4873-94F8-DB7EA7F76D7D}.indigo_web|Any CPU.Build.0 = Debug|Any CPU
+		{D28D2320-E0FD-4873-94F8-DB7EA7F76D7D}.indigo_web|x86.ActiveCfg = indigo_web|Any CPU
+		{D28D2320-E0FD-4873-94F8-DB7EA7F76D7D}.indigo_web|x86.Build.0 = indigo_web|Any CPU
+		{D28D2320-E0FD-4873-94F8-DB7EA7F76D7D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D28D2320-E0FD-4873-94F8-DB7EA7F76D7D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D28D2320-E0FD-4873-94F8-DB7EA7F76D7D}.Release|x86.ActiveCfg = Release|Any CPU
+		{D28D2320-E0FD-4873-94F8-DB7EA7F76D7D}.Release|x86.Build.0 = Release|Any CPU
+		{03BF6364-DFE6-47D5-8AA3-17839EF44854}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{03BF6364-DFE6-47D5-8AA3-17839EF44854}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{03BF6364-DFE6-47D5-8AA3-17839EF44854}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{03BF6364-DFE6-47D5-8AA3-17839EF44854}.Debug|x86.Build.0 = Debug|Any CPU
+		{03BF6364-DFE6-47D5-8AA3-17839EF44854}.indigo_app|Any CPU.ActiveCfg = indigo_app|Any CPU
+		{03BF6364-DFE6-47D5-8AA3-17839EF44854}.indigo_app|Any CPU.Build.0 = indigo_app|Any CPU
+		{03BF6364-DFE6-47D5-8AA3-17839EF44854}.indigo_app|x86.ActiveCfg = indigo_app|Any CPU
+		{03BF6364-DFE6-47D5-8AA3-17839EF44854}.indigo_app|x86.Build.0 = indigo_app|Any CPU
+		{03BF6364-DFE6-47D5-8AA3-17839EF44854}.indigo_web|Any CPU.ActiveCfg = Debug|Any CPU
+		{03BF6364-DFE6-47D5-8AA3-17839EF44854}.indigo_web|Any CPU.Build.0 = Debug|Any CPU
+		{03BF6364-DFE6-47D5-8AA3-17839EF44854}.indigo_web|x86.ActiveCfg = indigo_app|Any CPU
+		{03BF6364-DFE6-47D5-8AA3-17839EF44854}.indigo_web|x86.Build.0 = indigo_app|Any CPU
+		{03BF6364-DFE6-47D5-8AA3-17839EF44854}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{03BF6364-DFE6-47D5-8AA3-17839EF44854}.Release|Any CPU.Build.0 = Release|Any CPU
+		{03BF6364-DFE6-47D5-8AA3-17839EF44854}.Release|x86.ActiveCfg = Release|Any CPU
+		{03BF6364-DFE6-47D5-8AA3-17839EF44854}.Release|x86.Build.0 = Release|Any CPU
+		{6A1456B1-52A5-4975-942C-7810FE4097B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A1456B1-52A5-4975-942C-7810FE4097B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A1456B1-52A5-4975-942C-7810FE4097B9}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{6A1456B1-52A5-4975-942C-7810FE4097B9}.Debug|x86.Build.0 = Debug|Any CPU
+		{6A1456B1-52A5-4975-942C-7810FE4097B9}.indigo_app|Any CPU.ActiveCfg = indigo_app|Any CPU
+		{6A1456B1-52A5-4975-942C-7810FE4097B9}.indigo_app|Any CPU.Build.0 = indigo_app|Any CPU
+		{6A1456B1-52A5-4975-942C-7810FE4097B9}.indigo_app|x86.ActiveCfg = indigo_app|Any CPU
+		{6A1456B1-52A5-4975-942C-7810FE4097B9}.indigo_app|x86.Build.0 = indigo_app|Any CPU
+		{6A1456B1-52A5-4975-942C-7810FE4097B9}.indigo_web|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A1456B1-52A5-4975-942C-7810FE4097B9}.indigo_web|x86.ActiveCfg = indigo_app|Any CPU
+		{6A1456B1-52A5-4975-942C-7810FE4097B9}.indigo_web|x86.Build.0 = indigo_app|Any CPU
+		{6A1456B1-52A5-4975-942C-7810FE4097B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A1456B1-52A5-4975-942C-7810FE4097B9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6A1456B1-52A5-4975-942C-7810FE4097B9}.Release|x86.ActiveCfg = Release|Any CPU
+		{6A1456B1-52A5-4975-942C-7810FE4097B9}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3C7F92D7-6A86-4C62-A2A8-C19DF08649C9}
+	EndGlobalSection
+EndGlobal

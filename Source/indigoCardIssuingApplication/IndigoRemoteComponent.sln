@@ -1,0 +1,61 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2027
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Veneka.Indigo.RemoteComponentClient", "Veneka.Indigo.RemoteComponentClient\Veneka.Indigo.RemoteComponentClient.csproj", "{D53E9EA5-E864-429E-97F6-5163FEFF31CF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Veneka.Indigo.RemoteComponentConsole", "Veneka.Indigo.RemoteComponentConsole\Veneka.Indigo.RemoteComponentConsole.csproj", "{48751771-6251-41DB-A96D-E6F996D7C82D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Veneka.Indigo.RemoteComponentService", "Veneka.Indigo.RemoteComponentService\Veneka.Indigo.RemoteComponentService.csproj", "{B4D885D3-3A2B-43FB-8EDD-BFA2054F5501}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Veneka.Indigo.Integration", "Veneka.Indigo.Integration\Veneka.Indigo.Integration.csproj", "{03BF6364-DFE6-47D5-8AA3-17839EF44854}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D53E9EA5-E864-429E-97F6-5163FEFF31CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D53E9EA5-E864-429E-97F6-5163FEFF31CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D53E9EA5-E864-429E-97F6-5163FEFF31CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D53E9EA5-E864-429E-97F6-5163FEFF31CF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{48751771-6251-41DB-A96D-E6F996D7C82D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{48751771-6251-41DB-A96D-E6F996D7C82D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{48751771-6251-41DB-A96D-E6F996D7C82D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{48751771-6251-41DB-A96D-E6F996D7C82D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B4D885D3-3A2B-43FB-8EDD-BFA2054F5501}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B4D885D3-3A2B-43FB-8EDD-BFA2054F5501}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B4D885D3-3A2B-43FB-8EDD-BFA2054F5501}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B4D885D3-3A2B-43FB-8EDD-BFA2054F5501}.Release|Any CPU.Build.0 = Release|Any CPU
+		{03BF6364-DFE6-47D5-8AA3-17839EF44854}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{03BF6364-DFE6-47D5-8AA3-17839EF44854}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{03BF6364-DFE6-47D5-8AA3-17839EF44854}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{03BF6364-DFE6-47D5-8AA3-17839EF44854}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3C7F92D7-6A86-4C62-A2A8-C19DF08649C9}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 5
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://veneka.visualstudio.com/
+		SccProjectUniqueName0 = Veneka.Indigo.RemoteComponentClient\\Veneka.Indigo.RemoteComponentClient.csproj
+		SccProjectName0 = Veneka.Indigo.RemoteComponentClient
+		SccLocalPath0 = Veneka.Indigo.RemoteComponentClient
+		SccProjectUniqueName1 = Veneka.Indigo.RemoteComponentConsole\\Veneka.Indigo.RemoteComponentConsole.csproj
+		SccProjectName1 = Veneka.Indigo.RemoteComponentConsole
+		SccLocalPath1 = Veneka.Indigo.RemoteComponentConsole
+		SccProjectUniqueName2 = Veneka.Indigo.RemoteComponentService\\Veneka.Indigo.RemoteComponentService.csproj
+		SccProjectName2 = Veneka.Indigo.RemoteComponentService
+		SccLocalPath2 = Veneka.Indigo.RemoteComponentService
+		SccLocalPath3 = .
+		SccProjectUniqueName4 = Veneka.Indigo.Integration\\Veneka.Indigo.Integration.csproj
+		SccProjectName4 = Veneka.Indigo.Integration
+		SccLocalPath4 = Veneka.Indigo.Integration
+	EndGlobalSection
+EndGlobal

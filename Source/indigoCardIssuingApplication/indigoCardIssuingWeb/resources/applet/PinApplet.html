@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body id="appletbody">
+        <object id="pinpadapplet-object" class="pinpadapplet"
+                classid="clsid:CAFEEFAC-0017-0000-FFFF-ABCDEFFEDCBA"
+                width="350" height="250"
+                codebase="http://java.sun.com/update/1.7.0/jinstall-7u76-windows-i586.cab">
+            <param name="archive" value="/resources/applet/PinApp.jar,/resources/applet/jssc.jar" />
+            <param name="code" value="com.veneka.PinApp" />
+            <param name="java_version" value="1.7*" />
+            <param name="permissions" value="all-permissions" />
+            <embed id="pinpadapplet-embed" class="pinpadapplet"
+                   type="application/x-java-applet"
+                   width="350" height="250"
+                   archive="/resources/applet/PinApp.jar,/resources/applet/jssc.jar"
+                   code="com.veneka.PinApp"
+                   java_version="1.7*"
+                   pluginspage="http://java.com/download/" />
+        </object>    
+</body>
+</html>

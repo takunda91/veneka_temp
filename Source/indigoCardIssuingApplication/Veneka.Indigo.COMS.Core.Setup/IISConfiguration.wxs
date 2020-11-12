@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi" xmlns:iis="http://schemas.microsoft.com/wix/IIsExtension">
+  <Fragment>
+    <DirectoryRef Id="INSTALLFOLDER">
+      <Component Id="ComsCoreAppPool" Guid="" KeyPath="yes">
+        <iis:WebAppPool Id="ComsCoreAppPool"
+                        Name="ComsCore"
+                        Identity="applicationPoolIdentity"
+                         ManagedPipelineMode="Integrated"
+                        ManagedRuntimeVersion="v4.0" />
+      </Component>
+      <Component Id="InstallWebsite" Guid="" KeyPath="yes">
+        <!-- Install to default web site -->
+        <iis:WebSite Id="ComsCoreWebsite" Description='ComsCore Website' Directory='INSTALLFOLDER' AutoStart='yes' StartOnInstall='yes'>
+          <iis:WebAddress Id="AllUnassigned" Port="80" />
+          <iis:WebApplication Id="ComsCoreApplication" Name="[ComsCoreWebsite][WEBSITE_ID]" WebAppPool="ComsCoreAppPool"></iis:WebApplication>
+        </iis:WebSite>
+      </Component>
+    </DirectoryRef>
+    <ComponentGroup Id="ComsCoreIssConfiguration">
+      <ComponentRef Id="InstallWebsite" />
+      <ComponentRef Id="ComsCoreAppPool" />
+    </ComponentGroup>
+    <!--<Feature Id="ProductFeature" Title="ComsCore.Setup" Level="1">
+      <ComponentGroupRef Id="MyWebWebComponents" />
+      <ComponentGroupRef Id="ComsCoreIssConfiguration" />
+    </Feature>-->
+  </Fragment>
+</Wix>

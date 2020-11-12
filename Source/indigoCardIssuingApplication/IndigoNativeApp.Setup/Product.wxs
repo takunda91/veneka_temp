@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi"
+     xmlns:util="http://schemas.microsoft.com/wix/UtilExtension"
+     xmlns:ui="http://schemas.microsoft.com/wix/UIExtension">
+  <?define FileVersionNo="!(bind.FileVersion.fileIndigoNativeAppEXE)" ?>
+
+  <Product Id="*" Name="IndigoNativeApp" Language="1033" Version="$(var.FileVersionNo)" Manufacturer="Veneka Pty. Ltd."
+           UpgradeCode="4E72C9B0-EC67-4CBC-9D10-B1623DEB9407">
+    <Package Id="*" InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
+
+    <!--<MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />-->
+
+    <MajorUpgrade
+      AllowDowngrades="no"
+      AllowSameVersionUpgrades="no"
+      IgnoreRemoveFailure="no"
+      DowngradeErrorMessage="loc.Main_DowngradeErrorMessage"
+      Schedule="afterInstallInitialize"/>
+
+    <!--<InstallExecuteSequence>
+      <RemoveExistingProducts After="InstallInitialize" />
+    </InstallExecuteSequence>-->
+    
+    <MediaTemplate />
+    
+    <!-- https://www.codeproject.com/Articles/44191/Drivers-Installation-With-WiX -->
+    <!-- https://www.stevefenton.co.uk/2014/11/install-c-redistributable-with-your-wix-installer/ -->
+    <!-- https://kobyk.wordpress.com/2008/10/21/installing-filter-drivers-with-difxapp-and-a-wix-v3-msi/ -->
+
+    <Icon Id="INAIcon" SourceFile="$(var.IndigoNativeApp.ProjectDir)Assets\Icons\INA.ico"/>
+    <Property Id="ARPPRODUCTICON" Value="INAIcon" />
+    
+    <Property Id="IndigoNativeAppEXE" Value="$(var.IndigoNativeApp.TargetFileName)" />
+    <Property Id="PAXS300" Value="Veneka"/>
+
+    <Feature Id="ProductFeature" Title="IndigoNativeApp.Setup" Level="1">
+      <ComponentGroupRef Id="ProductComponents" />
+      <ComponentRef Id="RegistryEntries" />
+      <ComponentRef Id="cmpAB620175EFC3F5D6FED01DAD17AE8799" />
+      <ComponentRef Id="compGPTS300" />
+      <ComponentRef Id="compPAXS300" />
+    </Feature>
+    
+    <Feature Id="VCRedist" 
+         Title="Visual C++ 2010 Runtime" 
+         AllowAdvertise="no" 
+         Display="hidden" 
+         Level="1">
+        <MergeRef Id="VCRedist"/>
+    </Feature>
+
+    <UI Id="Custom_Install">
+      <TextStyle Id="WixUI_Font_Normal" FaceName="Tahoma" Size="8" />
+      <TextStyle Id="WixUI_Font_Bigger" FaceName="Tahoma" Size="12" />
+      <TextStyle Id="WixUI_Font_Title" FaceName="Tahoma" Size="9" Bold="yes" />
+      <Property Id="DefaultUIFont" Value="WixUI_Font_Normal" />
+      <Property Id="WixUI_Mode" Value="Mondo" />
+      <DialogRef Id="ErrorDlg" />
+      <DialogRef Id="FatalError" />
+      <DialogRef Id="FilesInUse" />
+      <DialogRef Id="MsiRMFilesInUse" />
+      <DialogRef Id="PrepareDlg" />
+      <DialogRef Id="ProgressDlg" />
+      <DialogRef Id="ResumeDlg" />
+      <DialogRef Id="UserExit" />
+      <Publish Dialog="ExitDialog" Control="Finish" Event="EndDialog" Value="Return" Order="999">1</Publish>
+      <Publish Dialog="WelcomeDlg" Control="Next" Event="NewDialog" Value="LicenseAgreementDlg"></Publish>
+      <Publish Dialog="LicenseAgreementDlg" Control="Back" Event="NewDialog" Value="WelcomeDlg">1</Publish>
+      <Publish Dialog="LicenseAgreementDlg" Control="Next" Event="NewDialog" Value="SettingsDlg" Order="2">LicenseAccepted = "1"</Publish>
+      <Publish Dialog="SettingsDlg" Control="Back" Event="NewDialog" Value="LicenseAgreementDlg"></Publish>
+      <Publish Dialog="SettingsDlg" Control="Next" Event="NewDialog" Value="VerifyReadyDlg"></Publish>
+      <Publish Dialog="VerifyReadyDlg" Control="Back" Event="NewDialog" Value="SettingsDlg" Order="1"></Publish>
+    </UI>
+    <UIRef Id="WixUI_Common" />
+  </Product>
+
+  
+
+  <Fragment>
+    <Directory Id="TARGETDIR" Name="SourceDir">
+      <Directory Id="ProgramFilesFolder">
+        <Directory Id="Veneka" Name="Veneka">
+          <Directory Id="INSTALLFOLDER" Name="IndigoNativeApp">
+            <Directory Id="DEVICEFOLDER" Name="Device">
+              <Directory Id="PRINTERFOLDER" Name="Printer">
+                <Directory Id="ZEBRAFOLDER" Name="Zebra">
+                  <Directory Id="dir727DDFEE3EACAFEFF60851D885B4FEE8" Name="ZXP3" />
+                  <Directory Id="dirAC7E2003584D41329449620E9701B953" Name="ZC3" />
+                 </Directory>
+              </Directory>
+              <Directory Id="PINPADFOLDER" Name="PINPad">
+                <Directory Id="PAXS300FOLDER" Name="PAXS300">
+                  <Directory Id="GPTFOLDER" Name="GPT" />
+                  <Directory Id="VENEKAAPPFOLDER" Name="VenekaApp" />
+                </Directory>
+              </Directory>
+            </Directory>
+          </Directory>
+        </Directory>
+      </Directory>
+    </Directory>
+  </Fragment>
+
+  <Fragment>
+    <DirectoryRef Id="TARGETDIR">
+      <Component Id="RegistryEntries" Guid="9E4987E9-1241-4486-88E1-1DCECE66AD8B">
+        <RegistryKey Root="HKCR"
+                     Key="IndigoNativeApp"
+                     ForceCreateOnInstall="yes"
+                     ForceDeleteOnUninstall="yes">
+          <RegistryKey Key="DefaultIcon">
+            <RegistryValue Type="string" Value="[INSTALLFOLDER][IndigoNativeAppEXE]" />
+          </RegistryKey>
+          <RegistryKey Key="Shell">
+            <RegistryKey Key="Open">
+              <RegistryKey Key="command">
+                <RegistryValue Type="string" Value='"[INSTALLFOLDER][IndigoNativeAppEXE]" "%1"' />
+              </RegistryKey>
+            </RegistryKey>
+          </RegistryKey>
+          <RegistryValue Type="string" Value="URL:IndigoNativeApp Protocol" KeyPath="yes"/>
+          <RegistryValue Type="string" Name="URL Protocol" Value="" />
+        </RegistryKey>
+      </Component>
+      <Merge Id="VCRedist" 
+           SourceFile="$(var.IndigoNativeApp.TargetDir)MergeModules\Microsoft_VC110_CRT_x86.msm" 
+           DiskId="1" 
+           Language="0"/>
+    </DirectoryRef>
+  </Fragment>
+  
+
+  <Fragment>
+    <ComponentGroup Id="ProductComponents" Directory="INSTALLFOLDER">
+      <Component Id="ProductComponent" Guid="AE104F5C-4B60-416A-852D-8CCBE28B20AB">
+        <File Id="fileIndigoNativeAppEXE" Source="$(var.IndigoNativeApp.TargetPath)" />
+        <File Id="fileIndigoNativeAppCONFIG" Source="$(var.IndigoNativeApp.TargetPath).config" />
+        <File Id="fileNativeAppApiDLL" Source="$(var.IndigoNativeApp.TargetDir)Veneka.Indigo.UX.NativeAppAPI.dll" />
+        <File Id="fileVenekaDataDLL" Source="$(var.IndigoNativeApp.TargetDir)Veneka.Data.dll" />
+        <File Id="fileJoseJwtDLL" Source="$(var.IndigoNativeApp.TargetDir)jose-jwt.dll" />
+        <util:XmlFile Id="UpdatePaxS300"
+            Action="setValue"
+            File="[INSTALLFOLDER]IndigoDesktopApp.exe.config"
+            SelectionLanguage="XPath"
+            Permanent="yes"
+            ElementPath="/configuration/appSettings/add[\[]@key='PaxS300'[\]]/@value"            
+            Value="[PAXS300]" />
+      </Component>
+      <Component Id="compZC350" Guid="003D44B1-1721-4EF4-8979-74ABCD92B759">
+        <File Id="indigoproductprinting" Source="$(var.IndigoNativeApp.TargetDir)Veneka.Indigo.Integration.ProductPrinting.dll" />
+        <File Id="sdkapicardcore" Source="$(var.IndigoNativeApp.TargetDir)SdkApi.Card.Core.dll" />
+        <File Id="sdkapicarddesktop" Source="$(var.IndigoNativeApp.TargetDir)SdkApi.Card.Desktop.dll" />
+        <File Id="sdkapicore" Source="$(var.IndigoNativeApp.TargetDir)SdkApi.Core.dll" />
+        <File Id="sdkapidesktop" Source="$(var.IndigoNativeApp.TargetDir)SdkApi.Desktop.dll" />
+        <File Id="sharpsnamlib" Source="$(var.IndigoNativeApp.TargetDir)SharpSnmpLib.dll" />
+        <File Id="sdkapidesktopusb" Source="$(var.IndigoNativeApp.TargetDir)SdkApi.Desktop.Usb.dll" />
+        <File Id="spdh" Source="$(var.IndigoNativeApp.TargetDir)spdh.dll" />
+
+      </Component>
+    </ComponentGroup>
+  </Fragment>
+
+  <Fragment>
+    <DirectoryRef Id="dir727DDFEE3EACAFEFF60851D885B4FEE8">
+      <Component Id="cmpAB620175EFC3F5D6FED01DAD17AE8799" Guid="{85583F0C-7D03-43FF-8464-3CBD3C8DB665}">
+        <AppId Description="ZXPPrinter" Id="{7ED6D9BC-FE23-414D-9526-1EE271256378}" />
+        <File Id="fil449973D9948CE1B996C9AAF724100A3D" KeyPath="yes" Source="$(var.IndigoNativeApp.TargetDir)Device\Printer\Zebra\ZXP3\ZXPPrinter.dll">
+          <TypeLib Id="{B901A410-77F7-40EE-BBCD-A04469A23D51}" Description="ZXPPrinter 1.0 Type Library" HelpDirectory="dir727DDFEE3EACAFEFF60851D885B4FEE8" Language="0" MajorVersion="1" MinorVersion="0">
+            <Class Id="{27B33290-5D70-445D-A91B-264155486CDA}" Context="InprocServer32" Description="Device Class" ThreadingModel="apartment" Programmable="yes">
+              <ProgId Id="ZXPPrinter.Device.1" Description="Device Class">
+                <ProgId Id="ZXPPrinter.Device" Description="Device Class" />
+              </ProgId>
+            </Class>
+            <Class Id="{8D4BBE9C-8BE1-40E9-A0E3-04A1489452B4}" Context="InprocServer32" Description="Utilities Class" ThreadingModel="apartment" Programmable="yes">
+              <ProgId Id="ZXPPrinter.Utilities.1" Description="Utilities Class">
+                <ProgId Id="ZXPPrinter.Utilities" Description="Utilities Class" />
+              </ProgId>
+            </Class>
+            <Class Id="{91ACF5CF-8115-4DBE-A634-C9244D9D2866}" Context="InprocServer32" Description="JobControl Class" ThreadingModel="apartment" Programmable="yes">
+              <ProgId Id="ZXPPrinter.JobControl.1" Description="JobControl Class">
+                <ProgId Id="ZXPPrinter.JobControl" Description="JobControl Class" />
+              </ProgId>
+            </Class>
+            <Class Id="{A6FF1B3A-E557-4FEC-843A-F9EE52398648}" Context="InprocServer32" Description="Job Class" ThreadingModel="apartment" Programmable="yes">
+              <ProgId Id="ZXPPrinter.Job.1" Description="Job Class">
+                <ProgId Id="ZXPPrinter.Job" Description="Job Class" />
+              </ProgId>
+            </Class>
+            <Interface Id="{AE9178F5-A967-4BAE-BAD6-614EAA53CEFE}" Name="IUtilities" ProxyStubClassId32="{00020424-0000-0000-C000-000000000046}" />
+            <Interface Id="{B8892374-094F-462B-810A-64B07CAB27A3}" Name="IJobControl" ProxyStubClassId32="{00020424-0000-0000-C000-000000000046}" />
+            <Interface Id="{E8B8011C-782D-4AEB-8A9B-B3E1497FB6EB}" Name="IJob" ProxyStubClassId32="{00020424-0000-0000-C000-000000000046}" />
+            <Interface Id="{FD08CC93-FC6B-48E0-8CA8-EBAF79FC503C}" Name="IDevice" ProxyStubClassId32="{00020424-0000-0000-C000-000000000046}" />
+            
+          </TypeLib>
+        </File>
+        <RegistryValue Root="HKCR" Key="AppID\ZXPPrinter.DLL" Name="AppID" Value="{7ED6D9BC-FE23-414D-9526-1EE271256378}" Type="string" Action="write" />
+        <RegistryValue Root="HKLM" Key="SYSTEM\CurrentControlSet\Services\EventLog\Application\Zebra ZXP3 Series Card Printer" Name="EventMessageFile" Value="[#fil449973D9948CE1B996C9AAF724100A3D]" Type="string" Action="write" />
+        <RegistryValue Root="HKLM" Key="SYSTEM\CurrentControlSet\Services\EventLog\Application\Zebra ZXP3 Series Card Printer" Name="TypesSupported" Value="7" Type="integer" Action="write" />
+
+        <File Id="fileZMotifGraphicsDLL" Source="$(var.IndigoNativeApp.TargetDir)ZMotifGraphics.DLL" />
+      </Component>
+    </DirectoryRef>
+  
+  
+  </Fragment>
+
+  <Fragment>
+    <DirectoryRef Id="GPTFOLDER">
+      <Component Id="compGPTS300" Guid="848C59F4-77D9-476C-872E-00033692AA4E">
+        <File Id="spdh0160DLL" Source="$(var.IndigoNativeApp.TargetDir)Device\PINPad\PAXS300\GPT\spdh0160.dll" />
+        <File Id="msvci70DLL" Source="$(var.IndigoNativeApp.TargetDir)Device\PINPad\PAXS300\GPT\msvci70.dll" />
+        <File Id="msvcr70DLL" Source="$(var.IndigoNativeApp.TargetDir)Device\PINPad\PAXS300\GPT\msvcr70.dll" />
+        <File Id="MSVCR70dDLL" Source="$(var.IndigoNativeApp.TargetDir)Device\PINPad\PAXS300\GPT\MSVCR70d.dll" />
+        <File Id="spdhDLL" Source="$(var.IndigoNativeApp.TargetDir)spdh.dll" />
+      </Component>
+    </DirectoryRef>
+  </Fragment>
+
+<Fragment>
+    <DirectoryRef Id="VENEKAAPPFOLDER">
+      <Component Id="compPAXS300" Guid="24D89D0A-1528-4FC5-8637-46C11D786161">
+        <File Id="eftpaydll" Source="$(var.IndigoNativeApp.TargetDir)Device\PINPad\PAXS300\VenekaApp\Eftpay_DLL.dll" />
+        <File Id="venekaeftpaydll" Source="$(var.IndigoNativeApp.TargetDir)Device\PINPad\PAXS300\VenekaApp\Veneka.EFTPay.dll" />
+      </Component>
+    </DirectoryRef>
+  </Fragment>
+</Wix>

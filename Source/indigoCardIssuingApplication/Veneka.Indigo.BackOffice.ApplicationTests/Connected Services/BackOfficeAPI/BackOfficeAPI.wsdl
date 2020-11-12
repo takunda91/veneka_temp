@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://schemas.veneka.com/Indigo/BackOfficeAPI" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="BackOfficeAPI" targetNamespace="http://schemas.veneka.com/Indigo/BackOfficeAPI" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="WSHttpBinding_IBackOfficeAPI_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <sp:HttpsToken RequireClientCertificate="false" />
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256 />
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict />
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://schemas.veneka.com/Indigo/BackOfficeAPI/Imports">
+      <xsd:import schemaLocation="https://localhost:8443/BackOfficeAPI.svc?xsd=xsd0" namespace="http://schemas.veneka.com/Indigo/BackOfficeAPI" />
+      <xsd:import schemaLocation="https://localhost:8443/BackOfficeAPI.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="https://localhost:8443/BackOfficeAPI.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Veneka.Indigo.BackOffice.API" />
+      <xsd:import schemaLocation="https://localhost:8443/BackOfficeAPI.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="https://localhost:8443/BackOfficeAPI.svc?xsd=xsd4" namespace="http://schemas.veneka.com/Indigo/ServicesAuthentication" />
+      <xsd:import schemaLocation="https://localhost:8443/BackOfficeAPI.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/Veneka.Indigo.ServicesAuthentication.API.DataContracts" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IBackOfficeAPI_CheckStatus_InputMessage">
+    <wsdl:part name="parameters" element="tns:CheckStatus" />
+  </wsdl:message>
+  <wsdl:message name="IBackOfficeAPI_CheckStatus_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CheckStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBackOfficeAPI_GetApprovedPrintBatches_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetApprovedPrintBatches" />
+  </wsdl:message>
+  <wsdl:message name="IBackOfficeAPI_GetApprovedPrintBatches_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetApprovedPrintBatchesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBackOfficeAPI_GetProductTemplate_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductTemplate" />
+  </wsdl:message>
+  <wsdl:message name="IBackOfficeAPI_GetProductTemplate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductTemplateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBackOfficeAPI_GetRequestsforBatch_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRequestsforBatch" />
+  </wsdl:message>
+  <wsdl:message name="IBackOfficeAPI_GetRequestsforBatch_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRequestsforBatchResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBackOfficeAPI_updatePrintBatchStatus_InputMessage">
+    <wsdl:part name="parameters" element="tns:updatePrintBatchStatus" />
+  </wsdl:message>
+  <wsdl:message name="IBackOfficeAPI_updatePrintBatchStatus_OutputMessage">
+    <wsdl:part name="parameters" element="tns:updatePrintBatchStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBackOfficeAPI_Login_InputMessage">
+    <wsdl:part xmlns:q1="http://schemas.veneka.com/Indigo/ServicesAuthentication" name="parameters" element="q1:Login" />
+  </wsdl:message>
+  <wsdl:message name="IBackOfficeAPI_Login_OutputMessage">
+    <wsdl:part xmlns:q2="http://schemas.veneka.com/Indigo/ServicesAuthentication" name="parameters" element="q2:LoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBackOfficeAPI_MultiFactor_InputMessage">
+    <wsdl:part xmlns:q3="http://schemas.veneka.com/Indigo/ServicesAuthentication" name="parameters" element="q3:MultiFactor" />
+  </wsdl:message>
+  <wsdl:message name="IBackOfficeAPI_MultiFactor_OutputMessage">
+    <wsdl:part xmlns:q4="http://schemas.veneka.com/Indigo/ServicesAuthentication" name="parameters" element="q4:MultiFactorResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IBackOfficeAPI">
+    <wsdl:operation name="CheckStatus">
+      <wsdl:input wsaw:Action="http://schemas.veneka.com/Indigo/BackOfficeAPI/IGeneral/CheckStatus" message="tns:IBackOfficeAPI_CheckStatus_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.veneka.com/Indigo/BackOfficeAPI/IGeneral/CheckStatusResponse" message="tns:IBackOfficeAPI_CheckStatus_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetApprovedPrintBatches">
+      <wsdl:input wsaw:Action="http://schemas.veneka.com/Indigo/BackOfficeAPI/IBulkPrintingAPI/GetApprovedPrintBatches" message="tns:IBackOfficeAPI_GetApprovedPrintBatches_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.veneka.com/Indigo/BackOfficeAPI/IBulkPrintingAPI/GetApprovedPrintBatchesResponse" message="tns:IBackOfficeAPI_GetApprovedPrintBatches_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProductTemplate">
+      <wsdl:input wsaw:Action="http://schemas.veneka.com/Indigo/BackOfficeAPI/IBulkPrintingAPI/GetProductTemplate" message="tns:IBackOfficeAPI_GetProductTemplate_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.veneka.com/Indigo/BackOfficeAPI/IBulkPrintingAPI/GetProductTemplateResponse" message="tns:IBackOfficeAPI_GetProductTemplate_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRequestsforBatch">
+      <wsdl:input wsaw:Action="http://schemas.veneka.com/Indigo/BackOfficeAPI/IBulkPrintingAPI/GetRequestsforBatch" message="tns:IBackOfficeAPI_GetRequestsforBatch_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.veneka.com/Indigo/BackOfficeAPI/IBulkPrintingAPI/GetRequestsforBatchResponse" message="tns:IBackOfficeAPI_GetRequestsforBatch_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="updatePrintBatchStatus">
+      <wsdl:input wsaw:Action="http://schemas.veneka.com/Indigo/BackOfficeAPI/IBulkPrintingAPI/updatePrintBatchStatus" message="tns:IBackOfficeAPI_updatePrintBatchStatus_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.veneka.com/Indigo/BackOfficeAPI/IBulkPrintingAPI/updatePrintBatchStatusResponse" message="tns:IBackOfficeAPI_updatePrintBatchStatus_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Login">
+      <wsdl:input wsaw:Action="http://schemas.veneka.com/Indigo/ServicesAuthentication/IAuthentication/Login" message="tns:IBackOfficeAPI_Login_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.veneka.com/Indigo/ServicesAuthentication/IAuthentication/LoginResponse" message="tns:IBackOfficeAPI_Login_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="MultiFactor">
+      <wsdl:input wsaw:Action="http://schemas.veneka.com/Indigo/ServicesAuthentication/IAuthentication/MultiFactor" message="tns:IBackOfficeAPI_MultiFactor_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.veneka.com/Indigo/ServicesAuthentication/IAuthentication/MultiFactorResponse" message="tns:IBackOfficeAPI_MultiFactor_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WSHttpBinding_IBackOfficeAPI" type="tns:IBackOfficeAPI">
+    <wsp:PolicyReference URI="#WSHttpBinding_IBackOfficeAPI_policy" />
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CheckStatus">
+      <soap12:operation soapAction="http://schemas.veneka.com/Indigo/BackOfficeAPI/IGeneral/CheckStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetApprovedPrintBatches">
+      <soap12:operation soapAction="http://schemas.veneka.com/Indigo/BackOfficeAPI/IBulkPrintingAPI/GetApprovedPrintBatches" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProductTemplate">
+      <soap12:operation soapAction="http://schemas.veneka.com/Indigo/BackOfficeAPI/IBulkPrintingAPI/GetProductTemplate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRequestsforBatch">
+      <soap12:operation soapAction="http://schemas.veneka.com/Indigo/BackOfficeAPI/IBulkPrintingAPI/GetRequestsforBatch" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updatePrintBatchStatus">
+      <soap12:operation soapAction="http://schemas.veneka.com/Indigo/BackOfficeAPI/IBulkPrintingAPI/updatePrintBatchStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Login">
+      <soap12:operation soapAction="http://schemas.veneka.com/Indigo/ServicesAuthentication/IAuthentication/Login" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MultiFactor">
+      <soap12:operation soapAction="http://schemas.veneka.com/Indigo/ServicesAuthentication/IAuthentication/MultiFactor" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="BackOfficeAPI">
+    <wsdl:port name="WSHttpBinding_IBackOfficeAPI" binding="tns:WSHttpBinding_IBackOfficeAPI">
+      <soap12:address location="https://localhost:8443/BackOfficeAPI.svc" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>https://localhost:8443/BackOfficeAPI.svc</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

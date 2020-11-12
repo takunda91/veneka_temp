@@ -1,0 +1,80 @@
+﻿<UserControl x:Uid="UserControl_1" x:Class="Veneka.Indigo.BackOffice.Application.Views.BulkPrinting.BulkPrintingContinueView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Veneka.Indigo.BackOffice.Application.Views.BulkPrinting"
+             mc:Ignorable="d" 
+           
+             d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources>
+        <BooleanToVisibilityConverter x:Uid="BooleanToVisibilityConverter_1" x:Key="booleanToVisibilityConverter"/>
+    </UserControl.Resources>
+    
+    <Grid x:Uid="Grid_1" HorizontalAlignment="Center"  Margin="0,15,0,0" Width="700">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="300"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition x:Uid="RowDefinition_1" Height="262"/>
+            <RowDefinition x:Uid="RowDefinition_2" Height="70"/>
+            <RowDefinition x:Uid="RowDefinition_3" Height="Auto"/>
+
+        </Grid.RowDefinitions>
+        
+        <DataGrid x:Uid="dgrequestlist" x:Name="dgrequestlist" HorizontalAlignment="Left" Grid.ColumnSpan="2" Grid.RowSpan="2" Grid.Column="0" Grid.Row="0" Background="LightGray" RowBackground="LightYellow" AlternatingRowBackground="LightBlue"   Height="262" AutoGenerateColumns="False" Margin="10,20,0,0" VerticalAlignment="Top" Width="580"  ItemsSource="{Binding Requests}">
+            <DataGrid.Columns>
+                <DataGridTemplateColumn Header="Select" Width="50">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate >
+                            <CheckBox IsChecked="{Binding Path=DataContext.IsSelected, Mode=TwoWay, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type DataGridRow}}}" IsEnabled="{Binding Path=DataContext.IsSelected, Mode=TwoWay, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type DataGridRow}}}" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTextColumn Header="Request Reference" Binding="{Binding RequestReference}"/>
+                <DataGridTextColumn Header="PAN" Binding="{Binding PAN}" Width="100"/>
+                <DataGridTextColumn Header="Request Status" Binding="{Binding RequestStatus,Mode=TwoWay, UpdateSourceTrigger=LostFocus}"/>
+                <DataGridTextColumn Header="Print Status" Binding="{Binding PrintingProgress,Mode=TwoWay,UpdateSourceTrigger=LostFocus}"/>
+
+
+                <!--<DataGridTemplateColumn Header="Reprint">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Content="Re-Print" Command="{Binding Path=DataContext.ReprintCommand,
+                                RelativeSource={RelativeSource 
+                                FindAncestor,
+                                AncestorType={x:Type DataGrid}}}"/>
+                        </DataTemplate>
+                        
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn >
+                <DataGridTemplateColumn Header="Spoil">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button>Spoil</Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>-->
+            </DataGrid.Columns>
+
+        </DataGrid>
+
+        <Label x:Uid="lblremarks" Content="Remarks" Grid.Column="0" Grid.Row="1" Margin="0,15,0,0" />
+        <TextBox x:Uid="tbremarks" Height="40" TextWrapping="Wrap" Grid.Row="1"  Grid.Column="1" Margin="10,20,10,2"   />
+
+        <StackPanel Grid.Row="2" Grid.Column="1" HorizontalAlignment="Center" Grid.ColumnSpan="2" Orientation="Horizontal" Margin="0,20,0,0">
+            <Button x:Uid="btnprint" Content="Print" Command="{Binding PrintingCommand}" CommandParameter="{Binding ElementName=dgrequestlist}" Visibility="{Binding ShowPrintButton,Mode=TwoWay,Converter={StaticResource booleanToVisibilityConverter}}"  HorizontalAlignment="Left" VerticalAlignment="Top" Width="75"   />
+            <Button x:Uid="btnreprint" Content="Reprint" Command="{Binding ReprintCommand}"  HorizontalAlignment="Left"  VerticalAlignment="Top" Visibility="{Binding ShowReprintButton,Mode=TwoWay,Converter={StaticResource booleanToVisibilityConverter}}" Margin="5,0,0,0" Width="75" RenderTransformOrigin="-0.2,0.85"   />
+            <Button x:Uid="btnspoil" Content="Spoil"  Command="{Binding SpoilCommand}" CommandParameter="{Binding ElementName=dgrequestlist}" Visibility="{Binding ShowSpoilButton,Mode=TwoWay,Converter={StaticResource booleanToVisibilityConverter}}" Margin="5,0,0,0"  HorizontalAlignment="Left"  VerticalAlignment="Top" Width="75"  />
+            <Button x:Uid="btncontinue" Content="Continue" Command="{Binding ContinueCommand}" Visibility="{Binding ShowContinueButton,Mode=TwoWay,Converter={StaticResource booleanToVisibilityConverter}}" Margin="5,0,0,0"    HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" />
+
+            <Button x:Uid="btncancel" Content="Cancel" Command="{Binding CancelCommand}"  HorizontalAlignment="Left"  Margin="5,0,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="-0.2,0.85" Visibility="{Binding ShowCancelButon,Mode=TwoWay,Converter={StaticResource booleanToVisibilityConverter}}" />
+
+
+        </StackPanel>
+
+
+
+    </Grid>
+</UserControl>

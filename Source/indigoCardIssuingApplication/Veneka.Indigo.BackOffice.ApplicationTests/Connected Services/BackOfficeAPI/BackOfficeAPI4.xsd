@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.veneka.com/Indigo/BackOfficeAPI" elementFormDefault="qualified" targetNamespace="http://schemas.veneka.com/Indigo/BackOfficeAPI" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://localhost:8443/BackOfficeAPI.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Veneka.Indigo.BackOffice.API" />
+  <xs:element name="CheckStatus">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="guid" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckStatusResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Veneka.Indigo.BackOffice.API" minOccurs="0" name="CheckStatusResult" nillable="true" type="q1:ResponseOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetApprovedPrintBatches">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="token" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetApprovedPrintBatchesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Veneka.Indigo.BackOffice.API" minOccurs="0" name="GetApprovedPrintBatchesResult" nillable="true" type="q2:ResponseOfArrayOfGetPrintBatchDetailsyE57n4_PG" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetProductTemplate">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="productId" type="xs:int" />
+        <xs:element minOccurs="0" name="token" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetProductTemplateResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Veneka.Indigo.BackOffice.API" minOccurs="0" name="GetProductTemplateResult" nillable="true" type="q3:ResponseOfArrayOfProductTemplateyE57n4_PG" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRequestsforBatch">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="printBatchId" type="xs:long" />
+        <xs:element minOccurs="0" name="startIndex" type="xs:int" />
+        <xs:element minOccurs="0" name="endindex" type="xs:int" />
+        <xs:element minOccurs="0" name="token" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRequestsforBatchResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Veneka.Indigo.BackOffice.API" minOccurs="0" name="GetRequestsforBatchResult" nillable="true" type="q4:ResponseOfArrayOfRequestDetailsyE57n4_PG" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="updatePrintBatchStatus">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Veneka.Indigo.BackOffice.API" minOccurs="0" name="printBatch" nillable="true" type="q5:UpdatePrintBatchDetails" />
+        <xs:element minOccurs="0" name="token" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="updatePrintBatchStatusResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Veneka.Indigo.BackOffice.API" minOccurs="0" name="updatePrintBatchStatusResult" nillable="true" type="q6:ResponseOfboolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

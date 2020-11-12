@@ -1,0 +1,143 @@
+<Wix xmlns='http://schemas.microsoft.com/wix/2006/wi'
+ xmlns:util='http://schemas.microsoft.com/wix/UtilExtension' xmlns:iis='http://schemas.microsoft.com/wix/IIsExtension'>
+  <Product Id="{E4FC8776-CA59-4A3F-86F0-66732539D6D1}" Name="Indigo NotificationService"  Language="1033" Version="2.1.3.2" Manufacturer="Veneka" UpgradeCode="{E4FC8776-CA59-4A3F-86F0-66732539D6D1}" >
+    <Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" Manufacturer="Veneka"   />
+    <!--<Condition Message="This application requires .NET Framework 4.5. Please install the .NET Framework then run this installer again. Contact support at support@veneka.com if you have further issues.">
+            <![CDATA[Installed OR NETFRAMEWORK45]]>
+        </Condition>-->
+    <MajorUpgrade DowngradeErrorMessage="A newer version of [NotificationService] is already installed." />
+    <MediaTemplate   EmbedCab="yes"/>
+
+    <Feature Id="ProductFeature" Title="Veneka.Indigo.NotificationService" Level="1">
+      <ComponentGroupRef Id="ProductComponents" />
+      <!--<ComponentGroupRef Id="ServiceComponets" />-->
+
+
+    </Feature>
+    <!--<Binary Id="MyCertificateBinaryStream" 
+   SourceFile="C:/veneka/Luminus/Base24_Replacement/test.cer" />-->
+    <Property Id="WIXUI_INSTALLDIR" Value="INSTALLFOLDER" ></Property>
+    <UIRef Id="WixUI_InstallDir"/>
+    <!--<UIRef Id="WixUI_Minimal" />-->
+    <!--
+  <Icon Id="icon.ico" SourceFile="..\Veneka.Luminus.Connect.UI\Resources\globe_process.ico"/>
+<Property Id="ARPPRODUCTICON" Value="icon.ico" /-->
+  </Product>
+
+  <Fragment>
+
+    <Directory Id="TARGETDIR" Name="SourceDir">
+      <Directory Id="VenekaFolder" Name="veneka" >
+        <Directory Id="IndigoFolder" Name="Indigo_2.1.3.2" >
+          <Directory Id="connectFolder" Name="NotificationService" >
+            <Directory Id="INSTALLFOLDER" Name="bin" >
+            </Directory>
+          </Directory>
+        </Directory>
+      </Directory>
+
+    </Directory>
+
+  </Fragment>
+
+  <Fragment>
+    <!--<ComponentGroup  Id="ServiceComponets" Directory="INSTALLFOLDER">
+      
+    </ComponentGroup>-->
+
+    <ComponentGroup Id="ProductComponents" Directory="INSTALLFOLDER">
+
+
+
+      <Component    Id="Service"  Guid="{879CB5AB-F29E-4A2C-83A9-B2D36AA8CE1E}">
+        <File KeyPath="yes" Id="Veneka.Indigo.NotificationService_F" Name="Veneka.Indigo.NotificationService.exe"
+              Source="$(var.Veneka.Indigo.NotificationService.TargetPath)" DiskId="1" />
+
+        <ServiceInstall   Id="ServiceInstaller"  Type="ownProcess" Vital="yes"
+                          Name="Veneka.Indigo.NotificationService_F"   DisplayName="Indigo NotificationService"   Description="NotificationService for Indigo"
+          Start="auto"
+        Account="localsystem"
+         Arguments=" /start Veneka.Indigo.NotificationService_F"    ErrorControl="critical">
+          <!--Interactive="yes"-->
+          <!--Account="veneka\skonduru"  Password="@s2ndhy3"-->
+          <!--<util:PermissionEx  User="Everyone" ServicePauseContinue="yes" ServiceQueryStatus="yes"
+                                             ServiceStart="yes" ServiceStop="yes" ServiceUserDefinedControl="yes" />-->
+
+          <!--<ServiceDependency Id="QSM"/>
+                      <ServiceDependency Id="pdl"/>
+                      <ServiceDependency Id="WHSTransportService"/>-->
+        </ServiceInstall>
+
+        <ServiceControl Id="StartService"  Stop="both" Remove="uninstall" Name="Veneka.Indigo.NotificationService_F"  />
+        <!--<CreateFolder Directory="DirectoryToManage">
+   <util:PermissionEx  User="Everyone" ServicePauseContinue="yes" ServiceQueryStatus="yes"
+                                    ServiceStart="yes" ServiceStop="yes" ServiceUserDefinedControl="yes" />
+</CreateFolder>-->
+      </Component>
+       <Component KeyPath="yes"  Id="core"  Guid="{1E52DEC9-D4CC-4AD7-BBE7-91E1AC71EF6A}">
+        <File Id="Veneka.Indigo.Common" Name="$(var.Veneka.Indigo.Common.TargetFileName)" Source="$(var.Veneka.Indigo.Common.TargetPath)" DiskId="1" />
+      </Component>
+
+
+      <Component KeyPath="yes"  Id="ConsoleApp"  Guid="{5E35D165-7F2C-4982-B831-A0F857B87380}">
+        <File Id="Veneka.Indigo.NotificationService.ConsoleApp"  Source="$(var.Veneka.Indigo.NotificationService.ConsoleApp.TargetPath)" DiskId="1" />
+      </Component>
+      <Component KeyPath="yes"  Id="ConsoleAppconfig"  Guid="{F93737B8-9934-4384-BF9D-B824C14FC3D5}">
+        <File Id="Veneka.Indigo.NotificationService.ConsoleApp.exe.config" Source="..\Veneka.Indigo.NotificationService.ConsoleApp\bin\Debug\Veneka.Indigo.NotificationService.ConsoleApp.exe.config" DiskId="1" />
+      </Component>
+      <Component KeyPath="yes"  Id="InterfaceManager"  Guid="{AA954C2E-C014-4676-953E-5D6D5376BC90}">
+        <File Id="Veneka.Indigo.Integration" Name="$(var.Veneka.Indigo.Integration.TargetFileName)" Source="$(var.Veneka.Indigo.Integration.TargetPath)" DiskId="1" />
+      </Component>
+
+
+
+      <Component KeyPath="yes"  Id="Serviceconfig"  Guid="{1594292E-E91B-42A2-A6FA-D5543B9F75E2}">
+        <File Id="Veneka.Indigo.NotificationService.exe.config" Source="..\Veneka.Indigo.NotificationService\bin\Debug\Veneka.Indigo.NotificationService.exe.config" DiskId="1" />
+      </Component>
+
+      <!--Luminus Dependent Dlls-->
+      <Component KeyPath="yes"  Id="Client"  Guid="A471EFDA-B405-4483-8382-BD85F768846D">
+        <File Id="Veneka.Licensing.Client" Source="..\Veneka.Indigo.NotificationService\bin\Debug\Veneka.Licensing.Client.dll" DiskId="1" />
+      </Component>
+      <Component KeyPath="yes" Id="Common" Guid="ED2D057D-97C6-42B6-BBAB-51E11EEE1B37">
+        <File Id="Veneka.Licensing.Common" Source="..\Veneka.Indigo.NotificationService\bin\Debug\Veneka.Licensing.Common.dll" DiskId="1" />
+
+      </Component>
+
+      <Component KeyPath="yes" Id="Encryption" Guid="A8C34F0F-A35A-479B-BE3B-CDA68CDAC957">
+        <File Id="Veneka.Licensing.Encryption" Source="..\Veneka.Indigo.NotificationService\bin\Debug\Veneka.Licensing.Encryption.dll" DiskId="1" />
+
+      </Component>
+
+
+      <Component KeyPath="yes" Id="Json" Guid="BF839EF9-5EC1-4408-A268-FF0F720796B1">
+        <File Id="Newtonsoft.Json" Source="..\Veneka.Indigo.NotificationService\bin\Debug\Newtonsoft.Json.dll" DiskId="1" />
+
+      </Component>
+      <Component KeyPath="yes" Id="Crypto" Guid="7F66B667-9436-4670-9737-A704609F2542">
+        <File Id="BouncyCastle.Crypto" Source="..\Veneka.Indigo.NotificationService\bin\Debug\BouncyCastle.Crypto.dll" DiskId="1" />
+
+      </Component>
+      <Component KeyPath="yes"  Id="Common.Logging"  Guid="{49C59553-1E6A-4AE2-801E-29954FC5B3E0}">
+        <File Source="..\packages\Common.Logging.3.3.1\lib\net40\Common.Logging.dll"/>
+      </Component>
+      <Component KeyPath="yes"  Id="Common.Logging.Core"  Guid="{A6193EF9-279A-417C-9960-47F284D2F43C}">
+        <File Source="..\packages\Common.Logging.Core.3.3.1\lib\net40\Common.Logging.Core.dll"/>
+      </Component>
+      <Component KeyPath="yes"  Id="log4net1"  Guid="{C58500F1-DE88-4D32-9000-107F7EE1322F}">
+        <File Source="..\packages\Common.Logging.Log4Net1213.3.3.1\lib\net40\Common.Logging.Log4Net1213.dll"/>
+      </Component>
+
+      <Component KeyPath="yes"  Id="log4net"  Guid="{D1AD7643-F921-4632-A2AA-00C978B6CB8B}">
+        <File Source="..\packages\log4net.2.0.5\lib\net40-full\log4net.dll"/>
+      </Component>
+
+      <!--<Component KeyPath="yes"  Id="entityframework"  Guid="{F93737B8-9934-4384-BF9D-B824C14FC3D5}">
+        <File Source="..\packages\EntityFramework.dll"/>
+      </Component>-->
+
+
+    </ComponentGroup>
+  </Fragment>
+
+</Wix>

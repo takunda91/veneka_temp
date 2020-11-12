@@ -1,0 +1,33 @@
+﻿/*Designs by GlassCode Data Solutions (PTY) LTD
+for Veneka (PTY) LTD on behalf of EcoBank Ghana
+Copyright (c) 2013 Veneka (LTD) LTD.
+*/
+
+
+.TableContainerStyle
+	{
+	    background-color:#FFFFFF;
+	    border:thin solid #0082B6;
+	    border-width:1px;
+	    width:800px;
+	}
+	
+	.TableRowHeading
+	{
+	    width:800px;
+	}
+	
+     td #heading
+	{
+	   /*
+colspan="3" align="center" 
+                style="background-color: #FFFFFF; border: thin solid #0082B6; 
+                font-family: Verdana; font-size: small; font-weight: normal;"*/
+	    text-align:right;
+	    background-color:#000000;
+	    border:thin solid #0082B6;
+	    font-family:Verdana;
+	    font-size:small;
+	    font-weight:normal;
+	    
+	}

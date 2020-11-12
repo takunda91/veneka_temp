@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+    <Fragment>
+        <DirectoryRef Id="INSTALLLOCATION">
+            <Component Id="cmp64A6ABEC5F17E36590DB69F4FEA67659" Guid="{B4928906-25F3-464E-9206-EE0B7BAFCB26}">
+                <File Id="filDA65CA48F325D2509A9508DEF4C92F9C" KeyPath="yes" Source="$(env.SuperFormFilesDir)\ZMotifGraphics.dll" />
+            </Component>
+            <Component Id="cmp2E221C46DE9A11A1492A1688FBB5A9D6" Guid="{AE77718D-C192-43C7-9F46-8F89C26ECCBA}">
+                <File Id="fil13A726945280A21D308DE3D3F9E4287E" KeyPath="yes" Source="$(env.SuperFormFilesDir)\ZMotifPrinter.dll" />
+            </Component>
+        </DirectoryRef>
+    </Fragment>
+    <Fragment>
+        <ComponentGroup Id="SuperFormFiles">
+            <ComponentRef Id="cmp64A6ABEC5F17E36590DB69F4FEA67659" />
+            <ComponentRef Id="cmp2E221C46DE9A11A1492A1688FBB5A9D6" />
+        </ComponentGroup>
+    </Fragment>
+</Wix>

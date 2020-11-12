@@ -1,0 +1,1 @@
+﻿<%@ WebService Language="C#" CodeBehind="IndigoWebService.asmx.cs" Class="IndigoCardIssuanceService.Service1" %>

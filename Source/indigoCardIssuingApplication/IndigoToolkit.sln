@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2046
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IndigoToolkit", "IndigoToolkit\IndigoToolkit.csproj", "{D3970F4D-2B09-49F5-B68F-0D7E34D4FA7A}"
+EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "IndigoDatabase", "IndigoDatabase\IndigoDatabase.sqlproj", "{20E8A786-155A-4E7B-A374-248783225916}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IndigoToolkit2", "IndigoToolkit2\IndigoToolkit2.csproj", "{6B188093-0968-412C-87F9-5EB94BD12F50}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		indigo_app|Any CPU = indigo_app|Any CPU
+		Indigo_web|Any CPU = Indigo_web|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D3970F4D-2B09-49F5-B68F-0D7E34D4FA7A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D3970F4D-2B09-49F5-B68F-0D7E34D4FA7A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D3970F4D-2B09-49F5-B68F-0D7E34D4FA7A}.indigo_app|Any CPU.ActiveCfg = indigo_app|Any CPU
+		{D3970F4D-2B09-49F5-B68F-0D7E34D4FA7A}.indigo_app|Any CPU.Build.0 = indigo_app|Any CPU
+		{D3970F4D-2B09-49F5-B68F-0D7E34D4FA7A}.Indigo_web|Any CPU.ActiveCfg = Indigo_web|Any CPU
+		{D3970F4D-2B09-49F5-B68F-0D7E34D4FA7A}.Indigo_web|Any CPU.Build.0 = Indigo_web|Any CPU
+		{D3970F4D-2B09-49F5-B68F-0D7E34D4FA7A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D3970F4D-2B09-49F5-B68F-0D7E34D4FA7A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{20E8A786-155A-4E7B-A374-248783225916}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{20E8A786-155A-4E7B-A374-248783225916}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{20E8A786-155A-4E7B-A374-248783225916}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{20E8A786-155A-4E7B-A374-248783225916}.indigo_app|Any CPU.ActiveCfg = indigo_app|Any CPU
+		{20E8A786-155A-4E7B-A374-248783225916}.indigo_app|Any CPU.Build.0 = indigo_app|Any CPU
+		{20E8A786-155A-4E7B-A374-248783225916}.indigo_app|Any CPU.Deploy.0 = indigo_app|Any CPU
+		{20E8A786-155A-4E7B-A374-248783225916}.Indigo_web|Any CPU.ActiveCfg = Indigo_web|Any CPU
+		{20E8A786-155A-4E7B-A374-248783225916}.Indigo_web|Any CPU.Build.0 = Indigo_web|Any CPU
+		{20E8A786-155A-4E7B-A374-248783225916}.Indigo_web|Any CPU.Deploy.0 = Indigo_web|Any CPU
+		{20E8A786-155A-4E7B-A374-248783225916}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{20E8A786-155A-4E7B-A374-248783225916}.Release|Any CPU.Build.0 = Release|Any CPU
+		{20E8A786-155A-4E7B-A374-248783225916}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{6B188093-0968-412C-87F9-5EB94BD12F50}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6B188093-0968-412C-87F9-5EB94BD12F50}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6B188093-0968-412C-87F9-5EB94BD12F50}.indigo_app|Any CPU.ActiveCfg = Release|Any CPU
+		{6B188093-0968-412C-87F9-5EB94BD12F50}.indigo_app|Any CPU.Build.0 = Release|Any CPU
+		{6B188093-0968-412C-87F9-5EB94BD12F50}.Indigo_web|Any CPU.ActiveCfg = Release|Any CPU
+		{6B188093-0968-412C-87F9-5EB94BD12F50}.Indigo_web|Any CPU.Build.0 = Release|Any CPU
+		{6B188093-0968-412C-87F9-5EB94BD12F50}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6B188093-0968-412C-87F9-5EB94BD12F50}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D9666210-45C1-4A25-B6A5-6C72F3CC4977}
+	EndGlobalSection
+EndGlobal

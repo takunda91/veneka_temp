@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29806.167
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Veneka.Indigo.Integration.TMB", "Veneka.Indigo.Integration.TMB.csproj", "{724E43E5-3797-4017-AE0F-DAB3B67DBCA2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{724E43E5-3797-4017-AE0F-DAB3B67DBCA2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{724E43E5-3797-4017-AE0F-DAB3B67DBCA2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{724E43E5-3797-4017-AE0F-DAB3B67DBCA2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{724E43E5-3797-4017-AE0F-DAB3B67DBCA2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E5C597CD-739B-4647-860D-DEE89F315588}
+	EndGlobalSection
+EndGlobal

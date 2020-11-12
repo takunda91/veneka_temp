@@ -1,0 +1,177 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{EB1A54C0-B5A5-4A9A-9C0A-43A10634EE10}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>OriginalIndigoDAL</RootNamespace>
+    <AssemblyName>OriginalIndigoDAL</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.0.0\lib\net40\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.0.0\lib\net40\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Models\audit_action.cs" />
+    <Compile Include="Models\audit_action_language.cs" />
+    <Compile Include="Models\audit_control.cs" />
+    <Compile Include="Models\BLK_ACCOUNTS.cs" />
+    <Compile Include="Models\branch.cs" />
+    <Compile Include="Models\branch_card_codes.cs" />
+    <Compile Include="Models\branch_card_codes_language.cs" />
+    <Compile Include="Models\branch_card_code_type.cs" />
+    <Compile Include="Models\branch_card_status.cs" />
+    <Compile Include="Models\branch_card_statuses.cs" />
+    <Compile Include="Models\branch_card_statuses_language.cs" />
+    <Compile Include="Models\branch_card_status_current.cs" />
+    <Compile Include="Models\branch_statuses.cs" />
+    <Compile Include="Models\branch_statuses_language.cs" />
+    <Compile Include="Models\cards.cs" />
+    <Compile Include="Models\card_issue_reason.cs" />
+    <Compile Include="Models\card_issue_reason_language.cs" />
+    <Compile Include="Models\cms_connection_config.cs" />
+    <Compile Include="Models\connection_parameters.cs" />
+    <Compile Include="Models\country.cs" />
+    <Compile Include="Models\currency.cs" />
+    <Compile Include="Models\customer_account.cs" />
+    <Compile Include="Models\customer_account_type.cs" />
+    <Compile Include="Models\customer_account_type_language.cs" />
+    <Compile Include="Models\customer_residency.cs" />
+    <Compile Include="Models\customer_residency_language.cs" />
+    <Compile Include="Models\customer_title.cs" />
+    <Compile Include="Models\customer_title_language.cs" />
+    <Compile Include="Models\customer_type.cs" />
+    <Compile Include="Models\customer_type_language.cs" />
+    <Compile Include="Models\dist_batch.cs" />
+    <Compile Include="Models\dist_batch_cards.cs" />
+    <Compile Include="Models\dist_batch_status.cs" />
+    <Compile Include="Models\dist_batch_statuses.cs" />
+    <Compile Include="Models\dist_batch_statuses_language.cs" />
+    <Compile Include="Models\dist_batch_status_current.cs" />
+    <Compile Include="Models\dist_card_statuses.cs" />
+    <Compile Include="Models\dist_card_statuses_language.cs" />
+    <Compile Include="Models\file_history.cs" />
+    <Compile Include="Models\file_load.cs" />
+    <Compile Include="Models\file_statuses.cs" />
+    <Compile Include="Models\file_statuses_language.cs" />
+    <Compile Include="Models\file_types.cs" />
+    <Compile Include="Models\flex_affiliate_codes.cs" />
+    <Compile Include="Models\flex_parameters.cs" />
+    <Compile Include="Models\flex_responses.cs" />
+    <Compile Include="Models\flex_response_values.cs" />
+    <Compile Include="Models\flex_response_values_language.cs" />
+    <Compile Include="Models\interface_type.cs" />
+    <Compile Include="Models\interface_type_language.cs" />
+    <Compile Include="Models\issuer.cs" />
+    <Compile Include="Models\issuer_interface.cs" />
+    <Compile Include="Models\issuer_product.cs" />
+    <Compile Include="Models\Issuer_product_font.cs" />
+    <Compile Include="Models\issuer_statuses.cs" />
+    <Compile Include="Models\issuer_statuses_language.cs" />
+    <Compile Include="Models\languages.cs" />
+    <Compile Include="Models\ldap_setting.cs" />
+    <Compile Include="Models\load_batch.cs" />
+    <Compile Include="Models\load_batch_cards.cs" />
+    <Compile Include="Models\load_batch_status.cs" />
+    <Compile Include="Models\load_batch_statuses.cs" />
+    <Compile Include="Models\load_batch_statuses_language.cs" />
+    <Compile Include="Models\load_batch_status_current.cs" />
+    <Compile Include="Models\load_card_failed.cs" />
+    <Compile Include="Models\load_card_statuses.cs" />
+    <Compile Include="Models\load_card_statuses_language.cs" />
+    <Compile Include="Models\mac_index_keys.cs" />
+    <Compile Include="Models\message_parameters.cs" />
+    <Compile Include="Models\message_parameters_has_interface.cs" />
+    <Compile Include="Models\mod_interface_account_params.cs" />
+    <Compile Include="Models\mod_interface_cond_accnt.cs" />
+    <Compile Include="Models\mod_interface_general.cs" />
+    <Compile Include="Models\mod_response_mapping.cs" />
+    <Compile Include="Models\OldIndigoDataModel.cs" />
+    <Compile Include="Models\pin_batch.cs" />
+    <Compile Include="Models\pin_batch_status.cs" />
+    <Compile Include="Models\pin_mailer.cs" />
+    <Compile Include="Models\reportfields_language.cs" />
+    <Compile Include="Models\reports.cs" />
+    <Compile Include="Models\report_fields.cs" />
+    <Compile Include="Models\report_reportfields.cs" />
+    <Compile Include="Models\response_messages.cs" />
+    <Compile Include="Models\system_parameters.cs" />
+    <Compile Include="Models\TEMP_dist_cards.cs" />
+    <Compile Include="Models\user.cs" />
+    <Compile Include="Models\user_gender.cs" />
+    <Compile Include="Models\user_group.cs" />
+    <Compile Include="Models\user_group_branch_ex_ent.cs" />
+    <Compile Include="Models\user_password_history.cs" />
+    <Compile Include="Models\user_roles.cs" />
+    <Compile Include="Models\user_roles_branch.cs" />
+    <Compile Include="Models\user_roles_language.cs" />
+    <Compile Include="Models\user_status.cs" />
+    <Compile Include="Models\user_status_language.cs" />
+    <Compile Include="OriginalIndigoRepo.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\EProcess.Indigo.2.0.0.Migration.Common\EProcess.Indigo.2.0.0.Migration.Common.csproj">
+      <Project>{398f1125-f9d9-40f9-886c-26fbfc8570b5}</Project>
+      <Name>EProcess.Indigo.2.0.0.Migration.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NewIndigoDAL\NewIndigoDAL.csproj">
+      <Project>{e099bbe2-604f-4449-8f41-91da0d643b29}</Project>
+      <Name>NewIndigoDAL</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

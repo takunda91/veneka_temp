@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DataComparison>
+  <Version>10</Version>
+  <ConnectionProperties1>
+    <ConnectionString>Data Source=VENEKA-DEV;Initial Catalog=indigo_database_main_dev;Integrated Security=True;Persist Security Info=False;Pooling=False;MultipleActiveResultSets=False;Connect Timeout=60;Encrypt=False;TrustServerCertificate=True</ConnectionString>
+    <FullDisplayName>VENEKA-DEV.indigo_database_main_dev (VENEKA\rbrenchley)</FullDisplayName>
+  </ConnectionProperties1>
+  <ConnectionProperties2>
+    <ConnectionString>Data Source=VENEKA-DEV;Initial Catalog=indigo_database_2.1.3.0;Integrated Security=True;Persist Security Info=False;Pooling=False;MultipleActiveResultSets=False;Connect Timeout=60;Encrypt=False;TrustServerCertificate=True</ConnectionString>
+    <FullDisplayName>VENEKA-DEV.indigo_database_2.1.3.0 (VENEKA\rbrenchley)</FullDisplayName>
+  </ConnectionProperties2>
+  <SessionSettings>IncludeIdenticalRecords, IncludeDifferentRecords, IncludeRecordsInOne</SessionSettings>
+</DataComparison>

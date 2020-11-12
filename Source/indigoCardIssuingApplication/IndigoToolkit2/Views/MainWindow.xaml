@@ -1,0 +1,130 @@
+﻿<catel:Window x:Class="IndigoToolkit2.Views.MainWindow"
+              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+              xmlns:catel="http://schemas.catelproject.com"
+              xmlns:views="clr-namespace:IndigoToolkit2.Views"
+              xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+              xmlns:behave="clr-namespace:IndigoToolkit2.Behaviours"
+              ResizeMode="CanResize" Height="584">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />            
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="130" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="80" />
+        </Grid.ColumnDefinitions>
+
+        <Label Grid.Row="0" Grid.Column="0" Content="Connection String:" />
+        <TextBox Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" Text="{Binding ConnectionString}">
+            <i:Interaction.Behaviors>
+                <catel:UpdateBindingOnTextChanged UpdateDelay="500" />
+            </i:Interaction.Behaviors>
+        </TextBox>
+
+        <Label Grid.Row="1" Grid.Column="0" Content="Target Database:" />
+        <TextBox Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Text="{Binding TargetDatabaseName}">
+            <i:Interaction.Behaviors>
+                <catel:UpdateBindingOnTextChanged UpdateDelay="500" />
+            </i:Interaction.Behaviors>
+        </TextBox>
+
+        <Label Grid.Row="2" Grid.Column="0" Content="DACPAC:" />
+        <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding DacPacPath, UpdateSourceTrigger=PropertyChanged}">
+            <i:Interaction.Behaviors>
+                <catel:UpdateBindingOnTextChanged UpdateDelay="500" />
+            </i:Interaction.Behaviors>
+        </TextBox>
+        <Button Grid.Row="2" Grid.Column="2" Content="Select" Command="{Binding DacPacSelectCmd}" />
+
+        <Label Grid.Row="3" Grid.Column="0" Content="Profile:" />
+        <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding PublishProfilePath, UpdateSourceTrigger=PropertyChanged}">
+            <i:Interaction.Behaviors>
+                <catel:UpdateBindingOnTextChanged UpdateDelay="500" />
+            </i:Interaction.Behaviors>
+        </TextBox>
+        <Button Grid.Row="3" Grid.Column="2" Content="Select" Command="{Binding ProfileSelectCmd}" />
+
+        <Label Grid.Row="4" Grid.Column="0" Content="Variables:" />
+        <ListBox 
+            Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2"
+            ItemsSource="{Binding Path=DacVariables.SqlCmdVars}">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Grid.Row="0" Grid.Column="1" Text="{Binding Path=Key}" Margin="0,0,5,0" />
+                        <TextBox Grid.Row="0" Grid.Column="0" Text="{Binding Path=Value}" Width="500" />
+                    </StackPanel>                    
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+
+        <Label Grid.Row="5" Grid.Column="0" Content="Options:" />
+        <ListBox 
+            Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="2"
+            ItemsSource="{Binding Path=DacProfileOptions.Options}">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Grid.Row="0" Grid.Column="1" Text="{Binding Path=Key}" Margin="0,0,5,0" />
+                        <TextBlock Grid.Row="0" Grid.Column="0" Text="{Binding Path=Value}" Width="500" />
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+
+
+        <StackPanel Grid.Row="6" Grid.Column="0">
+            <Button Command="{Binding DriftReportCmd}" Content="Drift Report" Margin="0,5" />
+            <Button Command="{Binding DeployReportCmd}" Content="Deploy Report" Margin="0,5"/>
+            <Button Command="{Binding DeployCmd}" Content="Deploy" Margin="0,5"  />
+            <Button Command="{Binding SaveMessageLogCmd}" Content="Save Message Log" Margin="0,5"/>
+            <Button Command="{Binding CancelCmd}" Content="Cancel" Margin="0,5"/>
+        </StackPanel>
+
+        <Grid Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="2">
+            <Grid.RowDefinitions>                
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Content="Messages" />
+
+            <ScrollViewer Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" >
+                <i:Interaction.Behaviors>
+                    <behave:AutoScrollBehavior />
+                </i:Interaction.Behaviors>
+                <TextBox TextWrapping="Wrap" AcceptsReturn="True" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto" FontFamily="Consolas"
+                    Text="{Binding DacNotifications.Progress, UpdateSourceTrigger=PropertyChanged}" >
+                </TextBox>
+            </ScrollViewer>
+        </Grid>
+
+        <Grid Grid.Row="7" Grid.Column="1" Grid.ColumnSpan="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>            
+        </Grid>
+    </Grid>
+</catel:Window>

@@ -1,0 +1,502 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F766F935-C122-4C20-94A7-33A543468E3B}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>IndigoCardIssuanceService</RootNamespace>
+    <AssemblyName>IndigoCardIssuanceService</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <TargetFrameworkProfile />
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+    <IISExpressSSLPort>44397</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication>enabled</IISExpressAnonymousAuthentication>
+    <IISExpressWindowsAuthentication>enabled</IISExpressWindowsAuthentication>
+    <IISExpressUseClassicPipelineMode />
+    <ConfigurationFilter>
+    </ConfigurationFilter>
+    <UpdateAssemblyVersion>
+    </UpdateAssemblyVersion>
+    <UpdateAssemblyFileVersion>
+    </UpdateAssemblyFileVersion>
+    <UpdateAssemblyInfoVersion>
+    </UpdateAssemblyInfoVersion>
+    <AssemblyFileVersionSettings>
+    </AssemblyFileVersionSettings>
+    <AssemblyInfoVersionSettings>
+    </AssemblyInfoVersionSettings>
+    <UseGlobalApplicationHostFile />
+    <WcfConfigValidationEnabled>True</WcfConfigValidationEnabled>
+    <Use64BitIISExpress />
+    <ApplicationInsightsResourceId>/subscriptions/b6a5488e-6bc7-4f5a-9e72-8322bb6d19a9/resourcegroups/Default-ApplicationInsights-EastUS/providers/microsoft.insights/components/IndigoCardIssuanceService</ApplicationInsightsResourceId>
+    <ApplicationInsightsAnnotationResourceId>/subscriptions/b6a5488e-6bc7-4f5a-9e72-8322bb6d19a9/resourceGroups/Default-ApplicationInsights-EastUS/providers/microsoft.insights/components/IndigoCardIssuanceService</ApplicationInsightsAnnotationResourceId>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DeployIisAppPath>Default Web Site/IndigoCardIssuanceService</DeployIisAppPath>
+    <FilesToIncludeForPublish>OnlyFilesToRunTheApp</FilesToIncludeForPublish>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
+    <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ExcludeApp_Data>false</ExcludeApp_Data>
+    <DeployIisAppPath>Default Web Site/IndigoCardIssuanceService</DeployIisAppPath>
+    <UpdateAssemblyVersion>False</UpdateAssemblyVersion>
+    <UpdateAssemblyFileVersion>False</UpdateAssemblyFileVersion>
+    <UpdateAssemblyInfoVersion>False</UpdateAssemblyInfoVersion>
+    <IncludeIisSettings>false</IncludeIisSettings>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Common.Logging, Version=3.4.1.0, Culture=neutral, PublicKeyToken=af08829b84f0328e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Common.Logging.3.4.1\lib\net40\Common.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Common.Logging.Core, Version=3.4.1.0, Culture=neutral, PublicKeyToken=af08829b84f0328e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Common.Logging.Core.3.4.1\lib\net40\Common.Logging.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Common.Logging.Log4Net1213, Version=3.4.1.0, Culture=neutral, PublicKeyToken=af08829b84f0328e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Common.Logging.Log4Net1213.3.4.1\lib\net40\Common.Logging.Log4Net1213.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp, Version=5.5.13.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\iTextSharp.5.5.13\lib\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="jose-jwt, Version=2.4.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\jose-jwt.2.4.0\lib\net461\jose-jwt.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=2.0.6.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.6\lib\net45-full\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.Agent.Intercept, Version=2.4.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.2.4.0\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.DependencyCollector, Version=2.4.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.4.1\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.PerfCounterCollector, Version=2.4.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.4.1\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.ServerTelemetryChannel, Version=2.4.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.4.0\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.Web, Version=2.4.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.2.4.1\lib\net45\Microsoft.AI.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.WindowsServer, Version=2.4.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.2.4.1\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights, Version=2.8.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.2.8.1\lib\net46\Microsoft.ApplicationInsights.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights.Log4NetAppender, Version=2.8.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Log4NetAppender.2.8.1\lib\net45\Microsoft.ApplicationInsights.Log4NetAppender.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.TelemetryCorrelation, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.TelemetryCorrelation.1.0.0\lib\net45\Microsoft.AspNet.TelemetryCorrelation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.AppContext, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.AppContext.4.1.0\lib\net46\System.AppContext.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Collections.NonGeneric, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Collections.NonGeneric.4.0.1\lib\net46\System.Collections.NonGeneric.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Console, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Console.4.0.0\lib\net46\System.Console.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Diagnostics.DiagnosticSource, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.4.5.0\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Diagnostics.Process, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Diagnostics.Process.4.1.0\lib\net461\System.Diagnostics.Process.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Diagnostics.StackTrace, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Diagnostics.StackTrace.4.0.1\lib\net46\System.Diagnostics.StackTrace.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Diagnostics.TraceSource, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Diagnostics.TraceSource.4.0.0\lib\net46\System.Diagnostics.TraceSource.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.FileSystem, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.FileSystem.4.0.1\lib\net46\System.IO.FileSystem.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.FileSystem.Primitives, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.FileSystem.Primitives.4.0.1\lib\net46\System.IO.FileSystem.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.FileSystem.Watcher, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.FileSystem.Watcher.4.0.0\lib\net46\System.IO.FileSystem.Watcher.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.NameResolution, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Net.NameResolution.4.0.0\lib\net46\System.Net.NameResolution.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Sockets, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Net.Sockets.4.1.0\lib\net46\System.Net.Sockets.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reflection.TypeExtensions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Reflection.TypeExtensions.4.1.0\lib\net46\System.Reflection.TypeExtensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Caching" />
+    <Reference Include="System.Runtime.InteropServices.RuntimeInformation, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.InteropServices.RuntimeInformation.4.0.0\lib\net45\System.Runtime.InteropServices.RuntimeInformation.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Runtime.Serialization.Formatters, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.Serialization.Formatters.4.3.0\lib\net46\System.Runtime.Serialization.Formatters.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization.Primitives, Version=4.1.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.Serialization.Primitives.4.3.0\lib\net46\System.Runtime.Serialization.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Threading.Thread, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Thread.4.0.0\lib\net46\System.Threading.Thread.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Xml.XmlDocument, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Xml.XmlDocument.4.0.1\lib\net46\System.Xml.XmlDocument.dll</HintPath>
+    </Reference>
+    <Reference Include="Veneka.Indigo.Notifications">
+      <HintPath>..\Veneka.Indigo.Notifications\bin\Debug\Veneka.Indigo.Notifications.dll</HintPath>
+    </Reference>
+    <Reference Include="Veneka.Licensing.Common">
+      <HintPath>..\Veneka.Indigo.Common\bin\Debug\Veneka.Licensing.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Veneka.Licensing.Encryption, Version=1.0.6606.21730, Culture=neutral, PublicKeyToken=b2f9648779cc4168, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\veneka\licensing_references\Veneka.Licensing.Encryption.dll</HintPath>
+    </Reference>
+    <Reference Include="Veneka.Licensing.License, Version=1.0.6606.21767, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\veneka\licensing_references\Veneka.Licensing.License.dll</HintPath>
+    </Reference>
+    <Reference Include="Veneka.Module.ISO8583, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\veneka\DLL\Veneka.Module.ISO8583.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AuditInterface.svc" />
+    <Content Include="AuthenticationAPI.svc" />
+    <Content Include="BackOfficeAPI.svc" />
+    <Content Include="CardRequest.svc" />
+    <Content Include="ComsCallback.svc" />
+    <Content Include="IndigoWebService.asmx" />
+    <Content Include="ISO8583.svc" />
+    <Content Include="ManagementAPI.svc" />
+    <Content Include="parameters.xml" />
+    <Content Include="RemoteComponent.svc" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AuditInterface.svc.cs">
+      <DependentUpon>AuditInterface.svc</DependentUpon>
+    </Compile>
+    <Compile Include="AuthenticationAPI.svc.cs">
+      <DependentUpon>AuthenticationAPI.svc</DependentUpon>
+    </Compile>
+    <Compile Include="BackOfficeAPI.svc.cs">
+      <DependentUpon>BackOfficeAPI.svc</DependentUpon>
+    </Compile>
+    <Compile Include="bll\AuditServiceContoller.cs" />
+    <Compile Include="bll\BackOfficeAPIController.cs" />
+    <Compile Include="bll\DocumentManagementController.cs" />
+    <Compile Include="bll\RemoteDocumentController.cs" />
+    <Compile Include="bll\RenewalController.cs" />
+    <Compile Include="bll\ExportBatchController.cs" />
+    <Compile Include="bll\FundsLoadController.cs" />
+    <Compile Include="bll\LanguageLoopupController.cs" />
+    <Compile Include="bll\LicenseController.cs" />
+    <Compile Include="bll\Logic\AccountLookupLogic.cs" />
+    <Compile Include="bll\Logic\FeeChargeLogic.cs" />
+    <Compile Include="bll\NotificationController.cs" />
+    <Compile Include="bll\PINBatchController.cs" />
+    <Compile Include="bll\DistributionBatchController.cs" />
+    <Compile Include="bll\IssuerManagementController.cs" />
+    <Compile Include="bll\LoadBatchController.cs" />
+    <Compile Include="bll\LoadCardController.cs" />
+    <Compile Include="bll\PrintJobController.cs" />
+    <Compile Include="bll\ProductController.cs" />
+    <Compile Include="bll\RemoteServicesController.cs" />
+    <Compile Include="bll\ReportManagementController.cs" />
+    <Compile Include="bll\SessionManager.cs" />
+    <Compile Include="bll\SystemConfigController.cs" />
+    <Compile Include="bll\TerminalManagementController.cs" />
+    <Compile Include="bll\ThreedBatchController.cs" />
+    <Compile Include="bll\UserManagementController.cs" />
+    <Compile Include="bll\IssueCardController.cs" />
+    <Compile Include="CardRequest.svc.cs">
+      <DependentUpon>CardRequest.svc</DependentUpon>
+    </Compile>
+    <Compile Include="ComsCallback.svc.cs">
+      <DependentUpon>ComsCallback.svc</DependentUpon>
+    </Compile>
+    <Compile Include="COMS\COMSController.cs" />
+    <Compile Include="External\ICardRequest.cs" />
+    <Compile Include="IndigoWebService.asmx.cs">
+      <DependentUpon>IndigoWebService.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Integration\IIntegrationController.cs" />
+    <Compile Include="Integration\IntegrationController.cs" />
+    <Compile Include="ISO8583.svc.cs">
+      <DependentUpon>ISO8583.svc</DependentUpon>
+    </Compile>
+    <Compile Include="DataContracts\BaseResponse.cs" />
+    <Compile Include="DataContracts\PINReissue\PinReissueWSResult.cs" />
+    <Compile Include="DataContracts\Response.cs" />
+    <Compile Include="DataContracts\SessionObject.cs" />
+    <Compile Include="DataContracts\UserLogInRes.cs" />
+    <Compile Include="ManagementAPI.svc.cs">
+      <DependentUpon>ManagementAPI.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DocumentStorageType.cs" />
+    <Compile Include="Models\LocalFileModel.cs" />
+    <Compile Include="Models\ProductDocumentStructure.cs" />
+    <Compile Include="Models\RemoteDocument.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="RemoteComponent.svc.cs">
+      <DependentUpon>RemoteComponent.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Remote\RemoteController.cs" />
+    <Compile Include="Remote\RemoteErrorGenerator.cs" />
+    <Compile Include="ServiceEnumscs.cs" />
+    <Compile Include="util\StaticFields.cs" />
+    <Compile Include="util\UtilityClass.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\IndigoCardsFileLoader\IndigoFileLoader.csproj">
+      <Project>{7024ee02-1c0a-4cd6-bff0-6eba0edfe0b4}</Project>
+      <Name>IndigoFileLoader</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Veneka.Indigo.Audit.Interfaces\Veneka.Indigo.Audit.Interfaces.csproj">
+      <Project>{92bfb8a0-1f08-4f07-9bde-1c7450b3baec}</Project>
+      <Name>Veneka.Indigo.Audit.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Veneka.Indigo.AuditManagement\Veneka.Indigo.AuditManagement.csproj">
+      <Project>{23cc92ab-f026-4c99-bb83-b0a756fc8849}</Project>
+      <Name>Veneka.Indigo.AuditManagement</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Veneka.Indigo.BackOffice.API\Veneka.Indigo.BackOffice.API.csproj">
+      <Project>{22bd7d3c-6039-4259-9f01-eb9c15ac9cd8}</Project>
+      <Name>Veneka.Indigo.BackOffice.API</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Veneka.Indigo.CardRenewal.Entities\Veneka.Indigo.Renewal.Entities.csproj">
+      <Project>{6A4AB795-DD49-4D0B-98A3-28E2D5E05B42}</Project>
+      <Name>Veneka.Indigo.Renewal.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Veneka.Indigo.CardRenewal.Incoming\Veneka.Indigo.Renewal.Incoming.csproj">
+      <Project>{c52bf635-c2c1-48d0-aaf8-b145dc23c101}</Project>
+      <Name>Veneka.Indigo.Renewal.Incoming</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Veneka.Indigo.CardRenewal\Veneka.Indigo.Renewal.csproj">
+      <Project>{927a2bc0-4540-4ae9-b633-ef3ba390f791}</Project>
+      <Name>Veneka.Indigo.Renewal</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Veneka.Indigo.CardManagement\Veneka.Indigo.CardManagement.csproj">
+      <Project>{53228D46-943F-408E-887E-437DA9E6E2D1}</Project>
+      <Name>Veneka.Indigo.CardManagement</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Veneka.Indigo.Common\Veneka.Indigo.Common.csproj">
+      <Project>{6a1456b1-52a5-4975-942c-7810fe4097b9}</Project>
+      <Name>Veneka.Indigo.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Veneka.Indigo.COMS.Core\Veneka.Indigo.COMS.Core.csproj">
+      <Project>{bca9e337-2a5c-4b33-afa2-6c392985e7dd}</Project>
+      <Name>Veneka.Indigo.COMS.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Veneka.Indigo.COMS.DataSource\Veneka.Indigo.COMS.DataSource.csproj">
+      <Project>{9C34A9FC-22F0-4823-BC83-8C678D824E39}</Project>
+      <Name>Veneka.Indigo.COMS.DataSource</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Veneka.Indigo.COMS.SystemsInterface\Veneka.Indigo.COMS.SystemsInterface.csproj">
+      <Project>{2442a52d-0b23-423e-9eca-5aee28e4d7f7}</Project>
+      <Name>Veneka.Indigo.COMS.SystemsInterface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Veneka.Indigo.DocumentManagement\Veneka.Indigo.DocumentManagement.csproj">
+      <Project>{a1066781-6049-41de-87bf-a89c3906dfd5}</Project>
+      <Name>Veneka.Indigo.DocumentManagement</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Veneka.Indigo.FundsLoad\Veneka.Indigo.FundsLoad.csproj">
+      <Project>{eaf7bfc3-6a8a-4d88-86f4-5689b6218f7d}</Project>
+      <Name>Veneka.Indigo.FundsLoad</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Veneka.Indigo.Integration.ProductPrinting\Veneka.Indigo.Integration.ProductPrinting.csproj">
+      <Project>{3C248C1C-AA7E-4656-B851-1C591A1EBE51}</Project>
+      <Name>Veneka.Indigo.Integration.ProductPrinting</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Veneka.Indigo.Integration\Veneka.Indigo.Integration.csproj">
+      <Project>{03bf6364-dfe6-47d5-8aa3-17839ef44854}</Project>
+      <Name>Veneka.Indigo.Integration</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Veneka.Indigo.IssuerManagement\Veneka.Indigo.IssuerManagement.csproj">
+      <Project>{bfb348b9-8aa2-4326-8157-bbb7df8f6888}</Project>
+      <Name>Veneka.Indigo.IssuerManagement</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Veneka.Indigo.LanguageLookup\Veneka.Indigo.LanguageLookup.csproj">
+      <Project>{842DCC17-0669-430C-83EE-49E3F154EC42}</Project>
+      <Name>Veneka.Indigo.LanguageLookup</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Veneka.Indigo.PINManagement\Veneka.Indigo.PINManagement.csproj">
+      <Project>{fe8191d7-aa21-4872-b261-fda635ba1c1d}</Project>
+      <Name>Veneka.Indigo.PINManagement</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Veneka.Indigo.RemoteManagement\Veneka.Indigo.RemoteManagement.csproj">
+      <Project>{645b6461-bc70-42cf-8ba8-017d0e3838c0}</Project>
+      <Name>Veneka.Indigo.RemoteManagement</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Veneka.Indigo.Security\Veneka.Indigo.Security.csproj">
+      <Project>{a585b1f6-3cff-41fd-ba3e-736a133a6210}</Project>
+      <Name>Veneka.Indigo.Security</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Veneka.Indigo.ServicesAuthentication.API\Veneka.Indigo.ServicesAuthentication.API.csproj">
+      <Project>{8983c1c9-a298-490c-adbc-a1494acfc620}</Project>
+      <Name>Veneka.Indigo.ServicesAuthentication.API</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Veneka.Indigo.UserManagement\Veneka.Indigo.UserManagement.csproj">
+      <Project>{FD587632-46DE-4189-BFBA-6085CCB0FD58}</Project>
+      <Name>Veneka.Indigo.UserManagement</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+    <Content Include="ConfigFiles\Database.config" />
+    <Content Include="ConfigFiles\EF.config" />
+    <Content Include="ApplicationInsights.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Connected Services\Application Insights\ConnectedService.json" />
+    <Content Include="libman.json" />
+    <None Include="Properties\PublishProfiles\Local.pubxml" />
+    <None Include="Properties\PublishProfiles\Remote.pubxml" />
+    <None Include="Properties\PublishProfiles\Stagging.pubxml" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="Web.indigo_app.config">
+      <DependentUpon>Web.config</DependentUpon>
+      <SubType>Designer</SubType>
+    </Content>
+    <None Include="Web.Indigo_web.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Stagging.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'indigo_app|AnyCPU'">
+    <OutputPath>bin\indigo_app\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Indigo_web|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>52224</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:52224/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>https://localhost/</CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
